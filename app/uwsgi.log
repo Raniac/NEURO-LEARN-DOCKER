@@ -1,0 +1,1406 @@
+[pid: 3403|app: 0|req: 3/3] 116.56.138.68 () {44 vars in 1328 bytes} [Mon Jun 17 06:02:23 2019] GET / => generated 77 bytes in 1 msecs (HTTP/1.1 404) 4 headers in 114 bytes (1 switches on core 0)
+SIGINT/SIGQUIT received...killing workers...
+worker 1 buried after 1 seconds
+worker 2 buried after 1 seconds
+worker 3 buried after 1 seconds
+worker 4 buried after 1 seconds
+goodbye to uWSGI.
+*** Starting uWSGI 2.0.18 (64bit) on [Mon Jun 17 14:02:58 2019] ***
+compiled with version: 5.4.0 20160609 on 17 June 2019 03:54:56
+os: Linux-4.4.0-31-generic #50-Ubuntu SMP Wed Jul 13 00:07:12 UTC 2016
+nodename: amax
+machine: x86_64
+clock source: unix
+pcre jit disabled
+detected number of CPU cores: 40
+current working directory: /home/raniac/projects/neurolearn
+writing pidfile to uwsgi.pid
+detected binary path: /home/raniac/env/bin/uwsgi
+chdir() to /home/raniac/projects/neurolearn/
+your processes number limit is 1031236
+your memory page size is 4096 bytes
+detected max file descriptor number: 1024
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+uwsgi socket 0 bound to TCP address 0.0.0.0:9090 fd 3
+Python version: 3.6.8 (default, May  7 2019, 14:58:50)  [GCC 5.4.0 20160609]
+Python main interpreter initialized at 0x129ba80
+python threads support enabled
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 416880 bytes (407 KB) for 8 cores
+*** Operational MODE: preforking+threaded ***
+WSGI app 0 (mountpoint='') ready in 1 seconds on interpreter 0x129ba80 pid: 3460 (default app)
+*** uWSGI is running in multiple interpreter mode ***
+spawned uWSGI master process (pid: 3460)
+spawned uWSGI worker 1 (pid: 3464, cores: 2)
+spawned uWSGI worker 2 (pid: 3465, cores: 2)
+spawned uWSGI worker 3 (pid: 3466, cores: 2)
+spawned uWSGI worker 4 (pid: 3468, cores: 2)
+[pid: 3468|app: 0|req: 1/1] 116.56.138.68 () {44 vars in 1328 bytes} [Mon Jun 17 06:03:01 2019] GET / => generated 77 bytes in 31 msecs (HTTP/1.1 404) 4 headers in 114 bytes (1 switches on core 0)
+[pid: 3468|app: 0|req: 2/2] 116.56.138.68 () {44 vars in 1328 bytes} [Mon Jun 17 06:03:01 2019] GET / => generated 77 bytes in 2 msecs (HTTP/1.1 404) 4 headers in 114 bytes (1 switches on core 1)
+[pid: 3468|app: 0|req: 3/3] 116.56.138.68 () {44 vars in 1328 bytes} [Mon Jun 17 06:03:02 2019] GET / => generated 77 bytes in 1 msecs (HTTP/1.1 404) 4 headers in 114 bytes (1 switches on core 0)
+SIGINT/SIGQUIT received...killing workers...
+worker 1 buried after 1 seconds
+worker 2 buried after 1 seconds
+worker 3 buried after 1 seconds
+worker 4 buried after 1 seconds
+goodbye to uWSGI.
+*** Starting uWSGI 2.0.18 (64bit) on [Mon Jun 17 14:06:45 2019] ***
+compiled with version: 5.4.0 20160609 on 17 June 2019 03:54:56
+os: Linux-4.4.0-31-generic #50-Ubuntu SMP Wed Jul 13 00:07:12 UTC 2016
+nodename: amax
+machine: x86_64
+clock source: unix
+pcre jit disabled
+detected number of CPU cores: 40
+current working directory: /home/raniac/projects/neurolearn
+writing pidfile to uwsgi.pid
+detected binary path: /home/raniac/env/bin/uwsgi
+chdir() to /home/raniac/projects/neurolearn/
+your processes number limit is 1031236
+your memory page size is 4096 bytes
+detected max file descriptor number: 1024
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+uwsgi socket 0 bound to TCP address 0.0.0.0:9090 fd 3
+Python version: 3.6.8 (default, May  7 2019, 14:58:50)  [GCC 5.4.0 20160609]
+Python main interpreter initialized at 0x114ea80
+python threads support enabled
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 416880 bytes (407 KB) for 8 cores
+*** Operational MODE: preforking+threaded ***
+WSGI app 0 (mountpoint='') ready in 1 seconds on interpreter 0x114ea80 pid: 3656 (default app)
+*** uWSGI is running in multiple interpreter mode ***
+spawned uWSGI master process (pid: 3656)
+spawned uWSGI worker 1 (pid: 3664, cores: 2)
+spawned uWSGI worker 2 (pid: 3665, cores: 2)
+spawned uWSGI worker 3 (pid: 3666, cores: 2)
+spawned uWSGI worker 4 (pid: 3668, cores: 2)
+[pid: 3665|app: 0|req: 1/1] 116.56.138.68 () {44 vars in 1348 bytes} [Mon Jun 17 06:06:55 2019] GET / => generated 77 bytes in 31 msecs (HTTP/1.1 404) 4 headers in 114 bytes (1 switches on core 0)
+[pid: 3665|app: 0|req: 2/2] 116.56.138.68 () {44 vars in 1348 bytes} [Mon Jun 17 06:06:55 2019] GET / => generated 77 bytes in 2 msecs (HTTP/1.1 404) 4 headers in 114 bytes (1 switches on core 1)
+[pid: 3668|app: 0|req: 1/3] 116.56.138.68 () {40 vars in 514 bytes} [Mon Jun 17 06:22:11 2019] GET / => generated 77 bytes in 29 msecs (HTTP/1.1 404) 4 headers in 114 bytes (1 switches on core 1)
+[pid: 3666|app: 0|req: 1/4] 116.56.138.68 () {40 vars in 698 bytes} [Mon Jun 17 06:27:36 2019] GET / => generated 77 bytes in 32 msecs (HTTP/1.1 404) 4 headers in 114 bytes (1 switches on core 0)
+[pid: 3668|app: 0|req: 2/5] 116.56.138.68 () {42 vars in 729 bytes} [Mon Jun 17 06:29:02 2019] GET / => generated 77 bytes in 2 msecs (HTTP/1.1 404) 4 headers in 114 bytes (1 switches on core 0)
+[pid: 3664|app: 0|req: 1/6] 116.56.138.68 () {38 vars in 569 bytes} [Mon Jun 17 06:29:02 2019] GET /favicon.ico => generated 77 bytes in 30 msecs (HTTP/1.1 404) 4 headers in 114 bytes (1 switches on core 0)
+[pid: 3668|app: 0|req: 3/7] 116.56.138.68 () {40 vars in 514 bytes} [Mon Jun 17 06:29:12 2019] GET / => generated 77 bytes in 1 msecs (HTTP/1.1 404) 4 headers in 114 bytes (1 switches on core 1)
+[pid: 3668|app: 0|req: 4/8] 116.56.138.68 () {40 vars in 514 bytes} [Mon Jun 17 06:29:15 2019] GET / => generated 77 bytes in 1 msecs (HTTP/1.1 404) 4 headers in 114 bytes (1 switches on core 0)
+[pid: 3668|app: 0|req: 5/9] 116.56.138.68 () {40 vars in 587 bytes} [Mon Jun 17 06:29:24 2019] GET /api/login?username=test&password=test => generated 77 bytes in 1 msecs (HTTP/1.1 404) 4 headers in 114 bytes (1 switches on core 1)
+[pid: 3668|app: 0|req: 6/10] 116.56.138.68 () {40 vars in 530 bytes} [Mon Jun 17 06:29:29 2019] GET /api/home => generated 77 bytes in 1 msecs (HTTP/1.1 404) 4 headers in 114 bytes (1 switches on core 0)
+[pid: 3668|app: 0|req: 7/11] 116.56.138.68 () {40 vars in 562 bytes} [Mon Jun 17 06:29:40 2019] GET /api/overview_submissions => generated 77 bytes in 1 msecs (HTTP/1.1 404) 4 headers in 114 bytes (1 switches on core 1)
+...brutally killing workers...
+worker 1 buried after 1 seconds
+worker 2 buried after 1 seconds
+worker 3 buried after 1 seconds
+worker 4 buried after 1 seconds
+binary reloading uWSGI...
+chdir() to /home/raniac/projects/neurolearn
+closing all non-uwsgi socket fds > 2 (max_fd = 1024)...
+found fd 3 mapped to socket 0 (0.0.0.0:9090)
+running /home/raniac/env/bin/uwsgi
+[uWSGI] getting INI configuration from uwsgi.ini
+*** Starting uWSGI 2.0.18 (64bit) on [Mon Jun 17 06:30:08 2019] ***
+compiled with version: 5.4.0 20160609 on 17 June 2019 03:54:56
+os: Linux-4.4.0-31-generic #50-Ubuntu SMP Wed Jul 13 00:07:12 UTC 2016
+nodename: amax
+machine: x86_64
+clock source: unix
+pcre jit disabled
+detected number of CPU cores: 40
+current working directory: /home/raniac/projects/neurolearn
+detected binary path: /home/raniac/env/bin/uwsgi
+chdir() to /home/raniac/projects/neurolearn/
+your processes number limit is 1031236
+your memory page size is 4096 bytes
+detected max file descriptor number: 1024
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+uwsgi socket 0 inherited INET address 0.0.0.0:9090 fd 3
+Python version: 3.6.8 (default, May  7 2019, 14:58:50)  [GCC 5.4.0 20160609]
+Python main interpreter initialized at 0x22523b0
+python threads support enabled
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 416880 bytes (407 KB) for 8 cores
+*** Operational MODE: preforking+threaded ***
+WSGI app 0 (mountpoint='') ready in 0 seconds on interpreter 0x22523b0 pid: 3656 (default app)
+*** uWSGI is running in multiple interpreter mode ***
+gracefully (RE)spawned uWSGI master process (pid: 3656)
+spawned uWSGI worker 1 (pid: 4060, cores: 2)
+spawned uWSGI worker 2 (pid: 4061, cores: 2)
+spawned uWSGI worker 3 (pid: 4062, cores: 2)
+spawned uWSGI worker 4 (pid: 4064, cores: 2)
+...brutally killing workers...
+worker 1 buried after 1 seconds
+worker 2 buried after 1 seconds
+worker 3 buried after 1 seconds
+worker 4 buried after 1 seconds
+binary reloading uWSGI...
+chdir() to /home/raniac/projects/neurolearn
+closing all non-uwsgi socket fds > 2 (max_fd = 1024)...
+found fd 3 mapped to socket 0 (0.0.0.0:9090)
+running /home/raniac/env/bin/uwsgi
+[uWSGI] getting INI configuration from uwsgi.ini
+*** Starting uWSGI 2.0.18 (64bit) on [Mon Jun 17 06:30:15 2019] ***
+compiled with version: 5.4.0 20160609 on 17 June 2019 03:54:56
+os: Linux-4.4.0-31-generic #50-Ubuntu SMP Wed Jul 13 00:07:12 UTC 2016
+nodename: amax
+machine: x86_64
+clock source: unix
+pcre jit disabled
+detected number of CPU cores: 40
+current working directory: /home/raniac/projects/neurolearn
+detected binary path: /home/raniac/env/bin/uwsgi
+chdir() to /home/raniac/projects/neurolearn/
+your processes number limit is 1031236
+your memory page size is 4096 bytes
+detected max file descriptor number: 1024
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+uwsgi socket 0 inherited INET address 0.0.0.0:9090 fd 3
+Python version: 3.6.8 (default, May  7 2019, 14:58:50)  [GCC 5.4.0 20160609]
+Python main interpreter initialized at 0x1c703b0
+python threads support enabled
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 416880 bytes (407 KB) for 8 cores
+*** Operational MODE: preforking+threaded ***
+WSGI app 0 (mountpoint='') ready in 0 seconds on interpreter 0x1c703b0 pid: 3656 (default app)
+*** uWSGI is running in multiple interpreter mode ***
+gracefully (RE)spawned uWSGI master process (pid: 3656)
+spawned uWSGI worker 1 (pid: 4074, cores: 2)
+spawned uWSGI worker 2 (pid: 4075, cores: 2)
+spawned uWSGI worker 3 (pid: 4076, cores: 2)
+spawned uWSGI worker 4 (pid: 4078, cores: 2)
+*** Starting uWSGI 2.0.18 (64bit) on [Mon Jun 17 14:30:45 2019] ***
+compiled with version: 5.4.0 20160609 on 17 June 2019 03:54:56
+os: Linux-4.4.0-31-generic #50-Ubuntu SMP Wed Jul 13 00:07:12 UTC 2016
+nodename: amax
+machine: x86_64
+clock source: unix
+pcre jit disabled
+detected number of CPU cores: 40
+current working directory: /home/raniac/projects/neurolearn
+writing pidfile to uwsgi.pid
+detected binary path: /home/raniac/env/bin/uwsgi
+chdir() to /home/raniac/projects/neurolearn/
+your processes number limit is 1031236
+your memory page size is 4096 bytes
+detected max file descriptor number: 1024
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+uwsgi socket 0 bound to TCP address 0.0.0.0:9090 fd 3
+Python version: 3.6.8 (default, May  7 2019, 14:58:50)  [GCC 5.4.0 20160609]
+Python main interpreter initialized at 0x7f8a90
+python threads support enabled
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 416880 bytes (407 KB) for 8 cores
+*** Operational MODE: preforking+threaded ***
+WSGI app 0 (mountpoint='') ready in 0 seconds on interpreter 0x7f8a90 pid: 4097 (default app)
+*** uWSGI is running in multiple interpreter mode ***
+spawned uWSGI master process (pid: 4097)
+spawned uWSGI worker 1 (pid: 4101, cores: 2)
+spawned uWSGI worker 2 (pid: 4102, cores: 2)
+spawned uWSGI worker 3 (pid: 4103, cores: 2)
+spawned uWSGI worker 4 (pid: 4105, cores: 2)
+[pid: 4105|app: 0|req: 1/1] 116.56.138.68 () {40 vars in 562 bytes} [Mon Jun 17 06:30:52 2019] GET /api/overview_submissions => generated 77 bytes in 32 msecs (HTTP/1.1 404) 4 headers in 114 bytes (1 switches on core 0)
+[pid: 4105|app: 0|req: 2/2] 116.56.138.68 () {40 vars in 514 bytes} [Mon Jun 17 06:31:00 2019] GET / => generated 77 bytes in 2 msecs (HTTP/1.1 404) 4 headers in 114 bytes (1 switches on core 1)
+SIGINT/SIGQUIT received...killing workers...
+worker 1 buried after 1 seconds
+worker 2 buried after 1 seconds
+worker 3 buried after 1 seconds
+worker 4 buried after 1 seconds
+goodbye to uWSGI.
+*** Starting uWSGI 2.0.18 (64bit) on [Mon Jun 17 14:32:06 2019] ***
+compiled with version: 5.4.0 20160609 on 17 June 2019 03:54:56
+os: Linux-4.4.0-31-generic #50-Ubuntu SMP Wed Jul 13 00:07:12 UTC 2016
+nodename: amax
+machine: x86_64
+clock source: unix
+pcre jit disabled
+detected number of CPU cores: 40
+current working directory: /home/raniac/projects/neurolearn
+writing pidfile to uwsgi.pid
+detected binary path: /home/raniac/env/bin/uwsgi
+chdir() to /home/raniac/projects/neurolearn/
+your processes number limit is 1031236
+your memory page size is 4096 bytes
+detected max file descriptor number: 1024
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+uwsgi socket 0 bound to TCP address 0.0.0.0:9090 fd 3
+Python version: 3.6.8 (default, May  7 2019, 14:58:50)  [GCC 5.4.0 20160609]
+Python main interpreter initialized at 0xaa2a90
+python threads support enabled
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 416880 bytes (407 KB) for 8 cores
+*** Operational MODE: preforking+threaded ***
+WSGI app 0 (mountpoint='') ready in 0 seconds on interpreter 0xaa2a90 pid: 4118 (default app)
+*** uWSGI is running in multiple interpreter mode ***
+spawned uWSGI master process (pid: 4118)
+spawned uWSGI worker 1 (pid: 4122, cores: 2)
+spawned uWSGI worker 2 (pid: 4123, cores: 2)
+spawned uWSGI worker 3 (pid: 4124, cores: 2)
+spawned uWSGI worker 4 (pid: 4126, cores: 2)
+[pid: 4124|app: 0|req: 1/1] 116.56.138.68 () {40 vars in 514 bytes} [Mon Jun 17 06:32:32 2019] GET / => generated 77 bytes in 33 msecs (HTTP/1.1 404) 4 headers in 114 bytes (1 switches on core 0)
+[pid: 4126|app: 0|req: 1/2] 116.56.138.68 () {42 vars in 729 bytes} [Mon Jun 17 06:35:57 2019] GET / => generated 77 bytes in 33 msecs (HTTP/1.1 404) 4 headers in 114 bytes (1 switches on core 0)
+[pid: 4122|app: 0|req: 1/3] 116.56.138.68 () {38 vars in 569 bytes} [Mon Jun 17 06:35:57 2019] GET /favicon.ico => generated 77 bytes in 32 msecs (HTTP/1.1 404) 4 headers in 114 bytes (1 switches on core 0)
+SIGINT/SIGQUIT received...killing workers...
+worker 1 buried after 1 seconds
+worker 2 buried after 1 seconds
+worker 3 buried after 1 seconds
+worker 4 buried after 1 seconds
+goodbye to uWSGI.
+*** Starting uWSGI 2.0.18 (64bit) on [Mon Jun 17 14:53:03 2019] ***
+compiled with version: 5.4.0 20160609 on 17 June 2019 03:54:56
+os: Linux-4.4.0-31-generic #50-Ubuntu SMP Wed Jul 13 00:07:12 UTC 2016
+nodename: amax
+machine: x86_64
+clock source: unix
+pcre jit disabled
+detected number of CPU cores: 40
+current working directory: /home/raniac/projects/neurolearn
+writing pidfile to uwsgi.pid
+detected binary path: /home/raniac/env/bin/uwsgi
+chdir() to /home/raniac/projects/neurolearn/
+your processes number limit is 1031236
+your memory page size is 4096 bytes
+detected max file descriptor number: 1024
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+uwsgi socket 0 bound to TCP address 0.0.0.0:9090 fd 3
+Python version: 3.6.8 (default, May  7 2019, 14:58:50)  [GCC 5.4.0 20160609]
+Python main interpreter initialized at 0x153ba70
+python threads support enabled
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 416880 bytes (407 KB) for 8 cores
+*** Operational MODE: preforking+threaded ***
+WSGI app 0 (mountpoint='') ready in 1 seconds on interpreter 0x153ba70 pid: 4572 (default app)
+*** uWSGI is running in multiple interpreter mode ***
+spawned uWSGI master process (pid: 4572)
+spawned uWSGI worker 1 (pid: 4580, cores: 2)
+spawned uWSGI worker 2 (pid: 4581, cores: 2)
+spawned uWSGI worker 3 (pid: 4582, cores: 2)
+spawned uWSGI worker 4 (pid: 4584, cores: 2)
+[pid: 4584|app: 0|req: 1/1] 116.56.138.68 () {40 vars in 514 bytes} [Mon Jun 17 06:53:09 2019] GET / => generated 77 bytes in 30 msecs (HTTP/1.1 404) 4 headers in 114 bytes (1 switches on core 0)
+SIGINT/SIGQUIT received...killing workers...
+worker 1 buried after 1 seconds
+worker 2 buried after 1 seconds
+worker 3 buried after 1 seconds
+worker 4 buried after 1 seconds
+goodbye to uWSGI.
+*** Starting uWSGI 2.0.18 (64bit) on [Mon Jun 17 14:58:31 2019] ***
+compiled with version: 5.4.0 20160609 on 17 June 2019 03:54:56
+os: Linux-4.4.0-31-generic #50-Ubuntu SMP Wed Jul 13 00:07:12 UTC 2016
+nodename: amax
+machine: x86_64
+clock source: unix
+pcre jit disabled
+detected number of CPU cores: 40
+current working directory: /home/raniac/projects/neurolearn
+writing pidfile to uwsgi.pid
+detected binary path: /home/raniac/env/bin/uwsgi
+chdir() to /home/raniac/projects/neurolearn/
+your processes number limit is 1031236
+your memory page size is 4096 bytes
+detected max file descriptor number: 1024
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+uwsgi socket 0 bound to TCP address 0.0.0.0:9090 fd 3
+Python version: 3.6.8 (default, May  7 2019, 14:58:50)  [GCC 5.4.0 20160609]
+Python main interpreter initialized at 0x20d6a70
+python threads support enabled
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 416880 bytes (407 KB) for 8 cores
+*** Operational MODE: preforking+threaded ***
+WSGI app 0 (mountpoint='') ready in 0 seconds on interpreter 0x20d6a70 pid: 4766 (default app)
+*** uWSGI is running in multiple interpreter mode ***
+spawned uWSGI master process (pid: 4766)
+spawned uWSGI worker 1 (pid: 4770, cores: 2)
+spawned uWSGI worker 2 (pid: 4771, cores: 2)
+spawned uWSGI worker 3 (pid: 4772, cores: 2)
+spawned uWSGI worker 4 (pid: 4774, cores: 2)
+[pid: 4771|app: 0|req: 1/1] 116.56.138.68 () {40 vars in 514 bytes} [Mon Jun 17 06:58:44 2019] GET / => generated 77 bytes in 29 msecs (HTTP/1.1 404) 4 headers in 114 bytes (1 switches on core 0)
+[pid: 4771|app: 0|req: 2/2] 116.56.138.68 () {40 vars in 514 bytes} [Mon Jun 17 07:02:15 2019] GET / => generated 77 bytes in 2 msecs (HTTP/1.1 404) 4 headers in 114 bytes (1 switches on core 1)
+SIGINT/SIGQUIT received...killing workers...
+worker 1 buried after 1 seconds
+worker 2 buried after 1 seconds
+worker 3 buried after 1 seconds
+worker 4 buried after 1 seconds
+goodbye to uWSGI.
+*** Starting uWSGI 2.0.18 (64bit) on [Mon Jun 17 15:07:32 2019] ***
+compiled with version: 5.4.0 20160609 on 17 June 2019 03:54:56
+os: Linux-4.4.0-31-generic #50-Ubuntu SMP Wed Jul 13 00:07:12 UTC 2016
+nodename: amax
+machine: x86_64
+clock source: unix
+pcre jit disabled
+detected number of CPU cores: 40
+current working directory: /home/raniac/projects/neurolearn
+writing pidfile to uwsgi.pid
+detected binary path: /home/raniac/env/bin/uwsgi
+chdir() to /home/raniac/projects/neurolearn
+your processes number limit is 1031236
+your memory page size is 4096 bytes
+detected max file descriptor number: 1024
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+uwsgi socket 0 bound to TCP address 0.0.0.0:9090 fd 3
+Python version: 3.6.8 (default, May  7 2019, 14:58:50)  [GCC 5.4.0 20160609]
+Python main interpreter initialized at 0x9dba70
+python threads support enabled
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 416880 bytes (407 KB) for 8 cores
+*** Operational MODE: preforking+threaded ***
+WSGI app 0 (mountpoint='') ready in 0 seconds on interpreter 0x9dba70 pid: 4967 (default app)
+*** uWSGI is running in multiple interpreter mode ***
+spawned uWSGI master process (pid: 4967)
+spawned uWSGI worker 1 (pid: 4971, cores: 2)
+spawned uWSGI worker 2 (pid: 4972, cores: 2)
+spawned uWSGI worker 3 (pid: 4973, cores: 2)
+spawned uWSGI worker 4 (pid: 4975, cores: 2)
+[pid: 4975|app: 0|req: 1/1] 116.56.138.68 () {40 vars in 514 bytes} [Mon Jun 17 07:07:37 2019] GET / => generated 77 bytes in 26 msecs (HTTP/1.1 404) 4 headers in 114 bytes (1 switches on core 0)
+SIGINT/SIGQUIT received...killing workers...
+worker 1 buried after 1 seconds
+worker 2 buried after 1 seconds
+worker 3 buried after 1 seconds
+worker 4 buried after 1 seconds
+goodbye to uWSGI.
+*** Starting uWSGI 2.0.18 (64bit) on [Mon Jun 17 15:08:35 2019] ***
+compiled with version: 5.4.0 20160609 on 17 June 2019 03:54:56
+os: Linux-4.4.0-31-generic #50-Ubuntu SMP Wed Jul 13 00:07:12 UTC 2016
+nodename: amax
+machine: x86_64
+clock source: unix
+pcre jit disabled
+detected number of CPU cores: 40
+current working directory: /home/raniac/projects/neurolearn
+writing pidfile to uwsgi.pid
+detected binary path: /home/raniac/env/bin/uwsgi
+chdir() to /home/raniac/projects/neurolearn
+your processes number limit is 1031236
+your memory page size is 4096 bytes
+detected max file descriptor number: 1024
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+uwsgi socket 0 bound to TCP address 0.0.0.0:9090 fd 3
+Python version: 3.6.8 (default, May  7 2019, 14:58:50)  [GCC 5.4.0 20160609]
+Python main interpreter initialized at 0x1f25a70
+python threads support enabled
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 416880 bytes (407 KB) for 8 cores
+*** Operational MODE: preforking+threaded ***
+WSGI app 0 (mountpoint='') ready in 0 seconds on interpreter 0x1f25a70 pid: 5054 (default app)
+*** uWSGI is running in multiple interpreter mode ***
+spawned uWSGI master process (pid: 5054)
+spawned uWSGI worker 1 (pid: 5058, cores: 2)
+spawned uWSGI worker 2 (pid: 5059, cores: 2)
+spawned uWSGI worker 3 (pid: 5060, cores: 2)
+spawned uWSGI worker 4 (pid: 5062, cores: 2)
+[pid: 5062|app: 0|req: 1/1] 116.56.138.68 () {40 vars in 514 bytes} [Mon Jun 17 07:08:43 2019] GET / => generated 77 bytes in 29 msecs (HTTP/1.1 404) 4 headers in 114 bytes (1 switches on core 0)
+SIGINT/SIGQUIT received...killing workers...
+worker 1 buried after 1 seconds
+worker 2 buried after 1 seconds
+worker 3 buried after 1 seconds
+worker 4 buried after 1 seconds
+goodbye to uWSGI.
+*** Starting uWSGI 2.0.18 (64bit) on [Mon Jun 17 15:09:37 2019] ***
+compiled with version: 5.4.0 20160609 on 17 June 2019 03:54:56
+os: Linux-4.4.0-31-generic #50-Ubuntu SMP Wed Jul 13 00:07:12 UTC 2016
+nodename: amax
+machine: x86_64
+clock source: unix
+pcre jit disabled
+detected number of CPU cores: 40
+current working directory: /home/raniac/projects/neurolearn
+writing pidfile to uwsgi.pid
+detected binary path: /home/raniac/env/bin/uwsgi
+chdir() to /home/raniac/projects/neurolearn
+your processes number limit is 1031236
+your memory page size is 4096 bytes
+detected max file descriptor number: 1024
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+uwsgi socket 0 bound to TCP address 0.0.0.0:9090 fd 3
+Python version: 3.6.8 (default, May  7 2019, 14:58:50)  [GCC 5.4.0 20160609]
+Python main interpreter initialized at 0x188fa70
+python threads support enabled
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 416880 bytes (407 KB) for 8 cores
+*** Operational MODE: preforking+threaded ***
+WSGI app 0 (mountpoint='') ready in 0 seconds on interpreter 0x188fa70 pid: 5103 (default app)
+*** uWSGI is running in multiple interpreter mode ***
+spawned uWSGI master process (pid: 5103)
+spawned uWSGI worker 1 (pid: 5107, cores: 2)
+spawned uWSGI worker 2 (pid: 5108, cores: 2)
+spawned uWSGI worker 3 (pid: 5109, cores: 2)
+spawned uWSGI worker 4 (pid: 5111, cores: 2)
+unable to load configuration from from multiprocessing.semaphore_tracker import main;main(7)
+[pid: 5111|app: 0|req: 1/1] 116.56.138.68 () {40 vars in 514 bytes} [Mon Jun 17 07:09:42 2019] GET / => generated 649 bytes in 980 msecs (HTTP/1.1 200) 4 headers in 123 bytes (1 switches on core 0)
+[pid: 5111|app: 0|req: 2/2] 116.56.138.68 () {42 vars in 1317 bytes} [Mon Jun 17 07:09:57 2019] GET / => generated 649 bytes in 2 msecs (HTTP/1.1 200) 4 headers in 123 bytes (1 switches on core 1)
+None
+None
+None
+unable to load configuration from from multiprocessing.semaphore_tracker import main;main(8)
+[pid: 5108|app: 0|req: 1/3] 116.56.138.68 () {44 vars in 1348 bytes} [Mon Jun 17 07:11:30 2019] GET / => generated 649 bytes in 966 msecs (HTTP/1.1 200) 4 headers in 123 bytes (1 switches on core 0)
+unable to load configuration from from multiprocessing.semaphore_tracker import main;main(7)
+None
+None
+None
+[pid: 5109|app: 0|req: 2/4] 116.56.138.68 () {44 vars in 1348 bytes} [Mon Jun 17 07:11:33 2019] GET / => generated 649 bytes in 18 msecs (HTTP/1.1 200) 4 headers in 123 bytes (1 switches on core 1)
+None
+None
+None
+[pid: 5111|app: 0|req: 4/5] 116.56.138.68 () {44 vars in 1348 bytes} [Mon Jun 17 07:11:34 2019] GET / => generated 649 bytes in 4 msecs (HTTP/1.1 200) 4 headers in 123 bytes (1 switches on core 1)
+None
+None
+None
+unable to load configuration from from multiprocessing.semaphore_tracker import main;main(8)
+[pid: 5107|app: 0|req: 1/6] 116.56.138.68 () {42 vars in 1317 bytes} [Mon Jun 17 07:11:48 2019] GET / => generated 649 bytes in 1021 msecs (HTTP/1.1 200) 4 headers in 123 bytes (1 switches on core 0)
+None
+None
+None
+[pid: 5108|app: 0|req: 3/7] 116.56.138.68 () {40 vars in 1255 bytes} [Mon Jun 17 07:11:50 2019] GET /favicon.ico => generated 77 bytes in 9 msecs (HTTP/1.1 404) 4 headers in 114 bytes (1 switches on core 0)
+[pid: 5107|app: 0|req: 3/8] 116.56.138.68 () {42 vars in 729 bytes} [Mon Jun 17 07:15:02 2019] GET / => generated 649 bytes in 88 msecs (HTTP/1.1 200) 4 headers in 123 bytes (1 switches on core 0)
+None
+None
+None
+[pid: 5107|app: 0|req: 4/9] 116.56.138.68 () {42 vars in 750 bytes} [Mon Jun 17 07:15:04 2019] GET /api/overview_submissions => generated 68 bytes in 13 msecs (HTTP/1.1 200) 7 headers in 273 bytes (2 switches on core 0)
+[pid: 5107|app: 0|req: 5/10] 116.56.138.143 () {42 vars in 730 bytes} [Mon Jun 17 07:16:14 2019] GET / => generated 649 bytes in 4 msecs (HTTP/1.1 200) 4 headers in 123 bytes (1 switches on core 0)
+None
+None
+None
+SIGINT/SIGQUIT received...killing workers...
+worker 1 buried after 1 seconds
+worker 2 buried after 1 seconds
+worker 3 buried after 1 seconds
+worker 4 buried after 1 seconds
+goodbye to uWSGI.
+*** Starting uWSGI 2.0.18 (64bit) on [Mon Jun 17 15:21:37 2019] ***
+compiled with version: 5.4.0 20160609 on 17 June 2019 03:54:56
+os: Linux-4.4.0-31-generic #50-Ubuntu SMP Wed Jul 13 00:07:12 UTC 2016
+nodename: amax
+machine: x86_64
+clock source: unix
+pcre jit disabled
+detected number of CPU cores: 40
+current working directory: /home/raniac/projects/neurolearn
+writing pidfile to uwsgi.pid
+detected binary path: /home/raniac/env/bin/uwsgi
+chdir() to /home/raniac/projects/neurolearn
+your processes number limit is 1031236
+your memory page size is 4096 bytes
+detected max file descriptor number: 1024
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+uwsgi socket 0 bound to TCP address 0.0.0.0:9090 fd 3
+Python version: 3.6.8 (default, May  7 2019, 14:58:50)  [GCC 5.4.0 20160609]
+Python main interpreter initialized at 0xf9ca70
+python threads support enabled
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 416880 bytes (407 KB) for 8 cores
+*** Operational MODE: preforking+threaded ***
+Traceback (most recent call last):
+  File "./neurolearn/wsgi.py", line 16, in <module>
+    application = get_wsgi_application()
+  File "/home/raniac/env/lib/python3.6/site-packages/django/core/wsgi.py", line 12, in get_wsgi_application
+    django.setup(set_prefix=False)
+  File "/home/raniac/env/lib/python3.6/site-packages/django/__init__.py", line 24, in setup
+    apps.populate(settings.INSTALLED_APPS)
+  File "/home/raniac/env/lib/python3.6/site-packages/django/apps/registry.py", line 114, in populate
+    app_config.import_models()
+  File "/home/raniac/env/lib/python3.6/site-packages/django/apps/config.py", line 211, in import_models
+    self.models_module = import_module(models_module_name)
+  File "/home/raniac/env/lib/python3.6/importlib/__init__.py", line 126, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "/home/raniac/env/lib/python3.6/site-packages/django/contrib/auth/models.py", line 2, in <module>
+    from django.contrib.auth.base_user import AbstractBaseUser, BaseUserManager
+  File "/home/raniac/env/lib/python3.6/site-packages/django/contrib/auth/base_user.py", line 47, in <module>
+    class AbstractBaseUser(models.Model):
+  File "/home/raniac/env/lib/python3.6/site-packages/django/db/models/base.py", line 117, in __new__
+    new_class.add_to_class('_meta', Options(meta, app_label))
+  File "/home/raniac/env/lib/python3.6/site-packages/django/db/models/base.py", line 321, in add_to_class
+    value.contribute_to_class(cls, name)
+  File "/home/raniac/env/lib/python3.6/site-packages/django/db/models/options.py", line 204, in contribute_to_class
+    self.db_table = truncate_name(self.db_table, connection.ops.max_name_length())
+  File "/home/raniac/env/lib/python3.6/site-packages/django/db/__init__.py", line 28, in __getattr__
+    return getattr(connections[DEFAULT_DB_ALIAS], item)
+  File "/home/raniac/env/lib/python3.6/site-packages/django/db/utils.py", line 201, in __getitem__
+    backend = load_backend(db['ENGINE'])
+  File "/home/raniac/env/lib/python3.6/site-packages/django/db/utils.py", line 110, in load_backend
+    return import_module('%s.base' % backend_name)
+  File "/home/raniac/env/lib/python3.6/importlib/__init__.py", line 126, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "/home/raniac/env/lib/python3.6/site-packages/django/db/backends/mysql/base.py", line 36, in <module>
+    raise ImproperlyConfigured('mysqlclient 1.3.13 or newer is required; you have %s.' % Database.__version__)
+django.core.exceptions.ImproperlyConfigured: mysqlclient 1.3.13 or newer is required; you have 0.9.3.
+unable to load app 0 (mountpoint='') (callable not found or import error)
+*** no app loaded. going in full dynamic mode ***
+*** uWSGI is running in multiple interpreter mode ***
+spawned uWSGI master process (pid: 5618)
+spawned uWSGI worker 1 (pid: 5622, cores: 2)
+spawned uWSGI worker 2 (pid: 5623, cores: 2)
+spawned uWSGI worker 3 (pid: 5624, cores: 2)
+spawned uWSGI worker 4 (pid: 5626, cores: 2)
+--- no python application found, check your startup logs for errors ---
+[pid: 5626|app: -1|req: -1/1] 116.56.138.68 () {44 vars in 1348 bytes} [Mon Jun 17 07:21:49 2019] GET / => generated 21 bytes in 0 msecs (HTTP/1.1 500) 2 headers in 83 bytes (0 switches on core 0)
+--- no python application found, check your startup logs for errors ---
+[pid: 5626|app: -1|req: -1/2] 116.56.138.68 () {44 vars in 1348 bytes} [Mon Jun 17 07:21:51 2019] GET / => generated 21 bytes in 0 msecs (HTTP/1.1 500) 2 headers in 83 bytes (0 switches on core 1)
+--- no python application found, check your startup logs for errors ---
+[pid: 5626|app: -1|req: -1/3] 116.56.138.68 () {44 vars in 1348 bytes} [Mon Jun 17 07:21:54 2019] GET / => generated 21 bytes in 0 msecs (HTTP/1.1 500) 2 headers in 83 bytes (0 switches on core 0)
+--- no python application found, check your startup logs for errors ---
+[pid: 5624|app: -1|req: -1/4] 116.56.138.143 () {42 vars in 730 bytes} [Mon Jun 17 07:22:07 2019] GET / => generated 21 bytes in 0 msecs (HTTP/1.1 500) 2 headers in 83 bytes (0 switches on core 0)
+SIGINT/SIGQUIT received...killing workers...
+worker 1 buried after 1 seconds
+worker 2 buried after 1 seconds
+worker 3 buried after 1 seconds
+worker 4 buried after 1 seconds
+goodbye to uWSGI.
+*** Starting uWSGI 2.0.18 (64bit) on [Mon Jun 17 15:26:25 2019] ***
+compiled with version: 5.4.0 20160609 on 17 June 2019 03:54:56
+os: Linux-4.4.0-31-generic #50-Ubuntu SMP Wed Jul 13 00:07:12 UTC 2016
+nodename: amax
+machine: x86_64
+clock source: unix
+pcre jit disabled
+detected number of CPU cores: 40
+current working directory: /home/raniac/projects/neurolearn
+writing pidfile to uwsgi.pid
+detected binary path: /home/raniac/env/bin/uwsgi
+chdir() to /home/raniac/projects/neurolearn
+your processes number limit is 1031236
+your memory page size is 4096 bytes
+detected max file descriptor number: 1024
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+uwsgi socket 0 bound to TCP address 0.0.0.0:9090 fd 3
+Python version: 3.6.8 (default, May  7 2019, 14:58:50)  [GCC 5.4.0 20160609]
+Python main interpreter initialized at 0xa3aa70
+python threads support enabled
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 416880 bytes (407 KB) for 8 cores
+*** Operational MODE: preforking+threaded ***
+Traceback (most recent call last):
+  File "./neurolearn/wsgi.py", line 16, in <module>
+    application = get_wsgi_application()
+  File "/home/raniac/env/lib/python3.6/site-packages/django/core/wsgi.py", line 12, in get_wsgi_application
+    django.setup(set_prefix=False)
+  File "/home/raniac/env/lib/python3.6/site-packages/django/__init__.py", line 24, in setup
+    apps.populate(settings.INSTALLED_APPS)
+  File "/home/raniac/env/lib/python3.6/site-packages/django/apps/registry.py", line 114, in populate
+    app_config.import_models()
+  File "/home/raniac/env/lib/python3.6/site-packages/django/apps/config.py", line 211, in import_models
+    self.models_module = import_module(models_module_name)
+  File "/home/raniac/env/lib/python3.6/importlib/__init__.py", line 126, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "/home/raniac/env/lib/python3.6/site-packages/django/contrib/auth/models.py", line 2, in <module>
+    from django.contrib.auth.base_user import AbstractBaseUser, BaseUserManager
+  File "/home/raniac/env/lib/python3.6/site-packages/django/contrib/auth/base_user.py", line 47, in <module>
+    class AbstractBaseUser(models.Model):
+  File "/home/raniac/env/lib/python3.6/site-packages/django/db/models/base.py", line 117, in __new__
+    new_class.add_to_class('_meta', Options(meta, app_label))
+  File "/home/raniac/env/lib/python3.6/site-packages/django/db/models/base.py", line 321, in add_to_class
+    value.contribute_to_class(cls, name)
+  File "/home/raniac/env/lib/python3.6/site-packages/django/db/models/options.py", line 204, in contribute_to_class
+    self.db_table = truncate_name(self.db_table, connection.ops.max_name_length())
+  File "/home/raniac/env/lib/python3.6/site-packages/django/db/__init__.py", line 28, in __getattr__
+    return getattr(connections[DEFAULT_DB_ALIAS], item)
+  File "/home/raniac/env/lib/python3.6/site-packages/django/db/utils.py", line 201, in __getitem__
+    backend = load_backend(db['ENGINE'])
+  File "/home/raniac/env/lib/python3.6/site-packages/django/db/utils.py", line 110, in load_backend
+    return import_module('%s.base' % backend_name)
+  File "/home/raniac/env/lib/python3.6/importlib/__init__.py", line 126, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "/home/raniac/env/lib/python3.6/site-packages/django/db/backends/mysql/base.py", line 36, in <module>
+    raise ImproperlyConfigured('mysqlclient 1.3.13 or newer is required; you have %s.' % Database.__version__)
+django.core.exceptions.ImproperlyConfigured: mysqlclient 1.3.13 or newer is required; you have 0.9.3.
+unable to load app 0 (mountpoint='') (callable not found or import error)
+*** no app loaded. going in full dynamic mode ***
+*** uWSGI is running in multiple interpreter mode ***
+spawned uWSGI master process (pid: 5706)
+spawned uWSGI worker 1 (pid: 5710, cores: 2)
+spawned uWSGI worker 2 (pid: 5711, cores: 2)
+spawned uWSGI worker 3 (pid: 5712, cores: 2)
+spawned uWSGI worker 4 (pid: 5714, cores: 2)
+--- no python application found, check your startup logs for errors ---
+[pid: 5712|app: -1|req: -1/1] 116.56.138.68 () {44 vars in 1348 bytes} [Mon Jun 17 07:26:43 2019] GET / => generated 21 bytes in 0 msecs (HTTP/1.1 500) 2 headers in 83 bytes (0 switches on core 0)
+--- no python application found, check your startup logs for errors ---
+[pid: 5712|app: -1|req: -1/2] 116.56.138.68 () {44 vars in 1348 bytes} [Mon Jun 17 07:26:44 2019] GET / => generated 21 bytes in 0 msecs (HTTP/1.1 500) 2 headers in 83 bytes (0 switches on core 1)
+--- no python application found, check your startup logs for errors ---
+[pid: 5710|app: -1|req: -1/3] 116.56.138.143 () {42 vars in 730 bytes} [Mon Jun 17 07:27:43 2019] GET / => generated 21 bytes in 0 msecs (HTTP/1.1 500) 2 headers in 83 bytes (0 switches on core 0)
+*** Starting uWSGI 2.0.18 (64bit) on [Mon Jun 17 15:30:11 2019] ***
+compiled with version: 5.4.0 20160609 on 17 June 2019 03:54:56
+os: Linux-4.4.0-31-generic #50-Ubuntu SMP Wed Jul 13 00:07:12 UTC 2016
+nodename: amax
+machine: x86_64
+clock source: unix
+pcre jit disabled
+detected number of CPU cores: 40
+current working directory: /home/raniac/projects/neurolearn
+writing pidfile to uwsgi.pid
+detected binary path: /home/raniac/env/bin/uwsgi
+chdir() to /home/raniac/projects/neurolearn
+your processes number limit is 1031236
+your memory page size is 4096 bytes
+detected max file descriptor number: 1024
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+uwsgi socket 0 bound to TCP address 0.0.0.0:9090 fd 3
+Python version: 3.6.8 (default, May  7 2019, 14:58:50)  [GCC 5.4.0 20160609]
+Python main interpreter initialized at 0x1241a70
+python threads support enabled
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 416880 bytes (407 KB) for 8 cores
+*** Operational MODE: preforking+threaded ***
+WSGI app 0 (mountpoint='') ready in 1 seconds on interpreter 0x1241a70 pid: 5975 (default app)
+*** uWSGI is running in multiple interpreter mode ***
+spawned uWSGI master process (pid: 5975)
+spawned uWSGI worker 1 (pid: 5980, cores: 2)
+spawned uWSGI worker 2 (pid: 5981, cores: 2)
+spawned uWSGI worker 3 (pid: 5982, cores: 2)
+spawned uWSGI worker 4 (pid: 5984, cores: 2)
+unable to load configuration from from multiprocessing.semaphore_tracker import main;main(7)
+[pid: 5984|app: 0|req: 1/1] 116.56.138.68 () {44 vars in 1348 bytes} [Mon Jun 17 07:30:15 2019] GET / => generated 649 bytes in 1068 msecs (HTTP/1.1 200) 4 headers in 123 bytes (1 switches on core 0)
+unable to load configuration from from multiprocessing.semaphore_tracker import main;main(8)
+None
+None
+None
+[pid: 5981|app: 0|req: 1/2] 116.56.138.68 () {44 vars in 1369 bytes} [Mon Jun 17 07:30:16 2019] GET /api/overview_submissions => generated 96 bytes in 971 msecs (HTTP/1.1 200) 7 headers in 273 bytes (2 switches on core 0)
+[pid: 5984|app: 0|req: 2/3] 116.56.138.68 () {42 vars in 1371 bytes} [Mon Jun 17 07:30:25 2019] GET /api/login?username=Raniac&password=246493 => generated 89 bytes in 17 msecs (HTTP/1.1 200) 7 headers in 273 bytes (2 switches on core 1)
+[pid: 5984|app: 0|req: 3/4] 116.56.138.68 () {40 vars in 587 bytes} [Mon Jun 17 07:30:34 2019] GET /api/login?username=test&password=test => generated 89 bytes in 5 msecs (HTTP/1.1 200) 7 headers in 273 bytes (2 switches on core 0)
+[pid: 5984|app: 0|req: 4/5] 116.56.138.68 () {42 vars in 1371 bytes} [Mon Jun 17 07:31:43 2019] GET /api/login?username=Raniac&password=246493 => generated 42 bytes in 7 msecs (HTTP/1.1 200) 7 headers in 273 bytes (2 switches on core 1)
+SIGINT/SIGQUIT received...killing workers...
+worker 1 buried after 1 seconds
+worker 2 buried after 1 seconds
+worker 3 buried after 1 seconds
+worker 4 buried after 1 seconds
+goodbye to uWSGI.
+*** Starting uWSGI 2.0.18 (64bit) on [Mon Jun 17 15:31:55 2019] ***
+compiled with version: 5.4.0 20160609 on 17 June 2019 03:54:56
+os: Linux-4.4.0-31-generic #50-Ubuntu SMP Wed Jul 13 00:07:12 UTC 2016
+nodename: amax
+machine: x86_64
+clock source: unix
+pcre jit disabled
+detected number of CPU cores: 40
+current working directory: /home/raniac/projects/neurolearn
+writing pidfile to uwsgi.pid
+detected binary path: /home/raniac/env/bin/uwsgi
+chdir() to /home/raniac/projects/neurolearn
+your processes number limit is 1031236
+your memory page size is 4096 bytes
+detected max file descriptor number: 1024
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+uwsgi socket 0 bound to TCP address 0.0.0.0:9090 fd 3
+Python version: 3.6.8 (default, May  7 2019, 14:58:50)  [GCC 5.4.0 20160609]
+Python main interpreter initialized at 0x771a70
+python threads support enabled
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 416880 bytes (407 KB) for 8 cores
+*** Operational MODE: preforking+threaded ***
+WSGI app 0 (mountpoint='') ready in 0 seconds on interpreter 0x771a70 pid: 6270 (default app)
+*** uWSGI is running in multiple interpreter mode ***
+spawned uWSGI master process (pid: 6270)
+spawned uWSGI worker 1 (pid: 6280, cores: 2)
+spawned uWSGI worker 2 (pid: 6281, cores: 2)
+spawned uWSGI worker 3 (pid: 6282, cores: 2)
+spawned uWSGI worker 4 (pid: 6287, cores: 2)
+unable to load configuration from from multiprocessing.semaphore_tracker import main;main(7)
+[pid: 6287|app: 0|req: 1/1] 116.56.138.68 () {44 vars in 1348 bytes} [Mon Jun 17 07:32:04 2019] GET / => generated 649 bytes in 1142 msecs (HTTP/1.1 200) 4 headers in 123 bytes (1 switches on core 0)
+None
+None
+None
+[pid: 6287|app: 0|req: 2/2] 116.56.138.68 () {44 vars in 1369 bytes} [Mon Jun 17 07:32:05 2019] GET /api/overview_submissions => generated 136 bytes in 44 msecs (HTTP/1.1 200) 7 headers in 274 bytes (2 switches on core 1)
+[pid: 6287|app: 0|req: 3/3] 116.56.138.68 () {42 vars in 1363 bytes} [Mon Jun 17 07:32:10 2019] GET /api/login?username=test&password=test => generated 42 bytes in 7 msecs (HTTP/1.1 200) 7 headers in 273 bytes (2 switches on core 0)
+[pid: 6287|app: 0|req: 4/4] 116.56.138.68 () {44 vars in 1348 bytes} [Mon Jun 17 07:32:36 2019] GET / => generated 649 bytes in 2 msecs (HTTP/1.1 200) 4 headers in 123 bytes (1 switches on core 1)
+None
+None
+None
+[pid: 6287|app: 0|req: 5/5] 116.56.138.68 () {44 vars in 1369 bytes} [Mon Jun 17 07:32:36 2019] GET /api/overview_submissions => generated 136 bytes in 18 msecs (HTTP/1.1 200) 7 headers in 274 bytes (2 switches on core 0)
+[pid: 6287|app: 0|req: 6/6] 116.56.138.68 () {42 vars in 1363 bytes} [Mon Jun 17 07:32:43 2019] GET /api/login?username=test&password=test => generated 42 bytes in 6 msecs (HTTP/1.1 200) 7 headers in 273 bytes (2 switches on core 1)
+unable to load configuration from from multiprocessing.semaphore_tracker import main;main(7)
+[pid: 6282|app: 0|req: 1/7] 116.56.138.68 () {40 vars in 587 bytes} [Mon Jun 17 07:32:46 2019] GET /api/login?username=test&password=test => generated 42 bytes in 1157 msecs (HTTP/1.1 200) 7 headers in 273 bytes (2 switches on core 0)
+[uwsgi-body-read] Timeout reading 76 bytes. Content-Length: 76 consumed: 0 left: 76
+[pid: 6287|app: 0|req: 8/8] 116.56.138.68 () {46 vars in 1429 bytes} [Mon Jun 17 07:33:17 2019] POST /api/register => generated 64 bytes in 4006 msecs (HTTP/1.1 200) 7 headers in 273 bytes (3 switches on core 0)
+[uwsgi-body-read] Timeout reading 76 bytes. Content-Length: 76 consumed: 0 left: 76
+[pid: 6287|app: 0|req: 8/9] 116.56.138.68 () {46 vars in 1429 bytes} [Mon Jun 17 07:33:20 2019] POST /api/register => generated 64 bytes in 4006 msecs (HTTP/1.1 200) 7 headers in 273 bytes (3 switches on core 1)
+[uwsgi-body-read] Timeout reading 76 bytes. Content-Length: 76 consumed: 0 left: 76
+[pid: 6287|app: 0|req: 9/10] 116.56.138.68 () {46 vars in 1429 bytes} [Mon Jun 17 07:34:30 2019] POST /api/register => generated 64 bytes in 4006 msecs (HTTP/1.1 200) 7 headers in 273 bytes (3 switches on core 0)
+[uwsgi-body-read] Timeout reading 76 bytes. Content-Length: 76 consumed: 0 left: 76
+[pid: 6287|app: 0|req: 10/11] 116.56.138.68 () {46 vars in 1429 bytes} [Mon Jun 17 07:36:36 2019] POST /api/register => generated 64 bytes in 4006 msecs (HTTP/1.1 200) 7 headers in 273 bytes (3 switches on core 1)
+[pid: 6287|app: 0|req: 11/12] 116.56.138.68 () {44 vars in 1348 bytes} [Mon Jun 17 07:47:26 2019] GET / => generated 649 bytes in 2 msecs (HTTP/1.1 200) 4 headers in 123 bytes (1 switches on core 0)
+None
+None
+None
+[pid: 6282|app: 0|req: 2/13] 116.56.138.68 () {44 vars in 1369 bytes} [Mon Jun 17 07:47:26 2019] GET /api/overview_submissions => generated 136 bytes in 31 msecs (HTTP/1.1 200) 7 headers in 274 bytes (2 switches on core 1)
+[pid: 6287|app: 0|req: 12/14] 116.56.138.68 () {42 vars in 1286 bytes} [Mon Jun 17 07:47:26 2019] GET /favicon.ico => generated 77 bytes in 4 msecs (HTTP/1.1 404) 4 headers in 114 bytes (1 switches on core 1)
+a2c62114-15b7-3045-a6f1-fbd27a39c4b3
+[pid: 6287|app: 0|req: 13/15] 116.56.138.68 () {42 vars in 1377 bytes} [Mon Jun 17 07:47:34 2019] GET /api/login?username=wklab&password=wk20162017 => generated 118 bytes in 7 msecs (HTTP/1.1 200) 10 headers in 546 bytes (2 switches on core 0)
+[pid: 6287|app: 0|req: 14/16] 116.56.138.68 () {42 vars in 1408 bytes} [Mon Jun 17 07:47:38 2019] GET /api/show_data => generated 46 bytes in 6 msecs (HTTP/1.1 200) 7 headers in 273 bytes (2 switches on core 1)
+a2c62114-15b7-3045-a6f1-fbd27a39c4b3
+wklab
+USER20190000000000
+[pid: 6287|app: 0|req: 15/17] 116.56.138.68 () {42 vars in 1430 bytes} [Mon Jun 17 07:47:40 2019] GET /api/overview_submissions => generated 136 bytes in 17 msecs (HTTP/1.1 200) 7 headers in 274 bytes (2 switches on core 0)
+[pid: 6287|app: 0|req: 16/18] 116.56.138.68 () {42 vars in 1422 bytes} [Mon Jun 17 07:47:41 2019] GET /api/show_submissions => generated 46 bytes in 6 msecs (HTTP/1.1 200) 7 headers in 273 bytes (2 switches on core 1)
+[pid: 6287|app: 0|req: 17/19] 116.56.138.68 () {42 vars in 1422 bytes} [Mon Jun 17 07:47:43 2019] GET /api/show_submissions => generated 46 bytes in 5 msecs (HTTP/1.1 200) 7 headers in 273 bytes (2 switches on core 0)
+[pid: 6287|app: 0|req: 18/20] 116.56.138.68 () {42 vars in 1422 bytes} [Mon Jun 17 07:48:01 2019] GET /api/show_submissions => generated 46 bytes in 6 msecs (HTTP/1.1 200) 7 headers in 273 bytes (2 switches on core 1)
+a2c62114-15b7-3045-a6f1-fbd27a39c4b3
+wklab
+USER20190000000000
+[pid: 6287|app: 0|req: 19/21] 116.56.138.68 () {42 vars in 1430 bytes} [Mon Jun 17 07:48:02 2019] GET /api/overview_submissions => generated 136 bytes in 17 msecs (HTTP/1.1 200) 7 headers in 274 bytes (2 switches on core 0)
+[pid: 6287|app: 0|req: 20/22] 116.56.138.68 () {42 vars in 1408 bytes} [Mon Jun 17 07:48:10 2019] GET /api/show_data => generated 46 bytes in 5 msecs (HTTP/1.1 200) 7 headers in 273 bytes (2 switches on core 1)
+[pid: 6287|app: 0|req: 21/23] 116.56.138.68 () {42 vars in 1422 bytes} [Mon Jun 17 07:48:17 2019] GET /api/show_submissions => generated 46 bytes in 5 msecs (HTTP/1.1 200) 7 headers in 273 bytes (2 switches on core 0)
+[pid: 6287|app: 0|req: 22/24] 116.56.138.68 () {42 vars in 1408 bytes} [Mon Jun 17 07:51:02 2019] GET /api/show_data => generated 46 bytes in 4 msecs (HTTP/1.1 200) 7 headers in 273 bytes (2 switches on core 1)
+unable to load configuration from from multiprocessing.semaphore_tracker import main;main(8)
+[pid: 6280|app: 0|req: 1/25] 116.56.138.68 () {42 vars in 1408 bytes} [Mon Jun 17 07:52:55 2019] GET /api/show_data => generated 46 bytes in 1116 msecs (HTTP/1.1 200) 7 headers in 273 bytes (2 switches on core 0)
+[pid: 6282|app: 0|req: 3/26] 116.56.138.68 () {42 vars in 1408 bytes} [Mon Jun 17 07:54:43 2019] GET /api/show_data => generated 46 bytes in 7 msecs (HTTP/1.1 200) 7 headers in 273 bytes (2 switches on core 0)
+[pid: 6287|app: 0|req: 23/27] 116.56.138.68 () {42 vars in 1422 bytes} [Mon Jun 17 07:54:45 2019] GET /api/show_submissions => generated 46 bytes in 7 msecs (HTTP/1.1 200) 7 headers in 273 bytes (2 switches on core 0)
+[pid: 6287|app: 0|req: 24/28] 116.56.138.68 () {42 vars in 1408 bytes} [Mon Jun 17 07:54:48 2019] GET /api/show_data => generated 46 bytes in 5 msecs (HTTP/1.1 200) 7 headers in 273 bytes (2 switches on core 1)
+[uwsgi-body-read] Timeout reading 65536 bytes. Content-Length: 605714 consumed: 0 left: 605714
+[pid: 6282|app: 0|req: 4/29] 116.56.138.68 () {46 vars in 1609 bytes} [Mon Jun 17 07:54:56 2019] POST /api/upload_data => generated 67 bytes in 4006 msecs (HTTP/1.1 200) 7 headers in 309 bytes (3 switches on core 1)
+[uwsgi-body-read] Timeout reading 65536 bytes. Content-Length: 1649250 consumed: 0 left: 1649250
+[pid: 6280|app: 0|req: 2/30] 116.56.138.68 () {46 vars in 1613 bytes} [Mon Jun 17 07:54:59 2019] POST /api/upload_data => generated 67 bytes in 4007 msecs (HTTP/1.1 200) 7 headers in 309 bytes (3 switches on core 1)
+[uwsgi-body-read] Timeout reading 65536 bytes. Content-Length: 883904 consumed: 0 left: 883904
+[pid: 6282|app: 0|req: 5/31] 116.56.138.68 () {46 vars in 1611 bytes} [Mon Jun 17 07:55:01 2019] POST /api/upload_data => generated 67 bytes in 4006 msecs (HTTP/1.1 200) 7 headers in 309 bytes (3 switches on core 0)
+[uwsgi-body-read] Timeout reading 65536 bytes. Content-Length: 2409939 consumed: 0 left: 2409939
+[pid: 6287|app: 0|req: 25/32] 116.56.138.68 () {46 vars in 1611 bytes} [Mon Jun 17 07:55:04 2019] POST /api/upload_data => generated 67 bytes in 4006 msecs (HTTP/1.1 200) 7 headers in 309 bytes (3 switches on core 0)
+[uwsgi-body-read] Timeout reading 65536 bytes. Content-Length: 127508 consumed: 0 left: 127508
+[pid: 6282|app: 0|req: 6/33] 116.56.138.68 () {46 vars in 1613 bytes} [Mon Jun 17 07:55:08 2019] POST /api/upload_data => generated 67 bytes in 4006 msecs (HTTP/1.1 200) 7 headers in 309 bytes (3 switches on core 1)
+[uwsgi-body-read] Timeout reading 65536 bytes. Content-Length: 347674 consumed: 0 left: 347674
+[pid: 6287|app: 0|req: 26/34] 116.56.138.68 () {46 vars in 1613 bytes} [Mon Jun 17 07:55:11 2019] POST /api/upload_data => generated 67 bytes in 4006 msecs (HTTP/1.1 200) 7 headers in 309 bytes (3 switches on core 1)
+[uwsgi-body-read] Timeout reading 65536 bytes. Content-Length: 127183 consumed: 0 left: 127183
+[pid: 6287|app: 0|req: 27/35] 116.56.138.68 () {46 vars in 1611 bytes} [Mon Jun 17 07:55:15 2019] POST /api/upload_data => generated 67 bytes in 4004 msecs (HTTP/1.1 200) 7 headers in 309 bytes (3 switches on core 0)
+[pid: 6287|app: 0|req: 28/36] 116.56.138.68 () {42 vars in 1408 bytes} [Mon Jun 17 07:55:20 2019] GET /api/show_data => generated 46 bytes in 5 msecs (HTTP/1.1 200) 7 headers in 273 bytes (2 switches on core 1)
+[uwsgi-body-read] Timeout reading 65536 bytes. Content-Length: 346340 consumed: 0 left: 346340
+[pid: 6282|app: 0|req: 7/37] 116.56.138.68 () {46 vars in 1611 bytes} [Mon Jun 17 07:55:17 2019] POST /api/upload_data => generated 67 bytes in 4006 msecs (HTTP/1.1 200) 7 headers in 309 bytes (3 switches on core 0)
+[pid: 6287|app: 0|req: 29/38] 116.56.138.68 () {44 vars in 1440 bytes} [Mon Jun 17 07:55:38 2019] GET / => generated 649 bytes in 1 msecs (HTTP/1.1 200) 4 headers in 123 bytes (1 switches on core 0)
+a2c62114-15b7-3045-a6f1-fbd27a39c4b3
+wklab
+USER20190000000000
+[pid: 6287|app: 0|req: 31/39] 116.56.138.68 () {44 vars in 1461 bytes} [Mon Jun 17 07:55:38 2019] GET /api/overview_submissions => generated 136 bytes in 21 msecs (HTTP/1.1 200) 7 headers in 274 bytes (2 switches on core 1)
+[pid: 6287|app: 0|req: 31/40] 116.56.138.68 () {44 vars in 1439 bytes} [Mon Jun 17 07:55:38 2019] GET /api/show_data => generated 46 bytes in 14 msecs (HTTP/1.1 200) 7 headers in 273 bytes (2 switches on core 0)
+[uwsgi-body-read] Timeout reading 65536 bytes. Content-Length: 605716 consumed: 0 left: 605716
+[pid: 6287|app: 0|req: 32/41] 116.56.138.68 () {46 vars in 1611 bytes} [Mon Jun 17 07:56:24 2019] POST /api/upload_data => generated 67 bytes in 4006 msecs (HTTP/1.1 200) 7 headers in 309 bytes (3 switches on core 1)
+SIGINT/SIGQUIT received...killing workers...
+worker 1 buried after 1 seconds
+worker 2 buried after 1 seconds
+worker 3 buried after 1 seconds
+worker 4 buried after 1 seconds
+goodbye to uWSGI.
+*** Starting uWSGI 2.0.18 (64bit) on [Mon Jun 17 15:59:40 2019] ***
+compiled with version: 5.4.0 20160609 on 17 June 2019 03:54:56
+os: Linux-4.4.0-31-generic #50-Ubuntu SMP Wed Jul 13 00:07:12 UTC 2016
+nodename: amax
+machine: x86_64
+clock source: unix
+pcre jit disabled
+detected number of CPU cores: 40
+current working directory: /home/raniac/projects/neurolearn
+writing pidfile to uwsgi.pid
+detected binary path: /home/raniac/env/bin/uwsgi
+chdir() to /home/raniac/projects/neurolearn
+your processes number limit is 1031236
+your memory page size is 4096 bytes
+detected max file descriptor number: 1024
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+uwsgi socket 0 bound to TCP address 0.0.0.0:9090 fd 3
+Python version: 3.6.8 (default, May  7 2019, 14:58:50)  [GCC 5.4.0 20160609]
+Python main interpreter initialized at 0x104ca70
+python threads support enabled
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 416880 bytes (407 KB) for 8 cores
+*** Operational MODE: preforking+threaded ***
+WSGI app 0 (mountpoint='') ready in 1 seconds on interpreter 0x104ca70 pid: 6908 (default app)
+*** uWSGI is running in multiple interpreter mode ***
+spawned uWSGI master process (pid: 6908)
+spawned uWSGI worker 1 (pid: 6912, cores: 2)
+spawned uWSGI worker 2 (pid: 6913, cores: 2)
+spawned uWSGI worker 3 (pid: 6914, cores: 2)
+spawned uWSGI worker 4 (pid: 6916, cores: 2)
+unable to load configuration from from multiprocessing.semaphore_tracker import main;main(7)
+[pid: 6916|app: 0|req: 1/1] 116.56.138.68 () {44 vars in 1440 bytes} [Mon Jun 17 07:59:44 2019] GET / => generated 649 bytes in 1077 msecs (HTTP/1.1 200) 4 headers in 123 bytes (1 switches on core 0)
+a2c62114-15b7-3045-a6f1-fbd27a39c4b3
+wklab
+USER20190000000000
+[pid: 6916|app: 0|req: 2/2] 116.56.138.68 () {44 vars in 1461 bytes} [Mon Jun 17 07:59:45 2019] GET /api/overview_submissions => generated 136 bytes in 39 msecs (HTTP/1.1 200) 7 headers in 274 bytes (2 switches on core 1)
+unable to load configuration from from multiprocessing.semaphore_tracker import main;main(7)
+[pid: 6914|app: 0|req: 1/3] 116.56.138.68 () {44 vars in 1439 bytes} [Mon Jun 17 07:59:45 2019] GET /api/show_data => generated 46 bytes in 1147 msecs (HTTP/1.1 200) 7 headers in 273 bytes (2 switches on core 0)
+unable to load configuration from from multiprocessing.semaphore_tracker import main;main(8)
+[pid: 6913|app: 0|req: 1/4] 116.56.138.68 () {46 vars in 1611 bytes} [Mon Jun 17 07:59:55 2019] POST /api/upload_data => generated 66 bytes in 994 msecs (HTTP/1.1 200) 7 headers in 309 bytes (2 switches on core 0)
+[pid: 6914|app: 0|req: 2/5] 116.56.138.68 () {46 vars in 1611 bytes} [Mon Jun 17 08:00:07 2019] POST /api/upload_data => generated 66 bytes in 20 msecs (HTTP/1.1 200) 7 headers in 309 bytes (2 switches on core 1)
+[pid: 6913|app: 0|req: 2/6] 116.56.138.68 () {46 vars in 1607 bytes} [Mon Jun 17 08:00:14 2019] POST /api/upload_data => generated 66 bytes in 13 msecs (HTTP/1.1 200) 7 headers in 309 bytes (2 switches on core 1)
+[pid: 6914|app: 0|req: 3/7] 116.56.138.68 () {46 vars in 1613 bytes} [Mon Jun 17 08:00:17 2019] POST /api/upload_data => generated 66 bytes in 20 msecs (HTTP/1.1 200) 7 headers in 309 bytes (2 switches on core 0)
+[pid: 6914|app: 0|req: 4/8] 116.56.138.68 () {46 vars in 1611 bytes} [Mon Jun 17 08:00:19 2019] POST /api/upload_data => generated 66 bytes in 7 msecs (HTTP/1.1 200) 7 headers in 309 bytes (2 switches on core 1)
+[pid: 6914|app: 0|req: 5/9] 116.56.138.68 () {46 vars in 1609 bytes} [Mon Jun 17 08:00:21 2019] POST /api/upload_data => generated 66 bytes in 8 msecs (HTTP/1.1 200) 7 headers in 309 bytes (2 switches on core 0)
+[pid: 6914|app: 0|req: 6/10] 116.56.138.68 () {46 vars in 1609 bytes} [Mon Jun 17 08:00:24 2019] POST /api/upload_data => generated 66 bytes in 7 msecs (HTTP/1.1 200) 7 headers in 309 bytes (2 switches on core 1)
+[pid: 6914|app: 0|req: 7/11] 116.56.138.68 () {46 vars in 1611 bytes} [Mon Jun 17 08:00:26 2019] POST /api/upload_data => generated 66 bytes in 7 msecs (HTTP/1.1 200) 7 headers in 309 bytes (2 switches on core 0)
+[pid: 6914|app: 0|req: 8/12] 116.56.138.68 () {42 vars in 1408 bytes} [Mon Jun 17 08:00:31 2019] GET /api/show_data => generated 1508 bytes in 6 msecs (HTTP/1.1 200) 7 headers in 275 bytes (2 switches on core 1)
+a2c62114-15b7-3045-a6f1-fbd27a39c4b3
+wklab
+USER20190000000000
+[pid: 6916|app: 0|req: 3/13] 116.56.138.68 () {42 vars in 1430 bytes} [Mon Jun 17 08:00:33 2019] GET /api/overview_submissions => generated 136 bytes in 19 msecs (HTTP/1.1 200) 7 headers in 274 bytes (2 switches on core 0)
+[pid: 6916|app: 0|req: 4/14] 116.56.138.68 () {42 vars in 1422 bytes} [Mon Jun 17 08:00:34 2019] GET /api/show_submissions => generated 46 bytes in 6 msecs (HTTP/1.1 200) 7 headers in 273 bytes (2 switches on core 1)
+[pid: 6916|app: 0|req: 5/15] 116.56.138.68 () {42 vars in 1408 bytes} [Mon Jun 17 08:00:37 2019] GET /api/show_data => generated 1508 bytes in 6 msecs (HTTP/1.1 200) 7 headers in 275 bytes (2 switches on core 0)
+[pid: 6914|app: 0|req: 9/16] 116.56.138.68 () {46 vars in 1523 bytes} [Mon Jun 17 08:02:15 2019] POST /api/new_task => generated 57 bytes in 674 msecs (HTTP/1.1 200) 7 headers in 273 bytes (2 switches on core 0)
+[pid: 6914|app: 0|req: 10/17] 116.56.138.68 () {42 vars in 1408 bytes} [Mon Jun 17 08:05:50 2019] GET /api/show_data => generated 1508 bytes in 6 msecs (HTTP/1.1 200) 7 headers in 275 bytes (2 switches on core 0)
+[pid: 6914|app: 0|req: 11/18] 116.56.138.68 () {46 vars in 1523 bytes} [Mon Jun 17 08:17:43 2019] POST /api/new_task => generated 479 bytes in 28 msecs (HTTP/1.1 200) 7 headers in 274 bytes (2 switches on core 0)
+a2c62114-15b7-3045-a6f1-fbd27a39c4b3
+wklab
+USER20190000000000
+[pid: 6914|app: 0|req: 12/19] 116.56.138.68 () {42 vars in 1430 bytes} [Mon Jun 17 08:17:43 2019] GET /api/overview_submissions => generated 1280 bytes in 22 msecs (HTTP/1.1 200) 7 headers in 275 bytes (2 switches on core 1)
+[pid: 6914|app: 0|req: 13/20] 116.56.138.68 () {42 vars in 1422 bytes} [Mon Jun 17 08:18:23 2019] GET /api/show_submissions => generated 1191 bytes in 7 msecs (HTTP/1.1 200) 7 headers in 275 bytes (2 switches on core 0)
+[pid: 6914|app: 0|req: 14/21] 116.56.138.68 () {42 vars in 1467 bytes} [Mon Jun 17 08:18:27 2019] GET /api/show_results?task_id=TASK20190617081743 => generated 1098 bytes in 25 msecs (HTTP/1.1 200) 7 headers in 275 bytes (2 switches on core 1)
+[pid: 6914|app: 0|req: 15/22] 116.56.138.68 () {42 vars in 1478 bytes} [Mon Jun 17 08:18:27 2019] GET /api/show_img?task_id=TASK20190617081743&img_name=ROC_curve => generated 104095 bytes in 311 msecs (HTTP/1.1 200) 4 headers in 111 bytes (1 switches on core 0)
+[pid: 6914|app: 0|req: 16/23] 116.56.138.68 () {42 vars in 1408 bytes} [Mon Jun 17 08:22:14 2019] GET /api/show_data => generated 1508 bytes in 7 msecs (HTTP/1.1 200) 7 headers in 275 bytes (2 switches on core 1)
+[pid: 6914|app: 0|req: 17/24] 116.56.138.68 () {42 vars in 1422 bytes} [Mon Jun 17 08:22:15 2019] GET /api/show_submissions => generated 1191 bytes in 6 msecs (HTTP/1.1 200) 7 headers in 275 bytes (2 switches on core 0)
+unable to load configuration from from multiprocessing.semaphore_tracker import main;main(8)
+[pid: 6912|app: 0|req: 1/25] 116.56.138.68 () {42 vars in 1422 bytes} [Mon Jun 17 08:22:17 2019] GET /api/show_submissions => generated 1191 bytes in 1114 msecs (HTTP/1.1 200) 7 headers in 275 bytes (2 switches on core 0)
+[pid: 6913|app: 0|req: 3/26] 116.56.138.68 () {42 vars in 1408 bytes} [Mon Jun 17 08:22:18 2019] GET /api/show_data => generated 1508 bytes in 19 msecs (HTTP/1.1 200) 7 headers in 275 bytes (2 switches on core 0)
+[pid: 6912|app: 0|req: 2/27] 116.56.138.68 () {42 vars in 1422 bytes} [Mon Jun 17 08:22:19 2019] GET /api/show_submissions => generated 1191 bytes in 7 msecs (HTTP/1.1 200) 7 headers in 275 bytes (2 switches on core 1)
+a2c62114-15b7-3045-a6f1-fbd27a39c4b3
+wklab
+USER20190000000000
+[pid: 6914|app: 0|req: 18/28] 116.56.138.68 () {42 vars in 1430 bytes} [Mon Jun 17 08:22:25 2019] GET /api/overview_submissions => generated 1281 bytes in 20 msecs (HTTP/1.1 200) 7 headers in 275 bytes (2 switches on core 1)
+[pid: 6913|app: 0|req: 4/29] 116.56.138.68 () {42 vars in 1422 bytes} [Mon Jun 17 08:22:27 2019] GET /api/show_submissions => generated 1191 bytes in 7 msecs (HTTP/1.1 200) 7 headers in 275 bytes (2 switches on core 1)
+[pid: 6914|app: 0|req: 19/30] 116.56.138.68 () {42 vars in 1408 bytes} [Mon Jun 17 08:22:30 2019] GET /api/show_data => generated 1508 bytes in 7 msecs (HTTP/1.1 200) 7 headers in 275 bytes (2 switches on core 0)
+[pid: 6916|app: 0|req: 6/31] 116.56.138.68 () {42 vars in 1408 bytes} [Mon Jun 17 08:22:33 2019] GET /api/show_data => generated 1508 bytes in 7 msecs (HTTP/1.1 200) 7 headers in 275 bytes (2 switches on core 0)
+[pid: 6914|app: 0|req: 20/32] 116.56.138.68 () {42 vars in 1408 bytes} [Mon Jun 17 08:25:36 2019] GET /api/show_data => generated 1508 bytes in 7 msecs (HTTP/1.1 200) 7 headers in 275 bytes (2 switches on core 1)
+[pid: 6916|app: 0|req: 7/33] 116.56.138.68 () {42 vars in 1408 bytes} [Mon Jun 17 08:25:39 2019] GET /api/show_data => generated 1508 bytes in 6 msecs (HTTP/1.1 200) 7 headers in 275 bytes (2 switches on core 1)
+[pid: 6913|app: 0|req: 5/34] 116.56.138.117 () {40 vars in 709 bytes} [Mon Jun 17 08:57:07 2019] GET / => generated 649 bytes in 25 msecs (HTTP/1.1 200) 4 headers in 123 bytes (1 switches on core 0)
+None
+None
+None
+[pid: 6916|app: 0|req: 8/35] 116.56.138.117 () {40 vars in 675 bytes} [Mon Jun 17 08:57:08 2019] GET /api/overview_submissions => generated 1281 bytes in 20 msecs (HTTP/1.1 200) 7 headers in 275 bytes (2 switches on core 0)
+[pid: 6913|app: 0|req: 6/36] 116.56.138.117 () {40 vars in 655 bytes} [Mon Jun 17 08:57:08 2019] GET /favicon.ico => generated 77 bytes in 4 msecs (HTTP/1.1 404) 4 headers in 114 bytes (1 switches on core 1)
+[pid: 6916|app: 0|req: 9/37] 116.56.138.117 () {40 vars in 700 bytes} [Mon Jun 17 08:57:14 2019] GET /api/login?username=test&password=test => generated 42 bytes in 6 msecs (HTTP/1.1 200) 7 headers in 273 bytes (2 switches on core 1)
+*** Starting uWSGI 2.0.18 (64bit) on [Mon Jun 17 21:10:12 2019] ***
+compiled with version: 5.4.0 20160609 on 17 June 2019 03:54:56
+os: Linux-4.4.0-31-generic #50-Ubuntu SMP Wed Jul 13 00:07:12 UTC 2016
+nodename: amax
+machine: x86_64
+clock source: unix
+pcre jit disabled
+detected number of CPU cores: 40
+current working directory: /home/raniac/projects/neurolearn
+writing pidfile to uwsgi.pid
+detected binary path: /home/raniac/env/bin/uwsgi
+chdir() to /home/raniac/projects/neurolearn
+your processes number limit is 1031236
+your memory page size is 4096 bytes
+detected max file descriptor number: 1024
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+probably another instance of uWSGI is running on the same address (0.0.0.0:9090).
+bind(): Address already in use [core/socket.c line 769]
+*** Starting uWSGI 2.0.18 (64bit) on [Mon Jun 17 21:10:31 2019] ***
+compiled with version: 5.4.0 20160609 on 17 June 2019 03:54:56
+os: Linux-4.4.0-31-generic #50-Ubuntu SMP Wed Jul 13 00:07:12 UTC 2016
+nodename: amax
+machine: x86_64
+clock source: unix
+pcre jit disabled
+detected number of CPU cores: 40
+current working directory: /home/raniac/projects/neurolearn
+writing pidfile to uwsgi.pid
+detected binary path: /home/raniac/env/bin/uwsgi
+chdir() to /home/raniac/projects/neurolearn
+your processes number limit is 1031236
+your memory page size is 4096 bytes
+detected max file descriptor number: 1024
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+uwsgi socket 0 bound to TCP address 0.0.0.0:9090 fd 3
+Python version: 3.6.8 (default, May  7 2019, 14:58:50)  [GCC 5.4.0 20160609]
+Python main interpreter initialized at 0x1822a70
+python threads support enabled
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 416880 bytes (407 KB) for 8 cores
+*** Operational MODE: preforking+threaded ***
+WSGI app 0 (mountpoint='') ready in 1 seconds on interpreter 0x1822a70 pid: 17116 (default app)
+*** uWSGI is running in multiple interpreter mode ***
+spawned uWSGI master process (pid: 17116)
+spawned uWSGI worker 1 (pid: 17120, cores: 2)
+spawned uWSGI worker 2 (pid: 17121, cores: 2)
+spawned uWSGI worker 3 (pid: 17122, cores: 2)
+spawned uWSGI worker 4 (pid: 17124, cores: 2)
+unable to load configuration from from multiprocessing.semaphore_tracker import main;main(7)
+Traceback (most recent call last):
+  File "/home/raniac/env/lib/python3.6/site-packages/django/core/handlers/exception.py", line 34, in inner
+    response = get_response(request)
+  File "/home/raniac/env/lib/python3.6/site-packages/django/core/handlers/base.py", line 100, in _get_response
+    resolver_match = resolver.resolve(request.path_info)
+  File "/home/raniac/env/lib/python3.6/site-packages/django/urls/resolvers.py", line 535, in resolve
+    for pattern in self.url_patterns:
+  File "/home/raniac/env/lib/python3.6/site-packages/django/utils/functional.py", line 80, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+  File "/home/raniac/env/lib/python3.6/site-packages/django/urls/resolvers.py", line 579, in url_patterns
+    patterns = getattr(self.urlconf_module, "urlpatterns", self.urlconf_module)
+  File "/home/raniac/env/lib/python3.6/site-packages/django/utils/functional.py", line 80, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+  File "/home/raniac/env/lib/python3.6/site-packages/django/urls/resolvers.py", line 572, in urlconf_module
+    return import_module(self.urlconf_name)
+  File "/home/raniac/env/lib/python3.6/importlib/__init__.py", line 126, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 994, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 971, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 955, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 665, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 678, in exec_module
+  File "<frozen importlib._bootstrap>", line 219, in _call_with_frames_removed
+  File "./neurolearn/urls.py", line 21, in <module>
+    from neurolearn_dev import settings
+ModuleNotFoundError: No module named 'neurolearn_dev'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/raniac/env/lib/python3.6/site-packages/django/core/handlers/exception.py", line 34, in inner
+    response = get_response(request)
+  File "/home/raniac/env/lib/python3.6/site-packages/django/utils/deprecation.py", line 94, in __call__
+    response = response or self.get_response(request)
+  File "/home/raniac/env/lib/python3.6/site-packages/django/core/handlers/exception.py", line 36, in inner
+    response = response_for_exception(request, exc)
+  File "/home/raniac/env/lib/python3.6/site-packages/django/core/handlers/exception.py", line 90, in response_for_exception
+    response = handle_uncaught_exception(request, get_resolver(get_urlconf()), sys.exc_info())
+  File "/home/raniac/env/lib/python3.6/site-packages/django/core/handlers/exception.py", line 128, in handle_uncaught_exception
+    callback, param_dict = resolver.resolve_error_handler(500)
+  File "/home/raniac/env/lib/python3.6/site-packages/django/urls/resolvers.py", line 592, in resolve_error_handler
+    callback = getattr(self.urlconf_module, 'handler%s' % view_type, None)
+  File "/home/raniac/env/lib/python3.6/site-packages/django/utils/functional.py", line 80, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+  File "/home/raniac/env/lib/python3.6/site-packages/django/urls/resolvers.py", line 572, in urlconf_module
+    return import_module(self.urlconf_name)
+  File "/home/raniac/env/lib/python3.6/importlib/__init__.py", line 126, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 994, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 971, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 955, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 665, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 678, in exec_module
+  File "<frozen importlib._bootstrap>", line 219, in _call_with_frames_removed
+  File "./neurolearn/urls.py", line 21, in <module>
+    from neurolearn_dev import settings
+ModuleNotFoundError: No module named 'neurolearn_dev'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/raniac/env/lib/python3.6/site-packages/django/core/handlers/exception.py", line 34, in inner
+    response = get_response(request)
+  File "/home/raniac/env/lib/python3.6/site-packages/django/utils/deprecation.py", line 94, in __call__
+    response = response or self.get_response(request)
+  File "/home/raniac/env/lib/python3.6/site-packages/django/core/handlers/exception.py", line 36, in inner
+    response = response_for_exception(request, exc)
+  File "/home/raniac/env/lib/python3.6/site-packages/django/core/handlers/exception.py", line 90, in response_for_exception
+    response = handle_uncaught_exception(request, get_resolver(get_urlconf()), sys.exc_info())
+  File "/home/raniac/env/lib/python3.6/site-packages/django/core/handlers/exception.py", line 128, in handle_uncaught_exception
+    callback, param_dict = resolver.resolve_error_handler(500)
+  File "/home/raniac/env/lib/python3.6/site-packages/django/urls/resolvers.py", line 592, in resolve_error_handler
+    callback = getattr(self.urlconf_module, 'handler%s' % view_type, None)
+  File "/home/raniac/env/lib/python3.6/site-packages/django/utils/functional.py", line 80, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+  File "/home/raniac/env/lib/python3.6/site-packages/django/urls/resolvers.py", line 572, in urlconf_module
+    return import_module(self.urlconf_name)
+  File "/home/raniac/env/lib/python3.6/importlib/__init__.py", line 126, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 994, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 971, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 955, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 665, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 678, in exec_module
+  File "<frozen importlib._bootstrap>", line 219, in _call_with_frames_removed
+  File "./neurolearn/urls.py", line 21, in <module>
+    from neurolearn_dev import settings
+ModuleNotFoundError: No module named 'neurolearn_dev'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/raniac/env/lib/python3.6/site-packages/django/core/handlers/exception.py", line 34, in inner
+    response = get_response(request)
+  File "/home/raniac/env/lib/python3.6/site-packages/django/utils/deprecation.py", line 94, in __call__
+    response = response or self.get_response(request)
+  File "/home/raniac/env/lib/python3.6/site-packages/django/core/handlers/exception.py", line 36, in inner
+    response = response_for_exception(request, exc)
+  File "/home/raniac/env/lib/python3.6/site-packages/django/core/handlers/exception.py", line 90, in response_for_exception
+    response = handle_uncaught_exception(request, get_resolver(get_urlconf()), sys.exc_info())
+  File "/home/raniac/env/lib/python3.6/site-packages/django/core/handlers/exception.py", line 128, in handle_uncaught_exception
+    callback, param_dict = resolver.resolve_error_handler(500)
+  File "/home/raniac/env/lib/python3.6/site-packages/django/urls/resolvers.py", line 592, in resolve_error_handler
+    callback = getattr(self.urlconf_module, 'handler%s' % view_type, None)
+  File "/home/raniac/env/lib/python3.6/site-packages/django/utils/functional.py", line 80, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+  File "/home/raniac/env/lib/python3.6/site-packages/django/urls/resolvers.py", line 572, in urlconf_module
+    return import_module(self.urlconf_name)
+  File "/home/raniac/env/lib/python3.6/importlib/__init__.py", line 126, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 994, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 971, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 955, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 665, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 678, in exec_module
+  File "<frozen importlib._bootstrap>", line 219, in _call_with_frames_removed
+  File "./neurolearn/urls.py", line 21, in <module>
+    from neurolearn_dev import settings
+ModuleNotFoundError: No module named 'neurolearn_dev'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/raniac/env/lib/python3.6/site-packages/django/core/handlers/exception.py", line 34, in inner
+    response = get_response(request)
+  File "/home/raniac/env/lib/python3.6/site-packages/django/utils/deprecation.py", line 94, in __call__
+    response = response or self.get_response(request)
+  File "/home/raniac/env/lib/python3.6/site-packages/django/core/handlers/exception.py", line 36, in inner
+    response = response_for_exception(request, exc)
+  File "/home/raniac/env/lib/python3.6/site-packages/django/core/handlers/exception.py", line 90, in response_for_exception
+    response = handle_uncaught_exception(request, get_resolver(get_urlconf()), sys.exc_info())
+  File "/home/raniac/env/lib/python3.6/site-packages/django/core/handlers/exception.py", line 128, in handle_uncaught_exception
+    callback, param_dict = resolver.resolve_error_handler(500)
+  File "/home/raniac/env/lib/python3.6/site-packages/django/urls/resolvers.py", line 592, in resolve_error_handler
+    callback = getattr(self.urlconf_module, 'handler%s' % view_type, None)
+  File "/home/raniac/env/lib/python3.6/site-packages/django/utils/functional.py", line 80, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+  File "/home/raniac/env/lib/python3.6/site-packages/django/urls/resolvers.py", line 572, in urlconf_module
+    return import_module(self.urlconf_name)
+  File "/home/raniac/env/lib/python3.6/importlib/__init__.py", line 126, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 994, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 971, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 955, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 665, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 678, in exec_module
+  File "<frozen importlib._bootstrap>", line 219, in _call_with_frames_removed
+  File "./neurolearn/urls.py", line 21, in <module>
+    from neurolearn_dev import settings
+ModuleNotFoundError: No module named 'neurolearn_dev'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/raniac/env/lib/python3.6/site-packages/django/core/handlers/exception.py", line 34, in inner
+    response = get_response(request)
+  File "/home/raniac/env/lib/python3.6/site-packages/django/utils/deprecation.py", line 94, in __call__
+    response = response or self.get_response(request)
+  File "/home/raniac/env/lib/python3.6/site-packages/django/core/handlers/exception.py", line 36, in inner
+    response = response_for_exception(request, exc)
+  File "/home/raniac/env/lib/python3.6/site-packages/django/core/handlers/exception.py", line 90, in response_for_exception
+    response = handle_uncaught_exception(request, get_resolver(get_urlconf()), sys.exc_info())
+  File "/home/raniac/env/lib/python3.6/site-packages/django/core/handlers/exception.py", line 128, in handle_uncaught_exception
+    callback, param_dict = resolver.resolve_error_handler(500)
+  File "/home/raniac/env/lib/python3.6/site-packages/django/urls/resolvers.py", line 592, in resolve_error_handler
+    callback = getattr(self.urlconf_module, 'handler%s' % view_type, None)
+  File "/home/raniac/env/lib/python3.6/site-packages/django/utils/functional.py", line 80, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+  File "/home/raniac/env/lib/python3.6/site-packages/django/urls/resolvers.py", line 572, in urlconf_module
+    return import_module(self.urlconf_name)
+  File "/home/raniac/env/lib/python3.6/importlib/__init__.py", line 126, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 994, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 971, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 955, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 665, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 678, in exec_module
+  File "<frozen importlib._bootstrap>", line 219, in _call_with_frames_removed
+  File "./neurolearn/urls.py", line 21, in <module>
+    from neurolearn_dev import settings
+ModuleNotFoundError: No module named 'neurolearn_dev'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/raniac/env/lib/python3.6/site-packages/django/core/handlers/exception.py", line 34, in inner
+    response = get_response(request)
+  File "/home/raniac/env/lib/python3.6/site-packages/django/utils/deprecation.py", line 94, in __call__
+    response = response or self.get_response(request)
+  File "/home/raniac/env/lib/python3.6/site-packages/django/core/handlers/exception.py", line 36, in inner
+    response = response_for_exception(request, exc)
+  File "/home/raniac/env/lib/python3.6/site-packages/django/core/handlers/exception.py", line 90, in response_for_exception
+    response = handle_uncaught_exception(request, get_resolver(get_urlconf()), sys.exc_info())
+  File "/home/raniac/env/lib/python3.6/site-packages/django/core/handlers/exception.py", line 128, in handle_uncaught_exception
+    callback, param_dict = resolver.resolve_error_handler(500)
+  File "/home/raniac/env/lib/python3.6/site-packages/django/urls/resolvers.py", line 592, in resolve_error_handler
+    callback = getattr(self.urlconf_module, 'handler%s' % view_type, None)
+  File "/home/raniac/env/lib/python3.6/site-packages/django/utils/functional.py", line 80, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+  File "/home/raniac/env/lib/python3.6/site-packages/django/urls/resolvers.py", line 572, in urlconf_module
+    return import_module(self.urlconf_name)
+  File "/home/raniac/env/lib/python3.6/importlib/__init__.py", line 126, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 994, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 971, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 955, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 665, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 678, in exec_module
+  File "<frozen importlib._bootstrap>", line 219, in _call_with_frames_removed
+  File "./neurolearn/urls.py", line 21, in <module>
+    from neurolearn_dev import settings
+ModuleNotFoundError: No module named 'neurolearn_dev'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/raniac/env/lib/python3.6/site-packages/django/core/handlers/exception.py", line 34, in inner
+    response = get_response(request)
+  File "/home/raniac/env/lib/python3.6/site-packages/django/utils/deprecation.py", line 94, in __call__
+    response = response or self.get_response(request)
+  File "/home/raniac/env/lib/python3.6/site-packages/django/core/handlers/exception.py", line 36, in inner
+    response = response_for_exception(request, exc)
+  File "/home/raniac/env/lib/python3.6/site-packages/django/core/handlers/exception.py", line 90, in response_for_exception
+    response = handle_uncaught_exception(request, get_resolver(get_urlconf()), sys.exc_info())
+  File "/home/raniac/env/lib/python3.6/site-packages/django/core/handlers/exception.py", line 128, in handle_uncaught_exception
+    callback, param_dict = resolver.resolve_error_handler(500)
+  File "/home/raniac/env/lib/python3.6/site-packages/django/urls/resolvers.py", line 592, in resolve_error_handler
+    callback = getattr(self.urlconf_module, 'handler%s' % view_type, None)
+  File "/home/raniac/env/lib/python3.6/site-packages/django/utils/functional.py", line 80, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+  File "/home/raniac/env/lib/python3.6/site-packages/django/urls/resolvers.py", line 572, in urlconf_module
+    return import_module(self.urlconf_name)
+  File "/home/raniac/env/lib/python3.6/importlib/__init__.py", line 126, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 994, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 971, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 955, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 665, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 678, in exec_module
+  File "<frozen importlib._bootstrap>", line 219, in _call_with_frames_removed
+  File "./neurolearn/urls.py", line 21, in <module>
+    from neurolearn_dev import settings
+ModuleNotFoundError: No module named 'neurolearn_dev'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/raniac/env/lib/python3.6/site-packages/django/core/handlers/exception.py", line 34, in inner
+    response = get_response(request)
+  File "/home/raniac/env/lib/python3.6/site-packages/django/utils/deprecation.py", line 94, in __call__
+    response = response or self.get_response(request)
+  File "/home/raniac/env/lib/python3.6/site-packages/django/core/handlers/exception.py", line 36, in inner
+    response = response_for_exception(request, exc)
+  File "/home/raniac/env/lib/python3.6/site-packages/django/core/handlers/exception.py", line 90, in response_for_exception
+    response = handle_uncaught_exception(request, get_resolver(get_urlconf()), sys.exc_info())
+  File "/home/raniac/env/lib/python3.6/site-packages/django/core/handlers/exception.py", line 128, in handle_uncaught_exception
+    callback, param_dict = resolver.resolve_error_handler(500)
+  File "/home/raniac/env/lib/python3.6/site-packages/django/urls/resolvers.py", line 592, in resolve_error_handler
+    callback = getattr(self.urlconf_module, 'handler%s' % view_type, None)
+  File "/home/raniac/env/lib/python3.6/site-packages/django/utils/functional.py", line 80, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+  File "/home/raniac/env/lib/python3.6/site-packages/django/urls/resolvers.py", line 572, in urlconf_module
+    return import_module(self.urlconf_name)
+  File "/home/raniac/env/lib/python3.6/importlib/__init__.py", line 126, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 994, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 971, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 955, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 665, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 678, in exec_module
+  File "<frozen importlib._bootstrap>", line 219, in _call_with_frames_removed
+  File "./neurolearn/urls.py", line 21, in <module>
+    from neurolearn_dev import settings
+ModuleNotFoundError: No module named 'neurolearn_dev'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/raniac/env/lib/python3.6/site-packages/django/core/handlers/exception.py", line 34, in inner
+    response = get_response(request)
+  File "/home/raniac/env/lib/python3.6/site-packages/django/utils/deprecation.py", line 94, in __call__
+    response = response or self.get_response(request)
+  File "/home/raniac/env/lib/python3.6/site-packages/django/core/handlers/exception.py", line 36, in inner
+    response = response_for_exception(request, exc)
+  File "/home/raniac/env/lib/python3.6/site-packages/django/core/handlers/exception.py", line 90, in response_for_exception
+    response = handle_uncaught_exception(request, get_resolver(get_urlconf()), sys.exc_info())
+  File "/home/raniac/env/lib/python3.6/site-packages/django/core/handlers/exception.py", line 128, in handle_uncaught_exception
+    callback, param_dict = resolver.resolve_error_handler(500)
+  File "/home/raniac/env/lib/python3.6/site-packages/django/urls/resolvers.py", line 592, in resolve_error_handler
+    callback = getattr(self.urlconf_module, 'handler%s' % view_type, None)
+  File "/home/raniac/env/lib/python3.6/site-packages/django/utils/functional.py", line 80, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+  File "/home/raniac/env/lib/python3.6/site-packages/django/urls/resolvers.py", line 572, in urlconf_module
+    return import_module(self.urlconf_name)
+  File "/home/raniac/env/lib/python3.6/importlib/__init__.py", line 126, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 994, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 971, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 955, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 665, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 678, in exec_module
+  File "<frozen importlib._bootstrap>", line 219, in _call_with_frames_removed
+  File "./neurolearn/urls.py", line 21, in <module>
+    from neurolearn_dev import settings
+ModuleNotFoundError: No module named 'neurolearn_dev'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/raniac/env/lib/python3.6/site-packages/django/core/handlers/wsgi.py", line 141, in __call__
+    response = self.get_response(request)
+  File "/home/raniac/env/lib/python3.6/site-packages/django/core/handlers/base.py", line 75, in get_response
+    response = self._middleware_chain(request)
+  File "/home/raniac/env/lib/python3.6/site-packages/django/core/handlers/exception.py", line 36, in inner
+    response = response_for_exception(request, exc)
+  File "/home/raniac/env/lib/python3.6/site-packages/django/core/handlers/exception.py", line 90, in response_for_exception
+    response = handle_uncaught_exception(request, get_resolver(get_urlconf()), sys.exc_info())
+  File "/home/raniac/env/lib/python3.6/site-packages/django/core/handlers/exception.py", line 128, in handle_uncaught_exception
+    callback, param_dict = resolver.resolve_error_handler(500)
+  File "/home/raniac/env/lib/python3.6/site-packages/django/urls/resolvers.py", line 592, in resolve_error_handler
+    callback = getattr(self.urlconf_module, 'handler%s' % view_type, None)
+  File "/home/raniac/env/lib/python3.6/site-packages/django/utils/functional.py", line 80, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+  File "/home/raniac/env/lib/python3.6/site-packages/django/urls/resolvers.py", line 572, in urlconf_module
+    return import_module(self.urlconf_name)
+  File "/home/raniac/env/lib/python3.6/importlib/__init__.py", line 126, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 994, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 971, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 955, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 665, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 678, in exec_module
+  File "<frozen importlib._bootstrap>", line 219, in _call_with_frames_removed
+  File "./neurolearn/urls.py", line 21, in <module>
+    from neurolearn_dev import settings
+ModuleNotFoundError: No module named 'neurolearn_dev'
+[pid: 17124|app: 0|req: 1/1] 116.56.138.68 () {44 vars in 1446 bytes} [Mon Jun 17 13:10:35 2019] GET / => generated 0 bytes in 1114 msecs (HTTP/1.1 500) 0 headers in 0 bytes (0 switches on core 0)
+SIGINT/SIGQUIT received...killing workers...
+worker 1 buried after 1 seconds
+worker 2 buried after 1 seconds
+worker 3 buried after 1 seconds
+worker 4 buried after 1 seconds
+goodbye to uWSGI.
+*** Starting uWSGI 2.0.18 (64bit) on [Mon Jun 17 21:11:58 2019] ***
+compiled with version: 5.4.0 20160609 on 17 June 2019 03:54:56
+os: Linux-4.4.0-31-generic #50-Ubuntu SMP Wed Jul 13 00:07:12 UTC 2016
+nodename: amax
+machine: x86_64
+clock source: unix
+pcre jit disabled
+detected number of CPU cores: 40
+current working directory: /home/raniac/projects/neurolearn
+writing pidfile to uwsgi.pid
+detected binary path: /home/raniac/env/bin/uwsgi
+chdir() to /home/raniac/projects/neurolearn
+your processes number limit is 1031236
+your memory page size is 4096 bytes
+detected max file descriptor number: 1024
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+uwsgi socket 0 bound to TCP address 0.0.0.0:9090 fd 3
+Python version: 3.6.8 (default, May  7 2019, 14:58:50)  [GCC 5.4.0 20160609]
+Python main interpreter initialized at 0x974a70
+python threads support enabled
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 416880 bytes (407 KB) for 8 cores
+*** Operational MODE: preforking+threaded ***
+WSGI app 0 (mountpoint='') ready in 0 seconds on interpreter 0x974a70 pid: 17209 (default app)
+*** uWSGI is running in multiple interpreter mode ***
+spawned uWSGI master process (pid: 17209)
+spawned uWSGI worker 1 (pid: 17213, cores: 2)
+spawned uWSGI worker 2 (pid: 17214, cores: 2)
+spawned uWSGI worker 3 (pid: 17215, cores: 2)
+spawned uWSGI worker 4 (pid: 17217, cores: 2)
+unable to load configuration from from multiprocessing.semaphore_tracker import main;main(8)
+[pid: 17214|app: 0|req: 1/1] 116.56.138.68 () {44 vars in 1446 bytes} [Mon Jun 17 13:12:00 2019] GET / => generated 649 bytes in 1101 msecs (HTTP/1.1 200) 4 headers in 123 bytes (1 switches on core 0)
+unable to load configuration from from multiprocessing.semaphore_tracker import main;main(7)
+a2c62114-15b7-3045-a6f1-fbd27a39c4b3
+wklab
+USER20190000000000
+[pid: 17215|app: 0|req: 1/2] 116.56.138.68 () {42 vars in 1436 bytes} [Mon Jun 17 13:12:02 2019] GET /api/overview_submissions => generated 1281 bytes in 1128 msecs (HTTP/1.1 200) 7 headers in 275 bytes (2 switches on core 0)
+[pid: 17215|app: 0|req: 2/3] 116.56.138.68 () {42 vars in 1415 bytes} [Mon Jun 17 13:12:27 2019] GET / => generated 649 bytes in 18 msecs (HTTP/1.1 200) 4 headers in 123 bytes (1 switches on core 1)
+a2c62114-15b7-3045-a6f1-fbd27a39c4b3
+wklab
+USER20190000000000
+[pid: 17214|app: 0|req: 2/4] 116.56.138.68 () {42 vars in 1436 bytes} [Mon Jun 17 13:12:27 2019] GET /api/overview_submissions => generated 1281 bytes in 42 msecs (HTTP/1.1 200) 7 headers in 275 bytes (2 switches on core 1)
+[pid: 17215|app: 0|req: 3/5] 116.56.138.68 () {40 vars in 1353 bytes} [Mon Jun 17 13:12:27 2019] GET /favicon.ico => generated 0 bytes in 2 msecs (HTTP/1.1 302) 5 headers in 155 bytes (1 switches on core 0)
+unable to load configuration from from multiprocessing.semaphore_tracker import main;main(7)
+[pid: 17217|app: 0|req: 1/6] 116.56.138.68 () {42 vars in 1415 bytes} [Mon Jun 17 13:15:43 2019] GET / => generated 649 bytes in 890 msecs (HTTP/1.1 200) 4 headers in 123 bytes (1 switches on core 0)
+a2c62114-15b7-3045-a6f1-fbd27a39c4b3
+wklab
+USER20190000000000
+[pid: 17215|app: 0|req: 4/7] 116.56.138.68 () {42 vars in 1436 bytes} [Mon Jun 17 13:15:44 2019] GET /api/overview_submissions => generated 1281 bytes in 20 msecs (HTTP/1.1 200) 7 headers in 275 bytes (2 switches on core 1)
+[pid: 17215|app: 0|req: 5/8] 116.56.138.68 () {40 vars in 1353 bytes} [Mon Jun 17 13:15:44 2019] GET /favicon.ico => generated 0 bytes in 1 msecs (HTTP/1.1 302) 5 headers in 155 bytes (1 switches on core 0)
+unable to load configuration from from multiprocessing.semaphore_tracker import main;main(8)
+[pid: 17213|app: 0|req: 1/9] 116.56.138.68 () {42 vars in 1414 bytes} [Mon Jun 17 13:24:28 2019] GET /api/show_data => generated 1508 bytes in 1081 msecs (HTTP/1.1 200) 7 headers in 275 bytes (2 switches on core 0)
+[pid: 17217|app: 0|req: 2/10] 116.56.138.68 () {42 vars in 1428 bytes} [Mon Jun 17 13:24:34 2019] GET /api/show_submissions => generated 1191 bytes in 25 msecs (HTTP/1.1 200) 7 headers in 275 bytes (2 switches on core 1)
+[pid: 17217|app: 0|req: 3/11] 116.56.138.68 () {42 vars in 1473 bytes} [Mon Jun 17 13:45:40 2019] GET /api/show_results?task_id=TASK20190617081743 => generated 1098 bytes in 23 msecs (HTTP/1.1 200) 7 headers in 275 bytes (2 switches on core 0)
+[pid: 17217|app: 0|req: 4/12] 116.56.138.68 () {42 vars in 1484 bytes} [Mon Jun 17 13:45:40 2019] GET /api/show_img?task_id=TASK20190617081743&img_name=ROC_curve => generated 104095 bytes in 307 msecs (HTTP/1.1 200) 4 headers in 111 bytes (1 switches on core 1)
+[pid: 17215|app: 0|req: 6/13] 116.56.138.68 () {42 vars in 1428 bytes} [Mon Jun 17 13:55:10 2019] GET /api/show_submissions => generated 1191 bytes in 8 msecs (HTTP/1.1 200) 7 headers in 275 bytes (2 switches on core 1)
+[pid: 17217|app: 0|req: 5/14] 116.56.138.68 () {42 vars in 1428 bytes} [Mon Jun 17 13:55:12 2019] GET /api/show_submissions => generated 1191 bytes in 8 msecs (HTTP/1.1 200) 7 headers in 275 bytes (2 switches on core 0)
+a2c62114-15b7-3045-a6f1-fbd27a39c4b3
+wklab
+USER20190000000000
+[pid: 17217|app: 0|req: 6/15] 116.56.138.68 () {42 vars in 1436 bytes} [Mon Jun 17 13:55:15 2019] GET /api/overview_submissions => generated 1281 bytes in 19 msecs (HTTP/1.1 200) 7 headers in 275 bytes (2 switches on core 1)
+[pid: 17214|app: 0|req: 3/16] 116.56.138.68 () {40 vars in 661 bytes} [Mon Jun 17 14:31:00 2019] GET / => generated 649 bytes in 2 msecs (HTTP/1.1 200) 4 headers in 123 bytes (1 switches on core 0)
+None
+None
+None
+[pid: 17215|app: 0|req: 7/17] 116.56.138.68 () {40 vars in 682 bytes} [Mon Jun 17 14:31:02 2019] GET /api/overview_submissions => generated 1281 bytes in 20 msecs (HTTP/1.1 200) 7 headers in 275 bytes (2 switches on core 0)
+[pid: 17214|app: 0|req: 4/18] 116.56.138.68 () {38 vars in 599 bytes} [Mon Jun 17 14:31:02 2019] GET /favicon.ico => generated 0 bytes in 2 msecs (HTTP/1.1 302) 5 headers in 155 bytes (1 switches on core 1)
+a2c62114-15b7-3045-a6f1-fbd27a39c4b3
+[pid: 17217|app: 0|req: 7/19] 116.56.138.68 () {40 vars in 721 bytes} [Mon Jun 17 14:31:23 2019] GET /api/login?username=wklab&password=wk20162017 => generated 118 bytes in 7 msecs (HTTP/1.1 200) 10 headers in 546 bytes (2 switches on core 0)
+Gracefully killing worker 4 (pid: 17217)...
+...gracefully killing workers...
+Gracefully killing worker 1 (pid: 17213)...
+Gracefully killing worker 3 (pid: 17215)...
+Gracefully killing worker 2 (pid: 17214)...
+worker 1 buried after 1 seconds
+worker 2 buried after 1 seconds
+worker 3 buried after 1 seconds
+worker 4 buried after 1 seconds
+binary reloading uWSGI...
+chdir() to /home/raniac/projects/neurolearn
+closing all non-uwsgi socket fds > 2 (max_fd = 1024)...
+found fd 3 mapped to socket 0 (0.0.0.0:9090)
+running /home/raniac/env/bin/uwsgi
+[uWSGI] getting INI configuration from uwsgi.ini
+*** Starting uWSGI 2.0.18 (64bit) on [Mon Jun 17 15:25:48 2019] ***
+compiled with version: 5.4.0 20160609 on 17 June 2019 03:54:56
+os: Linux-4.4.0-31-generic #50-Ubuntu SMP Wed Jul 13 00:07:12 UTC 2016
+nodename: amax
+machine: x86_64
+clock source: unix
+pcre jit disabled
+detected number of CPU cores: 40
+current working directory: /home/raniac/projects/neurolearn
+detected binary path: /home/raniac/env/bin/uwsgi
+chdir() to /home/raniac/projects/neurolearn
+your processes number limit is 1031236
+your memory page size is 4096 bytes
+detected max file descriptor number: 1024
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+uwsgi socket 0 inherited INET address 0.0.0.0:9090 fd 3
+Python version: 3.6.8 (default, May  7 2019, 14:58:50)  [GCC 5.4.0 20160609]
+Python main interpreter initialized at 0x168a3a0
+python threads support enabled
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 416880 bytes (407 KB) for 8 cores
+*** Operational MODE: preforking+threaded ***
+WSGI app 0 (mountpoint='') ready in 0 seconds on interpreter 0x168a3a0 pid: 17209 (default app)
+*** uWSGI is running in multiple interpreter mode ***
+gracefully (RE)spawned uWSGI master process (pid: 17209)
+spawned uWSGI worker 1 (pid: 20553, cores: 2)
+spawned uWSGI worker 2 (pid: 20554, cores: 2)
+spawned uWSGI worker 3 (pid: 20555, cores: 2)
+spawned uWSGI worker 4 (pid: 20557, cores: 2)
+unable to load configuration from from multiprocessing.semaphore_tracker import main;main(7)
+[pid: 20557|app: 0|req: 1/1] 116.56.138.68 () {42 vars in 1336 bytes} [Tue Jun 18 01:34:15 2019] GET /api/show_submissions => generated 1191 bytes in 994 msecs (HTTP/1.1 200) 7 headers in 275 bytes (2 switches on core 0)
+[pid: 20557|app: 0|req: 2/2] 116.56.138.68 () {42 vars in 1381 bytes} [Tue Jun 18 01:34:18 2019] GET /api/show_results?task_id=TASK20190617081743 => generated 1098 bytes in 23 msecs (HTTP/1.1 200) 7 headers in 275 bytes (2 switches on core 1)
+[pid: 20557|app: 0|req: 3/3] 116.56.138.68 () {44 vars in 1423 bytes} [Tue Jun 18 01:34:18 2019] GET /api/show_img?task_id=TASK20190617081743&img_name=ROC_curve => generated 104095 bytes in 310 msecs (HTTP/1.1 200) 4 headers in 111 bytes (1 switches on core 0)

@@ -1,0 +1,11 @@
+,Feature,Weight
+0,k__Bacteria;p__Proteobacteria;c__Gammaproteobacteria;o__Pasteurellales;f__Pasteurellaceae;g__Haemophilus,0.5685282317441005
+1,theta_aSigma,0.8957914457684504
+2,all__aNCp_7,0.2039503262762917
+3,all_aNLe_13,-0.42419127524585765
+4,theta_aNe_7,1.0266000329020735
+5,alpha2_aNLe_6,-0.4582684830846401
+6,alpha2_aNLp_4,0.7551022903465172
+7,beta2_aNLe_6,-0.230425516177022
+8,gamma_aDc_3,1.115747170590338
+9,gamma__aNCp_10,-0.24825110343654821

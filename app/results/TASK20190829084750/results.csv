@@ -1,0 +1,9 @@
+Item,Value
+Optimal CV Accuracy,0.575
+Optimal Parameters,{'svm__C': 1}
+Permutation Test p-Value,0.1485148514851485
+Test Accuracy,0.6363636363636364
+Test Sensitivity,0.7058823529411765
+Test Specificity,0.5625
+Area Under Curve,0.7058823529411764
+Run Time,18.97s

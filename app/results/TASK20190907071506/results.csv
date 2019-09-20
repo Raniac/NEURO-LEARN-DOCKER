@@ -1,0 +1,9 @@
+Item,Value
+Optimal CV Accuracy,0.71
+Optimal Parameters,"{'rf__bootstrap': True, 'rf__criterion': 'entropy', 'rf__max_depth': 4, 'rf__min_samples_leaf': 10, 'rf__min_samples_split': 5, 'rf__n_estimators': 50, 'rfe__n_features_to_select': 38}"
+Permutation Test p-Value,0.009900990099009901
+Test Accuracy,0.696969696969697
+Test Sensitivity,0.8235294117647058
+Test Specificity,0.5625
+Area Under Curve,0.8272058823529411
+Run Time,699.44s
