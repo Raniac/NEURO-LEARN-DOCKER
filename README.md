@@ -1,7 +1,7 @@
 # NEURO-LEARN-DOCKER
 
 ```bash
-user@machine:~$ docker run -it --rm --network host raniac/neuro-learn-docker:test
+user@machine:~$ docker run -it --rm --network host raniac/neuro-learn-docker:dev
 root@machine:/# service nginx start
 root@machine:/# service rabbitmq-server start
 root@machine:/# cd /neuro-learn/app/
