@@ -1,4 +1,4 @@
-FROM neuro-learn-docker:base
+FROM raniac/neuro-learn-docker:base
 MAINTAINER raniac <leibingye@outlook.com>
 
 WORKDIR /neuro-learn
