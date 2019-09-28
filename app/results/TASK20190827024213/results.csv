@@ -1,9 +1,0 @@
-Item,Value
-Optimal CV Accuracy,0.6475
-Optimal Parameters,"{'knn__algorithm': 'auto', 'knn__n_neighbors': 5, 'knn__p': 1}"
-Permutation Test p-Value,0.0297029702970297
-Test Accuracy,0.7272727272727273
-Test Sensitivity,0.6470588235294118
-Test Specificity,0.8125
-Area Under Curve,0.7996323529411765
-Run Time,10.53s

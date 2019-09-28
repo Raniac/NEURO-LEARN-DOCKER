@@ -1,9 +1,0 @@
-Item,Value
-Optimal CV Accuracy,0.75
-Optimal Parameters,"{'lr__multi_class': 'ovr', 'lr__solver': 'newton-cg'}"
-Permutation Test p-Value,0.009900990099009901
-Test Accuracy,0.5151515151515151
-Test Sensitivity,0.35294117647058826
-Test Specificity,0.6875
-Area Under Curve,0.5698529411764706
-Run Time,7.71s

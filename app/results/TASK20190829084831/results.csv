@@ -1,9 +1,0 @@
-Item,Value
-Optimal CV Accuracy,0.645
-Optimal Parameters,{'lda__solver': 'svd'}
-Permutation Test p-Value,0.009900990099009901
-Test Accuracy,0.6666666666666666
-Test Sensitivity,0.7058823529411765
-Test Specificity,0.625
-Area Under Curve,0.7279411764705882
-Run Time,40.62s

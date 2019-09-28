@@ -1,9 +1,0 @@
-Item,Value
-Optimal CV Accuracy,0.5175
-Optimal Parameters,"{'lr__multi_class': 'multinomial', 'lr__solver': 'sag'}"
-Permutation Test p-Value,0.3465346534653465
-Test Accuracy,0.8484848484848485
-Test Sensitivity,0.8823529411764706
-Test Specificity,0.8125
-Area Under Curve,0.8419117647058824
-Run Time,19.95s
