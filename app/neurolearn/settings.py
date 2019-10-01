@@ -85,9 +85,9 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'neurolearn',
-        'USER': 'root',
-        'PASSWORD': 'root',
-        'HOST': '116.56.138.220',
+        'USER': 'neurolearn',
+        'PASSWORD': 'nl4444_',
+        'HOST': '120.79.49.129',
         'PORT': '3306',
     }
 }
