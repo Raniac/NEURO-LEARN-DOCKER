@@ -7,15 +7,15 @@ import pymysql
 # ========================================
 # Define the content of the project.
 # ========================================
-PROJECT_LABEL = 'SZ with BCN'
-PROJECT_TITLE = 'Study of Schizophrenia with Pattern Analysis of Brain Connectivity Networks'
+PROJECT_LABEL = 'TEST'
+PROJECT_TITLE = 'Test Project'
 # Project Introduction (No more than 400 words)
 PROJECT_INTRODUCTION = '''\
-This is introduction.\
+This is a test project, and there is no template predefined so that you can upload whatever you want. Nevertheless, we strongly recommend you to come up with a project where templates and workflows are defined, because in that way, we can help you accumulate you data and reproduce all your experiments. :-)\
 '''
 # Project Methods (No more than 400 words)
 PROJECT_METHODS = '''\
-This is methods.\
+Click the following buttons to download predefined local workflows and dataset templates. Note that this is a test project, so it may not meet your requirements. Click the button on the right to upload your datasets.\
 '''
 # ========================================
 # End of definition.
@@ -27,9 +27,9 @@ PROJECT_ID = 'PROJ00000000000000'
 def create_project(sql, proj):
     try:
         conn = pymysql.connect(
-            host = '116.56.138.220',
-            user = 'root',
-            password = 'root',
+            host = '120.79.49.129',
+            user = 'neurolearn',
+            password = 'nl4444_',
             database = 'neurolearn',
             charset = 'utf8'
         )
@@ -65,9 +65,9 @@ if __name__ == "__main__":
         'title': PROJECT_TITLE,
         'introduction': PROJECT_INTRODUCTION,
         'methods': PROJECT_METHODS,
-        'flowchart_url': 'https://raw.githubusercontent.com/Raniac/NEURO-LEARN/master/projects/PROJ00000000000000/flowchart.png',
+        'flowchart_url': 'https://raw.githubusercontent.com/Raniac/NEURO-LEARN/master/doc/img/neurolearn_framework.png',
         'workflows_url': 'https://github.com/Raniac/NEURO-LEARN/raw/master/projects/PROJ00000000000000/local_workflows.zip',
-        'templates_url': ''
+        'templates_url': 'https://github.com/Raniac/NEURO-LEARN/raw/master/projects/PROJ20190626040404/dataset_templates.zip'
     }
 
     sql = """
