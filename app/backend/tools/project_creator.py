@@ -7,30 +7,36 @@ import pymysql
 # ========================================
 # Define the content of the project.
 # ========================================
-PROJECT_LABEL = 'TEST'
-PROJECT_TITLE = 'Test Project'
+PROJECT_LABEL = 'SZ with sfMRI'
+PROJECT_TITLE = 'Study of Schizophrenia with Pattern Analysis of Structural/Functional MRI Data'
 # Project Introduction (No more than 400 words)
 PROJECT_INTRODUCTION = '''\
-This is a test project, and there is no template predefined so that you can upload whatever you want. Nevertheless, we strongly recommend you to come up with a project where templates and workflows are defined, because in that way, we can help you accumulate you data and reproduce all your experiments. :-)\
+Fusing structural and functional MRI data, use DPABI on matlab to compute the features, and analyze SZ.\
 '''
 # Project Methods (No more than 400 words)
 PROJECT_METHODS = '''\
-Click the following buttons to download predefined local workflows and dataset templates. Note that this is a test project, so it may not meet your requirements. Click the button on the right to upload your datasets.\
+Compute gray matter volume, regional homogeneity, amplitude of low frequency fluctuations and degree centrality.\
 '''
+# Flowchart Url
+FLOWCHART_URL = 'https://raw.githubusercontent.com/Raniac/NEURO-LEARN/master/doc/img/neurolearn_framework.png'
+# Workflows Url
+WORKFLOWS_URL = 'https://github.com/Raniac/NEURO-LEARN/raw/master/projects/PROJ00000000000000/local_workflows.zip'
+# Templates Url
+TEMPLATES_URL = 'https://github.com/Raniac/NEURO-LEARN/raw/master/projects/PROJ20190626040404/dataset_templates.zip'
 # ========================================
 # End of definition.
 # ========================================
 
-# PROJECT_ID = 'PROJ' + time.strftime('%Y%m%d%H%M%S')
-PROJECT_ID = 'PROJ00000000000000'
+PROJECT_ID = 'PROJ' + time.strftime('%Y%m%d%H%M%S')
+# PROJECT_ID = 'PROJ00000000000000'
 
 def create_project(sql, proj):
     try:
         conn = pymysql.connect(
-            host = '120.79.49.129',
+            host = '127.0.0.1',
             user = 'neurolearn',
             password = 'nl4444_',
-            database = 'neurolearn',
+            database = 'neurolearn_dev',
             charset = 'utf8'
         )
         cursor = conn.cursor()
@@ -65,9 +71,9 @@ if __name__ == "__main__":
         'title': PROJECT_TITLE,
         'introduction': PROJECT_INTRODUCTION,
         'methods': PROJECT_METHODS,
-        'flowchart_url': 'https://raw.githubusercontent.com/Raniac/NEURO-LEARN/master/doc/img/neurolearn_framework.png',
-        'workflows_url': 'https://github.com/Raniac/NEURO-LEARN/raw/master/projects/PROJ00000000000000/local_workflows.zip',
-        'templates_url': 'https://github.com/Raniac/NEURO-LEARN/raw/master/projects/PROJ20190626040404/dataset_templates.zip'
+        'flowchart_url': FLOWCHART_URL,
+        'workflows_url': WORKFLOWS_URL,
+        'templates_url': TEMPLATES_URL
     }
 
     sql = """
@@ -85,7 +91,7 @@ if __name__ == "__main__":
     print('Are you sure you want to create this project? [y/n]')
     confirm = input()
 
-    if confirm == 'y':
+    if confirm in ['y', 'Y']:
         create_project(sql, project)
     else:
         logging.info('Exit without creating anything!')
