@@ -1,0 +1,1 @@
+This folder contains temporarily generated files.
