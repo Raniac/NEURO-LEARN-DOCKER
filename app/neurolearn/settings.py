@@ -84,10 +84,10 @@ WSGI_APPLICATION = 'neurolearn.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'neurolearn',
-        'USER': 'neurolearn',
+        'NAME': 'neurolearn_nld',
+        'USER': 'neurolearn_nld',
         'PASSWORD': 'nl4444_',
-        'HOST': '120.79.49.129',
+        'HOST': '116.56.138.220',
         'PORT': '3306',
     }
 }
