@@ -81,17 +81,27 @@ WSGI_APPLICATION = 'neurolearn.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/2.2/ref/settings/#databases
 
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.mysql',
+#         'NAME': 'neurolearn_nld',
+#         'USER': 'neurolearn_nld',
+#         'PASSWORD': 'nl4444_',
+#         'HOST': '116.56.138.220',
+#         'PORT': '3306',
+#     }
+# }
+
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'neurolearn_nld',
-        'USER': 'neurolearn_nld',
+        'NAME': 'neurolearn',
+        'USER': 'neurolearn',
         'PASSWORD': 'nl4444_',
-        'HOST': '116.56.138.220',
+        'HOST': '120.79.49.129',
         'PORT': '3306',
     }
 }
-
 
 # Password validation
 # https://docs.djangoproject.com/en/2.2/ref/settings/#auth-password-validators
