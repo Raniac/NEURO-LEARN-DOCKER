@@ -1,6 +1,7 @@
 # NEURO-LEARN-DOCKER
 
 - **Quick Start**
+
   ```bash
   # Open a terminal on the host
   user@machine:~$ docker run -it --rm --network host raniac/neuro-learn-docker:dev
@@ -11,4 +12,5 @@
   # open a browser on another machine under the same LAN with the host and type the address '192.168.51.148'.
   # VOILA!
   ```
+
 - More information about NEURO-LEARN-DOCKER can be found in [NLD Documentation](https://github.com/Raniac/NEURO-LEARN-DOCKER/wiki).
