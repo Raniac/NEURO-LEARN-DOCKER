@@ -1,0 +1,6 @@
+Flask
+pymysql
+celery
+redis
+amqp
+gunicorn

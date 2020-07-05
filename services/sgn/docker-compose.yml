@@ -1,0 +1,16 @@
+version: '2'
+
+services:
+  sgn-service:
+    image: 120.79.49.129:5000/neuro-learn-docker:sgn
+    # restart: on-failure
+    hostname: sgn-server
+    ports:
+      - "80:80"
+    volumes:
+      - /c/Users/Benny/Documents/Projects/nld_sgn/models:/nld_sgn/models
+    # environment:
+    #   KAFKA_ADVERTISED_HOST_NAME: localhost
+    # depends_on:
+    #   - zoo1
+    container_name: sgn-service
