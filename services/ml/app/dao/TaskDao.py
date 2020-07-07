@@ -4,10 +4,10 @@ from dao.DB import Singleton
 class TaskDao(Singleton):
     def __init__(self):
         self.mySqlDb = MySqlDb(
-            db_host='120.79.49.129',
-            db_name='neurolearn',
-            db_user='neurolearn',
-            db_pwd='nl4444_'
+            host='120.79.49.129',
+            db='neurolearn',
+            user='neurolearn',
+            pwd='nl4444_'
         )
     
     def insertNewTask(self, task_form):
@@ -22,7 +22,8 @@ class TaskDao(Singleton):
         `task_status`,
         `task_result`)
         VALUES('%s', '%s', '%s', '%s', '%s', '%s', '')
-        """ % (task_form['task_id'],
+        """ % (
+            task_form['task_id'],
             task_form['proj_id'],
             task_form['task_name'],
             task_form['task_type'],
@@ -31,9 +32,47 @@ class TaskDao(Singleton):
         )
         self.mySqlDb.execNonQuery(sql)
         return
+
+    def updateTaskStatusByTaskId(self, task_id, task_status):
+        sql = """
+        update
+        backend_submissions
+        set
+        task_result = '%s'
+        where
+        task_id = '%s'
+        """ % (
+            task_status,
+            task_id
+        )
+        self.mySqlDb.execNonQuery(sql)
+        return
     
     def updateTaskResultByTaskId(self, task_id, task_result):
-        pass
+        sql = """
+        update
+        backend_submissions
+        set
+        task_status = '%s'
+        where
+        task_id = '%s'
+        """ % (
+            task_result,
+            task_id
+        )
+        self.mySqlDb.execNonQuery(sql)
+        return
     
     def getDataByDataName(self, data_name):
-        pass
+        sql = """
+        select
+        data_cont
+        from
+        backend_datasets
+        where
+        data_name in %s
+        """ % (
+            str(tuple(data_name))
+        )
+        rs = self.mySqlDb.execQuery(sql)
+        return rs

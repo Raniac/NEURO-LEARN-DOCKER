@@ -64,9 +64,6 @@ def new_task():
 @app.route(BASEURL + '/v0/healthcheck', methods=['GET'])
 def test_db():
     try:
-        # DB = init_db(db_host='120.79.49.129', db_name='neurolearn', db_user='neurolearn', db_pwd='nl4444_')
-        # fetched = get_data_by_data_name(DB, 'A_181210_140_SZ_sfMRI_AAL90')
-        # app.logger.debug(len(fetched))
         return 'success'
     except Exception as e:
         return str(e)
