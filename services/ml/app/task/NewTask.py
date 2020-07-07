@@ -1,13 +1,15 @@
 import json
 import traceback
 
-from celery.decorators import task
+from celery import Celery
 import pandas as pd
 
-from task.Core import ml_task
 from dao.TaskDao import TaskDao
+from task.Core import ml_task
 
-@task
+celery = Celery(broker='redis://127.0.0.1:6379/0')
+
+@celery.task
 def new_ml_celery_task(taskid, tasktype, traindata, enabletest, testdata, label, featsel, estimator, cv):
     taskDao = TaskDao()
     taskDao.updateTaskStatusByTaskId(task_id=taskid, task_status='Running')
@@ -24,11 +26,10 @@ def new_ml_celery_task(taskid, tasktype, traindata, enabletest, testdata, label,
                 test_data_list.append(pd.read_json(jtm[0]))
 
         results = ml_task(taskid, tasktype, train_data_list, enabletest, test_data_list, label, featsel, estimator, cv)
-        results_json = json.dumps(results)
         taskDao.updateTaskStatusByTaskId(task_id=taskid, task_status='Finished')
-        taskDao.updateTaskResultByTaskId(task_id=taskid, task_result=results_json)
-    except Exception as e:
+        taskDao.updateTaskResultByTaskId(task_id=taskid, task_result=json.dumps(results))
+    except:
         traceback.print_exc()
         taskDao.updateTaskStatusByTaskId(task_id=taskid, task_status='Failed')
-        taskDao.updateTaskResultByTaskId(task_id=taskid, task_result=traceback.format_exc()[-min(1000, len(traceback.format_exc())):])
+        taskDao.updateTaskResultByTaskId(task_id=taskid, task_result=json.dumps(traceback.format_exc()[-min(1000, len(traceback.format_exc())):]))
     return

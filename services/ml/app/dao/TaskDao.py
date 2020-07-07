@@ -1,3 +1,6 @@
+import json
+import pymysql
+
 from dao.DB import MySqlDb
 from dao.DB import Singleton
 
@@ -27,7 +30,7 @@ class TaskDao(Singleton):
             task_form['proj_id'],
             task_form['task_name'],
             task_form['task_type'],
-            task_form['task_config'],
+            json.dumps(task_form['task_config']),
             'Submitted'
         )
         self.mySqlDb.execNonQuery(sql)
@@ -38,11 +41,11 @@ class TaskDao(Singleton):
         update
         backend_submissions
         set
-        task_result = '%s'
+        `task_status` = '%s'
         where
-        task_id = '%s'
+        `task_id` = '%s'
         """ % (
-            task_status,
+            task_status.replace("\'", ""),
             task_id
         )
         self.mySqlDb.execNonQuery(sql)
@@ -53,17 +56,18 @@ class TaskDao(Singleton):
         update
         backend_submissions
         set
-        task_status = '%s'
+        `task_result` = '%s'
         where
-        task_id = '%s'
+        `task_id` = '%s'
         """ % (
-            task_result,
+            pymysql.escape_string(task_result),
             task_id
         )
         self.mySqlDb.execNonQuery(sql)
         return
     
     def getDataByDataName(self, data_name):
+        print(str(tuple(data_name)))
         sql = """
         select
         data_cont
@@ -72,7 +76,7 @@ class TaskDao(Singleton):
         where
         data_name in %s
         """ % (
-            str(tuple(data_name))
+            str(data_name).replace('[', '(').replace(']', ')')
         )
         rs = self.mySqlDb.execQuery(sql)
         return rs
