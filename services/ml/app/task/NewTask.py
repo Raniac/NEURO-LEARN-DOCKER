@@ -2,12 +2,15 @@ import json
 import traceback
 
 from celery import Celery
+from flask import Flask
 import pandas as pd
 
 from dao.TaskDao import TaskDao
 from task.Core import ml_task
 
-celery = Celery(broker='redis://127.0.0.1:6379/0')
+app = Flask(__name__)
+celery = Celery(app.name, broker='redis://127.0.0.1:6379/0')
+celery.conf.update(app.config)
 
 @celery.task
 def new_ml_celery_task(taskid, tasktype, traindata, enabletest, testdata, label, featsel, estimator, cv):
