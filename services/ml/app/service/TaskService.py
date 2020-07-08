@@ -2,7 +2,7 @@ import json
 import time
 
 from dao.TaskDao import TaskDao
-from task.NewTask import new_ml_celery_task
+from task.MLTask import new_ml_celery_task
 
 def insertNewTask(task_form):
     """

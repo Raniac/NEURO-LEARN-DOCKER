@@ -4,18 +4,13 @@ import pickle
 import time
 import traceback
 
-from flask import Flask, request, jsonify
-from celery import Celery
+from flask import jsonify
+from flask import request
 
+from config.settings import app
+from config.settings import BASE_URL
+from config.settings import celery
 from service.TaskService import insertNewTask
-
-app = Flask(__name__)
-app.config['CELERY_BROKER_URL'] = 'redis://127.0.0.1:6379/0'
-app.config['CELERY_RESULT_BACKEND'] = 'redis://127.0.0.1:6379/0'
-celery = Celery(app.name, broker=app.config['CELERY_BROKER_URL'])
-celery.conf.update(app.config)
-
-BASEURL = "/rest/mlservice"
 
 def parse_arg():
     parser = argparse.ArgumentParser(description='nls-ml-main')
@@ -43,7 +38,7 @@ def intro():
     '''
     return intro_cont
 
-@app.route(BASEURL + '/v0/task/insert', methods=['POST'])
+@app.route(BASE_URL + '/v0/task/insert', methods=['POST'])
 def new_task():
     response_content = {}
 
@@ -61,7 +56,7 @@ def new_task():
 
     return jsonify(response_content)
 
-@app.route(BASEURL + '/v0/healthcheck', methods=['GET'])
+@app.route(BASE_URL + '/v0/healthcheck', methods=['GET'])
 def test_db():
     try:
         return 'success'
