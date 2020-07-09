@@ -368,118 +368,19 @@ def delete_project(request):
 
     return response
 
-# # ==================================================
-# # Workflow Management APIs
-# # ==================================================
-# @require_http_methods(["GET", "POST"])
-# def new_task(request):
-#     response = HttpResponse()
-#     response_content = {}
-#     try:
-#         if request.method == 'GET':
-#             get_token(request)
-#         if request.method == 'POST':
-#             postBody = json.loads(request.body.decode("utf-8"))
-#             proj_id = postBody.get('proj_id')
-#             task_type = postBody.get('task_type')
-#             if task_type[:2] == 'ml':
-#                 counter = 0
-#                 for trans in postBody.get('feat_sel'):
-#                     for estim in postBody.get('estimator'):
-#                         task_config = {}
-#                         task_config['proj_name'] = postBody.get('proj_name')
-#                         task_config['train_data'] = postBody.get('train_data')
-#                         task_config['enable_test'] = postBody.get('enable_test')
-#                         task_config['test_data'] = postBody.get('test_data')
-#                         task_config['label'] = postBody.get('label')
-#                         task_config['feat_sel'] = trans
-#                         task_config['estimator'] = estim
-#                         task_config['cv_type'] = postBody.get('cv_type')
-                        
-#                         task_id = 'TASK' + time.strftime('%y%m%d%H%M%S') + '{:02d}'.format(counter)
-
-#                         model_abbrs = {
-#                             'Analysis of Variance': 'anova',
-#                             'Principal Component Analysis': 'pca',
-#                             'Recursive Feature Elimination': 'rfe',
-#                             'None': 'none',
-#                             'Support Vector Machine': 'svm',
-#                             'Random Forest': 'rf',
-#                             'Linear Discriminative Analysis': 'lda',
-#                             'Logistic Regression': 'lr',
-#                             'K Nearest Neighbor': 'knn',
-#                             'Support Vector Regression': 'svr',
-#                             'Elastic Net': 'en',
-#                             'Ordinary Least Square': 'ols',
-#                             'Lasso Regression': 'lasso',
-#                             'Ridge Regression': 'ridge'
-#                         }
-#                         if not postBody.get('task_name'):
-#                             task_name = task_id + '_' + model_abbrs[trans] + '_' + model_abbrs[estim]
-#                         else:
-#                             task_name = postBody.get('task_name') + '_' + model_abbrs[trans] + '_' + model_abbrs[estim]
-
-#                         task = Submissions(
-#                             task_id=task_id,
-#                             proj_id=proj_id,
-#                             task_name=task_name,
-#                             task_type=task_type,
-#                             task_config=json.dumps(task_config),
-#                             task_status='Submitted',
-#                             task_result=''
-#                         )
-#                         task.save()
-
-#                         # create new celery task
-#                         new_ml_celery_task.delay(
-#                             taskid=task_id,
-#                             tasktype=task_type,
-#                             traindata=task_config['train_data'],
-#                             enabletest=task_config['enable_test'],
-#                             testdata=task_config['test_data'],
-#                             label=task_config['label'],
-#                             featsel=task_config['feat_sel'],
-#                             estimator=task_config['estimator'],
-#                             cv=task_config['cv_type']
-#                         )
-
-#                         counter += 1
-
-#             elif task_type[:2] == 'sa':
-#                 task_config = {}
-#                 task_config['proj_name'] = postBody.get('proj_name')
-#                 task_config['test_var_data_x'] = postBody.get('test_var_data_x')
-#                 task_config['group_var_data_y'] = postBody.get('group_var_data_y')
-
-#                 task = Submissions(
-#                     task_id=task_id,
-#                     proj_id=proj_id,
-#                     task_name=task_name,
-#                     task_type=task_type,
-#                     task_config=json.dumps(task_config),
-#                     task_status='Submitted',
-#                     task_result=''
-#                 )
-#                 task.save()
-
-#                 # # create new celery task
-#                 # new_sa_celery_task.delay(
-#                 #     taskid=task_id,
-#                 #     tasktype=task_type,
-#                 #     testvardatax=task_config['test_var_data_x'],
-#                 #     groupvardatay=task_config['group_var_data_y']
-#                 # )
-
-#             response_content['post_body'] = postBody
-#             response_content['msg'] = 'success'
-#             response_content['error_num'] = 0
-#     except Exception as e:
-#         response_content['msg'] = str(e)
-#         response_content['error_num'] = 1
-
-#     response.write(json.dumps(response_content))
-
-#     return response
+@require_http_methods(["POST"])
+def new_task(request):
+    response = HttpResponse()
+    try:
+        res = requests.post(
+            url="http://127.0.0.1:4701/rest/mlservice/v0/task/insert",
+            data=request.body.decode("utf-8")
+        )
+        response.write(json.dumps(res.json()))
+        return response
+    except Exception as e:
+        response.write(e)
+        return response
 
 @require_http_methods(["GET"])
 def overview_submissions(request):
