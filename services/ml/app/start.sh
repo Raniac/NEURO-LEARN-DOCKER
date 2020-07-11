@@ -1,4 +1,3 @@
-# service redis-server start;
 cd /ml/app;
 export C_FORCE_ROOT=true;
 nohup celery worker -A main.celery --loglevel=info >> celery.log &
