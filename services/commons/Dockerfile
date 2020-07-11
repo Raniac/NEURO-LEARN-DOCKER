@@ -1,4 +1,4 @@
-FROM nld-ml:base
+FROM neuro-learn-env:commons
 
 ADD . /commons/
 
