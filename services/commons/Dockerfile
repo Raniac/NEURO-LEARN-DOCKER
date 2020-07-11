@@ -1,5 +1,5 @@
 FROM neuro-learn-env:commons
 
-ADD . /commons/
+ADD . /nls-commons/
 
-CMD ["sh","/commons/app/start.sh"]
+CMD ["sh","/nls-commons/app/start.sh"]

@@ -1,5 +1,5 @@
-FROM nld-sgn-env:pg
+FROM neuro-learn-env:sgn
 
-ADD . /nld_sgn/
+ADD . /nls-sgn/
 
-CMD ["sh","/nld_sgn/start.sh"]
+CMD ["sh","/nls-sgn/start.sh"]

@@ -1,9 +1,7 @@
-FROM raniac/neuro-learn-docker:base
-MAINTAINER raniac <leibingye@outlook.com>
+FROM nginx:stable
 
-WORKDIR /neuro-learn
-ADD . /neuro-learn/
+ADD . /nlw/
 
-RUN cp -f /neuro-learn/nginx.conf /etc/nginx
+RUN cp -f /nlw/nginx.conf /etc/nginx/
 
-CMD ["sh","/neuro-learn/start.sh"]
+CMD ["sh","/nlw/start.sh"]

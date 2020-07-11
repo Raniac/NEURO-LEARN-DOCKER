@@ -1,5 +1,5 @@
-FROM nld-ml:base
+FROM neuro-learn-env:ml
 
-ADD . /ml/
+ADD . /nls-ml/
 
-CMD ["sh","/ml/app/start.sh"]
+CMD ["sh","/nls-ml/app/start.sh"]

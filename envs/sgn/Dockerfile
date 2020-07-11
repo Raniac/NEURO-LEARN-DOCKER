@@ -1,4 +1,3 @@
-# FROM ubuntu-with-python:dev
 FROM imcomking/pytorch_geometric:latest
 
 RUN apt-get update \
