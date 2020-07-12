@@ -4,6 +4,12 @@
 
 NEURO-LEARN-DOCKER-SGN(NLD-SGN) is a dockerized application programming interface developed with [Flask](https://dormousehole.readthedocs.io/en/latest/), allowing users to run Schizo_Graph_Net models via the user interface provided by NEURO-LEARN-WEB.
 
+## Start ```neuro-learn-service:sgn``` Container
+
+```bash
+$ docker run -it --rm --network host neuro-learn-service:sgn
+```
+
 ## Design
 
 ### Overview
