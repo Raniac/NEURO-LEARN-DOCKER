@@ -503,14 +503,14 @@ def show_results(request):
             response_content['got_weights'] = 0
             if 'Predictions' in task_result_dict.keys():
                 predictions_list = pd.DataFrame.from_records(task_result_dict['Predictions'])
-                predictions_list.to_csv(path_or_buf='tmp/supplementary.csv', index=False)
+                predictions_list.to_csv(path_or_buf='supplementary.csv', index=False)
                 response_content['got_weights'] = 1
             if 'Feature Weights' in task_result_dict.keys():
                 feature_weights_list = pd.DataFrame.from_records(task_result_dict['Feature Weights'])
                 if 'Predictions' in task_result_dict.keys():
-                    feature_weights_list.to_csv(path_or_buf='tmp/supplementary.csv', index=False, mode='a+')
+                    feature_weights_list.to_csv(path_or_buf='supplementary.csv', index=False, mode='a+')
                 else:
-                    feature_weights_list.to_csv(path_or_buf='tmp/supplementary.csv', index=False)
+                    feature_weights_list.to_csv(path_or_buf='supplementary.csv', index=False)
                 response_content['got_weights'] = 1
 
             # response with image data if exists
@@ -524,7 +524,7 @@ def show_results(request):
                 plt.ylabel('Classification Accuracy')
                 plt.xlabel('Features Selected')
                 plt.title('Optimization Curve')
-                plt.savefig('tmp/optimization_curve.png', dpi=300)
+                plt.savefig('optimization_curve.png', dpi=300)
                 plt.close()
                 response_content['img_list'].append('optimization_curve.png')
             if 'ROC fpr' in task_result_dict.keys():
@@ -532,7 +532,7 @@ def show_results(request):
                 mean_fpr = np.linspace(0, 1, 100)
                 fpr = np.array(task_result_dict['ROC fpr'])
                 tpr = np.array(task_result_dict['ROC tpr'])
-                roc_auc = auc(fpr, tpr)
+                roc_auc = task_result_dict['Area Under Curve']
                 plt.plot(fpr, tpr,
                         label='AUC = %0.2f' % (roc_auc))
                 plt.plot([0, 1], [0, 1], linestyle='--', lw=2, color='r',
@@ -543,7 +543,7 @@ def show_results(request):
                 plt.ylabel('True Positive Rate')
                 plt.title('Receiver Operating Characteristic')
                 plt.legend(loc="lower right")
-                plt.savefig('tmp/ROC_curve.png', dpi=300)
+                plt.savefig('ROC_curve.png', dpi=300)
                 plt.close()
                 response_content['img_list'].append('ROC_curve.png')
 
@@ -552,8 +552,8 @@ def show_results(request):
         #     assert list(task_info)
         #     response_content['info'] = json.loads(serializers.serialize("json", task_info))
 
-        # response_content['msg'] = 'success'
-        # response_content['error_num'] = 0
+        response_content['msg'] = 'success'
+        response_content['error_num'] = 0
 
     except Exception as e:
         traceback.print_exc()
@@ -573,7 +573,7 @@ def show_img(request):
     img_name = request.GET.get('img_name')
 
     buf = io.BytesIO()
-    img = Image.open('tmp/' + img_name)
+    img = Image.open(img_name)
     img.save(buf, 'png')
 
     return HttpResponse(buf.getvalue(), 'image/png')
@@ -581,7 +581,7 @@ def show_img(request):
 @require_http_methods(["GET"])
 def download_feature_weights(request):
     task_id = request.GET.get('task_id')
-    feature_weights_file = open('tmp/supplementary.csv', 'rb')
+    feature_weights_file = open('supplementary.csv', 'rb')
     
     response = FileResponse(feature_weights_file)
     response['Content-Type']='application/octet-stream'

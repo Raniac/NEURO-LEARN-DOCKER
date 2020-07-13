@@ -202,7 +202,7 @@ export default {
       axios.post('/api/v0/new_task', JSON.stringify(this.newform))
         .then(response => {
           var res = response.data
-          if (res.error_num === 0) {
+          if (res.code === 200) {
             this.$router.replace({
               path: '/analysis/overview',
               component: resolve => require(['@/pages/analysis/overview'], resolve)
