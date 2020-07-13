@@ -373,7 +373,7 @@ def new_task(request):
     response = HttpResponse()
     try:
         res = requests.post(
-            url="http://127.0.0.1:4701/rest/mlservice/v0/task/insert",
+            url="http://ml.neurolearn.com:4701/rest/mlservice/v0/task/insert",
             data=request.body.decode("utf-8")
         )
         response.write(json.dumps(res.json()))

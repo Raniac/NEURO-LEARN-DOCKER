@@ -118,7 +118,7 @@ export default {
         sessionStorage.setItem('Username', 'admin')
         this.$router.push('/home')
       } else {
-        axios.get('http://120.79.49.129:1470/api/v0/login?username=' + this.loginForm.username + '&password=' + this.loginForm.password).then(response => {
+        axios.get('/api/v0/login?username=' + this.loginForm.username + '&password=' + this.loginForm.password).then(response => {
           // var DjangoToken = this.getCookie('sessionid')
           // var username = this.getCookie('username')
           var res = response.data
@@ -143,7 +143,7 @@ export default {
     },
     handleRegister () {
       console.log(JSON.stringify(this.registerForm))
-      axios.post('http://120.79.49.129:1470/api/v0/register', JSON.stringify(this.registerForm))
+      axios.post('/api/v0/register', JSON.stringify(this.registerForm))
         .then(response => {
           var res = response.data
           console.log(res.error_num)
