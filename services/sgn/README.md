@@ -10,6 +10,12 @@ NEURO-LEARN-DOCKER-SGN(NLD-SGN) is a dockerized application programming interfac
 $ docker run -it --rm --network host neuro-learn-service:sgn
 ```
 
+## Build ```neuro-learn-service:sgn``` Image
+
+```bash
+$ docker build -t neuro-learn-service:sgn .
+```
+
 ## Design
 
 ### Overview
