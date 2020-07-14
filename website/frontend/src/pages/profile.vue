@@ -2,7 +2,7 @@
   <div style="text-align: center">
     <div class="profile-area">
       <div class="profile-detail">
-        <img style="float: left; height: auto; width: 200px" src="https://raw.githubusercontent.com/Raniac/NEURO-LEARN/master/doc/img/lby.png">
+        <img style="float: left; height: auto; width: 200px" src="@/assets/img/joker.jpg">
         <div style="line-height: 28px">
           <span style="padding-left: 20px; font-family: Arial; font-weight: 200; font-size: 40px; color: #282828">Benny Ray</span><br/>
           <span style="padding-left: 20px; font-family: Arial; font-weight: 100; font-size: 20px; color: #505050">Master of Engineering | SCUT</span><br/>

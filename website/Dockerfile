@@ -1,6 +1,7 @@
 FROM nginx:stable
 
-ADD . /nlw/
+ADD ./nginx.conf /nlw/
+ADD ./frontend/dist /nlw/dist
 
 RUN cp -f /nlw/nginx.conf /etc/nginx/
 RUN mkdir /etc/nginx/html/
