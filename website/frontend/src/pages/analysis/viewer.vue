@@ -68,7 +68,7 @@
               </el-table>
               <el-button type="primary" style="margin-top: 28px" round @click="handleDownloadFeatureWeights" v-if="showDownloadButton">Download Supplementary</el-button>
               <li v-for="(img_name, index) in resultImgList" :key="index" style="list-style: none; text-align: center">
-                <img class="result-image" :src="'/api/v0/show_img?&img_name=' + img_name">
+                <img class="result-image" :src="'http://commons.neurolearn.com:1470/api/v0/show_img?&img_name=' + img_name">
               </li>
             </div>
           </div>
@@ -165,10 +165,10 @@ export default {
     },
     handleDownloadFeatureWeights () {
       console.log(this.taskid)
-      window.location.href = '/api/v0/download_feature_weights?task_id=' + this.taskid
+      window.location.href = 'http://commons.neurolearn.com:1470/api/v0/download_feature_weights?task_id=' + this.taskid
     },
     handleDownloadSigValues () {
-      window.location.href = '/api/v0/download_significance_values?task_id=' + this.taskid
+      window.location.href = 'http://commons.neurolearn.com:1470/api/v0/download_significance_values?task_id=' + this.taskid
     },
     showResults () {
       axios.get('/api/v0/show_results?analysis_type=' + this.analysisType + '&task_id=' + this.taskid)

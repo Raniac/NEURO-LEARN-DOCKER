@@ -70,7 +70,7 @@ export default {
       currpage: 1,
       search_input: '',
       proj_id: '',
-      upload_url: '/api/v0/upload_data?proj_id='
+      upload_url: 'http://commons.neurolearn.com:1470/api/v0/upload_data?proj_id='
     }
   },
   mounted: function () {
@@ -147,7 +147,7 @@ export default {
             this.$message.error(res['msg'])
             console.log(res['msg'])
           } else {
-            window.location.href = '/api/v0/download_data?data_id=' + row.fields.data_id
+            window.location.href = 'http://commons.neurolearn.com:1470/api/v0/download_data?data_id=' + row.fields.data_id
           }
         })
     },
