@@ -1,4 +1,4 @@
-FROM neuro-learn-env:ml
+FROM raniac/neuro-learn-env:ml
 
 ADD . /nls-ml/
 

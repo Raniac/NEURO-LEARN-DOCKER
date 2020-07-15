@@ -1,4 +1,4 @@
-FROM neuro-learn-env:sgn
+FROM raniac/neuro-learn-env:sgn
 
 ADD . /nls-sgn/
 
