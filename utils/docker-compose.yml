@@ -2,58 +2,27 @@ version: '2'
 
 services:
   website:
-    image:
-      image: 120.79.49.129:5000/neuro-learn-website:online
-      # restart: on-failure
-      hostname: website-server
-      ports:
-        - "80:80"
-      volumes:
-        - /home/raniac/dev/nld_sgn/models:/nld_sgn/models
-      # environment:
-      #   KAFKA_ADVERTISED_HOST_NAME: localhost
-      # depends_on:
-      #   - zoo1
-      container_name: service-commons
+    image: raniac/neuro-learn-website:dev
+    # restart: on-failure
+    network_mode: host
+    container_name: website-dev
 
   service-commons:
-    image: 120.79.49.129:5000/neuro-learn-service:commons
+    image: raniac/neuro-learn-service:commons
     # restart: on-failure
-    hostname: commons-server
-    ports:
-      - "1470:1470"
-    volumes:
-      - /home/raniac/dev/nld_sgn/models:/nld_sgn/models
-    # environment:
-    #   KAFKA_ADVERTISED_HOST_NAME: localhost
-    # depends_on:
-    #   - zoo1
+    network_mode: host
     container_name: service-commons
 
   service-ml:
-    image: 120.79.49.129:5000/neuro-learn-service:ml
+    image: raniac/neuro-learn-service:ml
     # restart: on-failure
-    hostname: ml-server
-    ports:
-      - "4701:4701"
-    volumes:
-      - /home/raniac/dev/nld_sgn/models:/nld_sgn/models
-    # environment:
-    #   KAFKA_ADVERTISED_HOST_NAME: localhost
-    # depends_on:
-    #   - zoo1
+    network_mode: host
     container_name: service-ml
 
   service-sgn:
-    image: 120.79.49.129:5000/neuro-learn-service:sgn
+    image: raniac/neuro-learn-service:sgn
     # restart: on-failure
-    hostname: sgn-server
-    ports:
-      - "7014:7014"
+    network_mode: host
     volumes:
-      - /home/raniac/dev/nld_sgn/models:/nld_sgn/models
-    # environment:
-    #   KAFKA_ADVERTISED_HOST_NAME: localhost
-    # depends_on:
-    #   - zoo1
+      - /home/raniac/dev/NEURO-LEARN-DOCKER/services/sgn/models:/nld_sgn/models
     container_name: service-sgn

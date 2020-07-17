@@ -18,7 +18,7 @@
 
 # docker push raniac/neuro-learn-env:commons;
 # docker push raniac/neuro-learn-env:ml;
-# docker push raniac/neuro-learn-env:sgn;
+docker push raniac/neuro-learn-env:sgn;
 
 ## !!!! INITIATE CONTAINERS FOR DEV !!!!
 
