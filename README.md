@@ -19,4 +19,5 @@ inet 192.168.51.148  netmask 255.255.255.0  broadcast 192.168.51.255
 
 ## More
 
-More information about NEURO-LEARN-DOCKER can be found in [NLD Documentation](https://github.com/Raniac/NEURO-LEARN-DOCKER/wiki).
+- More information about NEURO-LEARN-DOCKER can be found in [NLD Documentation](https://github.com/Raniac/NEURO-LEARN-DOCKER/wiki).
+- 中文文档请戳[这里](https://www.jianshu.com/p/067747c881ee)。
