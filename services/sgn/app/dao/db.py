@@ -115,6 +115,6 @@ def get_model_state_by_task_id(mysql, task_id):
         return e
 
 if __name__ == '__main__':
-    mysql = MYSQLDB(host="120.79.49.129", user="root", pwd="root", db="neurolearn")
+    mysql = MYSQLDB(host="db.neurolearn.com", user="root", pwd="root", db="neurolearn")
     resList = get_model_state_by_task_id(mysql, 'TASK20012911464300')
     print(json.loads(resList)['model_state_path'])

@@ -12,17 +12,6 @@ from config.settings import BASE_URL
 from config.settings import celery
 from service.TaskService import insertNewTask
 
-def parse_arg():
-    parser = argparse.ArgumentParser(description='nls-ml-main')
-    parser.add_argument('--host', dest='host', default='0.0.0.0')
-    parser.add_argument('--port', dest='port', default='80')
-    parser.add_argument('--db_host', dest='db_host', default='120.79.49.129')
-    parser.add_argument('--db_name', dest='db_name', default='neurolearn')
-    parser.add_argument('--db_user', dest='db_user', default='neurolearn')
-    parser.add_argument('--db_pwd', dest='db_pwd', default='nl4444_')
-    args = parser.parse_args()
-    return args
-
 ## Loggers
 # app.logger.debug('A value for debugging')
 # app.logger.info('An info for notice')

@@ -20,14 +20,14 @@ def parse_arg():
     parser = argparse.ArgumentParser(description='nld-sgn-main')
     parser.add_argument('--host', dest='host', default='0.0.0.0')
     parser.add_argument('--port', dest='port', default='80')
-    parser.add_argument('--db_host', dest='db_host', default='120.79.49.129')
+    parser.add_argument('--db_host', dest='db_host', default='db.neurolearn.com')
     parser.add_argument('--db_name', dest='db_name', default='neurolearn')
     parser.add_argument('--db_user', dest='db_user', default='neurolearn')
     parser.add_argument('--db_pwd', dest='db_pwd', default='nl4444_')
     args = parser.parse_args()
     return args
 
-DB = init_db(db_host='120.79.49.129', db_name='neurolearn', db_user='neurolearn', db_pwd='nl4444_')
+DB = init_db(db_host='db.neurolearn.com', db_name='neurolearn', db_user='neurolearn', db_pwd='nl4444_')
 
 ## Loggers
 # app.logger.debug('A value for debugging')
@@ -52,7 +52,6 @@ def new_task():
         task_form = json.loads(request.data.decode("utf-8"))
 
         ## task manipulation service - create a new task
-        # DB = init_db(db_host='120.79.49.129', db_name='neurolearn', db_user='neurolearn', db_pwd='nl4444_')
         task_form, task_config, status = create_new_task(DB, task_form)
         if status == 1:
             raise Exception('Database Error!')
@@ -83,7 +82,6 @@ def new_task():
 @app.route('/api/v0/test_db', methods=['GET'])
 def test_db():
     try:
-        # DB = init_db(db_host='120.79.49.129', db_name='neurolearn', db_user='neurolearn', db_pwd='nl4444_')
         fetched = get_data_by_data_name(DB, 'A_181210_140_SZ_sfMRI_AAL90')
         # app.logger.debug(len(fetched))
         return 'success'
@@ -92,7 +90,7 @@ def test_db():
 
 @celery.task
 def task_executor(taskid, tasktype, traindata, valdata, enabletest, testdata, model, paramset):
-    DB = init_db(db_host='120.79.49.129', db_name='neurolearn', db_user='neurolearn', db_pwd='nl4444_')
+    DB = init_db(db_host='db.neurolearn.com', db_name='neurolearn', db_user='neurolearn', db_pwd='nl4444_')
     ## data acquisition
     fetched_train_data = []
     for train_data_name in traindata:

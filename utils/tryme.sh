@@ -5,9 +5,9 @@
 # docker build -t raniac/neuro-learn-env:sgn ../envs/sgn/;
 
 # docker build -t raniac/neuro-learn-website:dev ../website/;
-# docker build -t raniac/neuro-learn-service:commons ../services/commons/;
-# docker build -t raniac/neuro-learn-service:ml ../services/ml/;
-# docker build -t raniac/neuro-learn-service:sgn ../services/sgn/;
+docker build -t raniac/neuro-learn-service:commons ../services/commons/;
+docker build -t raniac/neuro-learn-service:ml ../services/ml/;
+docker build -t raniac/neuro-learn-service:sgn ../services/sgn/;
 
 ## !!!! PUSH IMAGES !!!!
 
@@ -18,7 +18,7 @@
 
 # docker push raniac/neuro-learn-env:commons;
 # docker push raniac/neuro-learn-env:ml;
-docker push raniac/neuro-learn-env:sgn;
+# docker push raniac/neuro-learn-env:sgn;
 
 ## !!!! INITIATE CONTAINERS FOR DEV !!!!
 

@@ -98,7 +98,7 @@ DATABASES = {
         'NAME': 'neurolearn',
         'USER': 'neurolearn',
         'PASSWORD': 'nl4444_',
-        'HOST': '120.79.49.129',
+        'HOST': 'db.neurolearn.com',
         'PORT': '3306',
     }
 }
