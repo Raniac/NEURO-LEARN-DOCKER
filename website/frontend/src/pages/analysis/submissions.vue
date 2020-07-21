@@ -212,7 +212,7 @@ export default {
       this.showSubmissions()
     },
     showSubmissions () {
-      axios.get('/api/v0/show_submissions?analysis_type=' + this.analysisType + '&page_num=' + this.currpage)
+      axios.get('/rest/commons/v0/show_submissions?analysis_type=' + this.analysisType + '&page_num=' + this.currpage)
         .then(response => {
           var res = response.data
           if (res.error_num === 0) {

@@ -36,7 +36,7 @@ This project aims to containerize/dockerize Schizo_Graph_Net as a service of NEU
 #### *New Task*
 
 - Request Information
-  - Address: ```/api/v0/new_sgn_task```
+  - Address: ```/rest/sgnservice/v0/new_sgn_task```
   - Method: POST
 - Response Information
   - Type: HTTP

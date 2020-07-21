@@ -70,7 +70,7 @@ export default {
       currpage: 1,
       search_input: '',
       proj_id: '',
-      upload_url: 'http://commons.neurolearn.com:1470/api/v0/upload_data?proj_id='
+      upload_url: 'http://commons.neurolearn.com:1470/rest/commons/v0/upload_data?proj_id='
     }
   },
   mounted: function () {
@@ -92,7 +92,7 @@ export default {
   },
   methods: {
     showData () {
-      axios.get('/api/v0/show_data?proj_id=' + this.proj_id)
+      axios.get('/rest/commons/v0/show_data?proj_id=' + this.proj_id)
         .then(response => {
           var res = response.data
           if (res.error_num === 0) {
@@ -124,7 +124,7 @@ export default {
         confirmButtonText: 'Yes',
         cancelButtonText: 'No'
       }).then(() => {
-        axios.get('/api/v0/delete_data?proj_id=' + this.proj_id + '&data_id=' + row.fields.data_id)
+        axios.get('/rest/commons/v0/delete_data?proj_id=' + this.proj_id + '&data_id=' + row.fields.data_id)
           .then(response => {
             var res = response.data
             if (res.error_num === 0) {
@@ -139,15 +139,15 @@ export default {
     },
     handleDownload (row) {
       console.log(row.fields.data_id)
-      // window.location.href = '/api/v0/download_data?data_id=' + row.fields.data_id
-      axios.get('/api/v0/download_data?data_id=' + row.fields.data_id)
+      // window.location.href = '/rest/commons/v0/download_data?data_id=' + row.fields.data_id
+      axios.get('/rest/commons/v0/download_data?data_id=' + row.fields.data_id)
         .then(response => {
           var res = response.data
           if (res.error_num === 1) {
             this.$message.error(res['msg'])
             console.log(res['msg'])
           } else {
-            window.location.href = 'http://commons.neurolearn.com:1470/api/v0/download_data?data_id=' + row.fields.data_id
+            window.location.href = 'http://commons.neurolearn.com:1470/rest/commons/v0/download_data?data_id=' + row.fields.data_id
           }
         })
     },

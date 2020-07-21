@@ -44,7 +44,7 @@ def intro():
     '''
     return intro_cont
 
-@app.route('/api/v0/new_sgn_task', methods=['POST'])
+@app.route('/rest/sgnservice/v0/new_sgn_task', methods=['POST'])
 def new_task():
     response_content = {}
 
@@ -79,7 +79,7 @@ def new_task():
 
     return jsonify(response_content)
 
-@app.route('/api/v0/test_db', methods=['GET'])
+@app.route('/rest/sgnservice/v0/test_db', methods=['GET'])
 def test_db():
     try:
         fetched = get_data_by_data_name(DB, 'A_181210_140_SZ_sfMRI_AAL90')
