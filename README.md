@@ -12,7 +12,7 @@ root@machine:/$ echo "120.79.49.129 commons.neurolearn.com" >> /etc/host
 
 ## NEURO-LEARN-DOCKER Layout
 
-![layout](doc/NLD_Layout.png)
+![layout](doc/NLD.png)
 
 ## More
 
