@@ -11,12 +11,16 @@ services:
     image: raniac/neuro-learn-service:commons
     # restart: on-failure
     network_mode: host
+    volumes:
+      - /opt/nls/commons/log:/nls-commons/log
     container_name: service-commons
 
   service-ml:
     image: raniac/neuro-learn-service:ml
     # restart: on-failure
     network_mode: host
+    volumes:
+      - /opt/nls/ml/log:/nls-ml/log
     container_name: service-ml
 
   service-sgn:
@@ -24,5 +28,6 @@ services:
     # restart: on-failure
     network_mode: host
     volumes:
-      - /home/raniac/dev/NEURO-LEARN-DOCKER/services/sgn/models:/nld_sgn/models
+      - /opt/nls/sgn/log:/nls-sgn/log
+      - /opt/nls/sgn/models:/nls-sgn/models
     container_name: service-sgn
