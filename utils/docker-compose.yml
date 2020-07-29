@@ -5,6 +5,8 @@ services:
     image: raniac/neuro-learn-website:dev
     # restart: on-failure
     network_mode: host
+    volumes:
+      - /opt/nlw/log:/nlw/log
     container_name: website-dev
 
   service-commons:
