@@ -1,5 +1,7 @@
 # NEURO-LEARN-DOCKER
 
+Before you start, feel free to read our [article](https://www.jianshu.com/p/06f0451463fe) about NLD! :-)
+
 ## Quick Start
 
 ```bash
