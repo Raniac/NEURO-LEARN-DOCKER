@@ -22,6 +22,6 @@
 
 ## !!!! INITIATE CONTAINERS FOR DEV !!!!
 
-# docker run -it --rm --network host -v /home/raniac/dev/NEURO-LEARN-DOCKER/services/commons:/nls-commons neuro-learn-service:commons /bin/bash
-# docker run -it --rm --network host -v /home/raniac/dev/NEURO-LEARN-DOCKER/services/ml:/nls-ml neuro-learn-service:ml /bin/bash
-# docker run -it --rm --network host -v /home/raniac/dev/NEURO-LEARN-DOCKER/services/sgn:/nls-sgn neuro-learn-service:sgn /bin/bash
+# docker run -it --rm --network host -v /home/raniac/dev/NEURO-LEARN-DOCKER/services/commons:/nls-commons raniac/neuro-learn-service:commons /bin/bash
+# docker run -it --rm --network host -v /home/raniac/dev/NEURO-LEARN-DOCKER/services/ml:/nls-ml raniac/neuro-learn-service:ml /bin/bash
+# docker run -it --rm --network host -v /home/raniac/dev/NEURO-LEARN-DOCKER/services/sgn:/nls-sgn raniac/neuro-learn-service:sgn /bin/bash
