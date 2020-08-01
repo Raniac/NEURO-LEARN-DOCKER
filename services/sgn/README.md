@@ -1,24 +1,72 @@
-# NEURO-LEARN-SERVICE-SGN
+# NEURO-LEARN-SERVICE
 
-## Introduction
+## ```commons```
+
+### Start ```raniac/neuro-learn-service:commons``` Container
+
+```bash
+$ docker run -it --rm --network host raniac/neuro-learn-service:commons
+```
+
+### Build ```raniac/neuro-learn-service:commons``` Image
+
+```bash
+$ docker build -t raniac/neuro-learn-service:commons .
+```
+
+### Initiate ```raniac/neuro-learn-service:commons``` Container for Dev
+
+```bash
+$ docker run -it --rm --network host -v /home/raniac/dev/NEURO-LEARN-DOCKER/services/commons:/nls-commons raniac/neuro-learn-service:commons /bin/bash
+```
+
+## ```ml```
+
+### Start ```raniac/neuro-learn-service:ml``` Container
+
+```bash
+$ docker run -it --rm --network host raniac/neuro-learn-service:ml
+```
+
+### Build ```raniac/neuro-learn-service:ml``` Image
+
+```bash
+$ docker build -t raniac/neuro-learn-service:ml .
+```
+
+### Initiate ```raniac/neuro-learn-service:ml``` Container for Dev
+
+```bash
+$ docker run -it --rm --network host -v /home/raniac/dev/NEURO-LEARN-DOCKER/services/ml:/nls-ml raniac/neuro-learn-service:ml /bin/bash
+```
+
+## ```sgn```
+
+### Introduction
 
 NEURO-LEARN-DOCKER-SGN(NLD-SGN) is a dockerized application programming interface developed with [Flask](https://dormousehole.readthedocs.io/en/latest/), allowing users to run Schizo_Graph_Net models via the user interface provided by NEURO-LEARN-WEB.
 
-## Start ```neuro-learn-service:sgn``` Container
+### Start ```raniac/neuro-learn-service:sgn``` Container
 
 ```bash
-$ docker run -it --rm --network host neuro-learn-service:sgn
+$ docker run -it --rm --network host raniac/neuro-learn-service:sgn
 ```
 
-## Build ```neuro-learn-service:sgn``` Image
+### Build ```raniac/neuro-learn-service:sgn``` Image
 
 ```bash
-$ docker build -t neuro-learn-service:sgn .
+$ docker build -t raniac/neuro-learn-service:sgn .
 ```
 
-## Design
+### Initiate ```raniac/neuro-learn-service:sgn``` Container for Dev
 
-### Overview
+```bash
+$ docker run -it --rm --network host -v /home/raniac/dev/NEURO-LEARN-DOCKER/services/sgn:/nls-sgn raniac/neuro-learn-service:sgn /bin/bash
+```
+
+### Design
+
+#### Overview
 
 This project aims to containerize/dockerize Schizo_Graph_Net as a service of NEURO-LEARN, developed with Flask.
 
@@ -31,9 +79,9 @@ This project aims to containerize/dockerize Schizo_Graph_Net as a service of NEU
 - Local deployment and container management are realized with docker-compose;
 - Clustered computing services are implemented by kubernetes;
 
-### API Definition
+#### API Definition
 
-#### *New Task*
+##### *New Task*
 
 - Request Information
   - Address: ```/rest/sgnservice/v0/new_sgn_task```
