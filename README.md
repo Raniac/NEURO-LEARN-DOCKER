@@ -15,6 +15,8 @@ root@machine:/$ echo "{host ip for sgn-service} sgn.neurolearn.com" >> /etc/host
 root@machine:/$ echo "{host ip for db-server} db.neurolearn.com" >> /etc/host
 # Open a terminal on the host, change directory to NEURO-LEARN-DOCKER/utils
 user@machine:~/NEURO-LEARN-DOCKER/utils$ docker-compose -f docker-compose.yml up -d
+# To stop the containers
+user@machine:~/NEURO-LEARN-DOCKER/utils$ docker-compose stop
 ```
 
 ### Client Configuration
