@@ -17,6 +17,9 @@ root@machine:/$ echo "{host ip for db-server} db.neurolearn.com" >> /etc/host
 user@machine:~/NEURO-LEARN-DOCKER/utils$ docker-compose -f docker-compose.yml up -d
 ```
 
+> NOTE that NEURO-LEARN-DOCKER requires a deployed MySQL database server with corresponding tables.
+> Starting fresh, one needs to follow the instructions mentioned in [wiki](https://github.com/Raniac/NEURO-LEARN-DOCKER/wiki) to initiate the database.
+
 ### Client Configuration
 
 ```bash
@@ -26,9 +29,13 @@ root@machine:/$ echo "120.79.49.129 commons.neurolearn.com" >> /etc/host
 # VOILA!
 ```
 
-## NEURO-LEARN-DOCKER Layout
+## NLD Microservices Layout
 
 ![layout](doc/NLD.png)
+
+## NLD DevOps Solution
+
+![solution](doc/solution.png)
 
 ## More
 
