@@ -199,7 +199,7 @@ def upload_data(request):
     response_content = {}
     response = HttpResponse()
     try:
-        user_id = request.COOKIES.get('user_id')
+        user_id = request.GET.get('user_id')
         proj_id = request.GET.get('proj_id')
         data_file = request.FILES.get('datafile')
         data_id = 'DATA' + time.strftime('%Y%m%d%H%M%S')
@@ -220,7 +220,7 @@ def upload_data(request):
     
     except Exception as e:
         traceback.print_exc()
-        response_content['msg'] = str(e)
+        response_content['msg'] = 'existed'
         response_content['error_num'] = 1
 
     response.write(json.dumps(response_content))

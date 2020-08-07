@@ -77,7 +77,7 @@ export default {
     if (this.$route.query.projectid) {
       this.proj_id = this.$route.query.projectid
       this.showData()
-      this.upload_url += this.proj_id
+      this.upload_url += this.proj_id + '&user_id=' + sessionStorage.getItem('UserID')
     } else {
       this.$alert('Choose a project first!', 'Error!', {
         confirmButtonText: 'Confirm',
@@ -114,7 +114,7 @@ export default {
         this.showData()
         console.log(response)
       } else if (response.msg === 'existed') {
-        this.$message({showClose: true, message: 'File existed!', type: 'warning'})
+        this.$message({showClose: true, message: 'File existed or unknown error!', type: 'warning'})
         console.log(response)
       }
     },
