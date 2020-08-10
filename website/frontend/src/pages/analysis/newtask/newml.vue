@@ -157,7 +157,7 @@ export default {
       })
     },
     updateProjects () {
-      axios.get('/rest/commons/v0/show_project_overview')
+      axios.get('/rest/api/v0/show_project_overview')
         .then(response => {
           var res = response.data
           if (res.error_num === 0) {
@@ -182,7 +182,7 @@ export default {
       this.updateData()
     },
     updateData () {
-      axios.get('/rest/commons/v0/show_data?proj_id=' + this.selected_proj_id)
+      axios.get('/rest/api/v0/show_data?proj_id=' + this.selected_proj_id)
         .then(response => {
           var res = response.data
           if (res.error_num === 0) {
@@ -199,7 +199,7 @@ export default {
       this.newform.proj_name = this.selected_proj_label
       this.newform.proj_id = this.selected_proj_id
       console.log(JSON.stringify(this.newform))
-      axios.post('/rest/commons/v0/new_task', JSON.stringify(this.newform))
+      axios.post('/rest/api/v0/new_task', JSON.stringify(this.newform))
         .then(response => {
           var res = response.data
           if (res.code === 200) {

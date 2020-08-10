@@ -2,7 +2,7 @@
   <div style="background-color: #FFFFFF; margin: 14px; padding: 14px">
     <el-upload
       class="upload-demo"
-      action="/rest/commons/upload_data"
+      action="/rest/api/upload_data"
       name="datafile"
       :on-change="handleChange"
       :on-success="uploadSuccess"

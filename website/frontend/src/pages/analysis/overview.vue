@@ -224,7 +224,7 @@ export default {
   },
   methods: {
     showSubmissions () {
-      axios.get('/rest/commons/v0/overview_submissions?analysis_type=' + this.analysisType)
+      axios.get('/rest/api/v0/overview_submissions?analysis_type=' + this.analysisType)
         .then(response => {
           var res = response.data
           if (res.error_num === 0) {

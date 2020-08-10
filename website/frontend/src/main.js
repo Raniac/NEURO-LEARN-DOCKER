@@ -12,7 +12,7 @@ import axios from 'axios'
 
 axios.defaults.withCredentials = true
 axios.defaults.credentials = 'include'
-axios.defaults.baseURL = 'http://commons.neurolearn.com:1470/'
+axios.defaults.baseURL = 'http://api.neurolearn.com:1470/'
 
 Vue.config.productionTip = false
 

@@ -54,7 +54,7 @@ export default {
   },
   methods: {
     showProjectOverview () {
-      axios.get('/rest/commons/v0/show_project_overview')
+      axios.get('/rest/api/v0/show_project_overview')
         .then(response => {
           var res = response.data
           if (res.error_num === 0) {

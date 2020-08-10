@@ -7,7 +7,7 @@
         </el-input>
         <el-upload
           class="upload-demo"
-          action="/rest/commons/upload_data"
+          action="/rest/api/upload_data"
           name="datafile"
           style="float: right"
           :on-change="handleChange"
@@ -66,7 +66,7 @@ export default {
   },
   methods: {
     showData () {
-      axios.get('/rest/commons/show_data')
+      axios.get('/rest/api/show_data')
         .then(response => {
           var res = response.data
           if (res.error_num === 0) {

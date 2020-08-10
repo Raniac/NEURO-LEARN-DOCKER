@@ -1,2 +1,2 @@
-cd /nls-commons/app;
+cd /nls-api/app;
 uwsgi --ini uwsgi.ini;

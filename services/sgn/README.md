@@ -1,23 +1,23 @@
 # NEURO-LEARN-SERVICE
 
-## ```commons```
+## ```api```
 
-### Start ```raniac/neuro-learn-service:commons``` Container
+### Start ```raniac/neuro-learn-service:api``` Container
 
 ```bash
-$ docker run -it --rm --network host raniac/neuro-learn-service:commons
+$ docker run -it --rm --network host raniac/neuro-learn-service:api
 ```
 
-### Build ```raniac/neuro-learn-service:commons``` Image
+### Build ```raniac/neuro-learn-service:api``` Image
 
 ```bash
-$ docker build -t raniac/neuro-learn-service:commons .
+$ docker build -t raniac/neuro-learn-service:api .
 ```
 
-### Initiate ```raniac/neuro-learn-service:commons``` Container for Dev
+### Initiate ```raniac/neuro-learn-service:api``` Container for Dev
 
 ```bash
-$ docker run -it --rm --network host -v /home/raniac/dev/NEURO-LEARN-DOCKER/services/commons:/nls-commons raniac/neuro-learn-service:commons /bin/bash
+$ docker run -it --rm --network host -v /home/raniac/dev/NEURO-LEARN-DOCKER/services/api:/nls-api raniac/neuro-learn-service:api /bin/bash
 ```
 
 ## ```ml```

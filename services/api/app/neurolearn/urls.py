@@ -22,7 +22,7 @@ from neurolearn import settings
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
-    url(r'^rest/commons/', include(backend.urls)),
+    url(r'^rest/api/', include(backend.urls)),
     url(r'^$', TemplateView.as_view(template_name="index.html")),
     url(r'^favicon.ico$', RedirectView.as_view(url=settings.STATIC_URL + r'favicon.ico')),
 ]

@@ -9,13 +9,13 @@ services:
       - /opt/nlw/log:/nlw/log
     container_name: website-dev
 
-  service-commons:
-    image: raniac/neuro-learn-service:commons
+  service-api:
+    image: raniac/neuro-learn-service:api
     # restart: on-failure
     network_mode: host
     volumes:
-      - /opt/nls/commons/log:/nls-commons/log
-    container_name: service-commons
+      - /opt/nls/api/log:/nls-api/log
+    container_name: service-api
 
   service-ml:
     image: raniac/neuro-learn-service:ml

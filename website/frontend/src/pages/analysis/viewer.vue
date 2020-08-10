@@ -68,7 +68,7 @@
               </el-table>
               <el-button type="primary" style="margin-top: 28px" round @click="handleDownloadFeatureWeights" v-if="showDownloadButton">Download Supplementary</el-button>
               <li v-for="(img_name, index) in resultImgList" :key="index" style="list-style: none; text-align: center">
-                <img class="result-image" :src="'http://commons.neurolearn.com:1470/rest/commons/v0/show_img?&img_name=' + img_name">
+                <img class="result-image" :src="'http://api.neurolearn.com:1470/rest/api/v0/show_img?&img_name=' + img_name">
               </li>
             </div>
           </div>
@@ -116,7 +116,7 @@
               </div>
               <el-button type="primary" style="margin-top: 0px" round @click="handleDownloadSigValues" v-if="showDownloadButton">Download Significance Values</el-button>
               <!-- <li v-for="(img_name, index) in resultImgList" :key="index" style="list-style: none; text-align: center">
-                <img class="result-image" :src="'/rest/commons/show_img?task_id=' + taskid + '&img_name=' + img_name">
+                <img class="result-image" :src="'/rest/api/show_img?task_id=' + taskid + '&img_name=' + img_name">
               </li> -->
             </div>
           </div>
@@ -165,13 +165,13 @@ export default {
     },
     handleDownloadFeatureWeights () {
       console.log(this.taskid)
-      window.location.href = 'http://commons.neurolearn.com:1470/rest/commons/v0/download_feature_weights?task_id=' + this.taskid
+      window.location.href = 'http://api.neurolearn.com:1470/rest/api/v0/download_feature_weights?task_id=' + this.taskid
     },
     handleDownloadSigValues () {
-      window.location.href = 'http://commons.neurolearn.com:1470/rest/commons/v0/download_significance_values?task_id=' + this.taskid
+      window.location.href = 'http://api.neurolearn.com:1470/rest/api/v0/download_significance_values?task_id=' + this.taskid
     },
     showResults () {
-      axios.get('/rest/commons/v0/show_results?analysis_type=' + this.analysisType + '&task_id=' + this.taskid)
+      axios.get('/rest/api/v0/show_results?analysis_type=' + this.analysisType + '&task_id=' + this.taskid)
         .then(response => {
           var res = response.data
           console.log(res)
