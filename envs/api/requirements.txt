@@ -1,4 +1,4 @@
-Django==2.1.7
+Django==2.2.13
 django-cors-headers==2.5.2
 django-redis==4.10.0
 django-redis-sessions==0.6.1
