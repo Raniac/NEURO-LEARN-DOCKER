@@ -25,3 +25,7 @@
 # docker run -it --rm --network host -v /home/raniac/dev/NEURO-LEARN-DOCKER/services/api:/nls-api raniac/neuro-learn-service:api /bin/bash
 # docker run -it --rm --network host -v /home/raniac/dev/NEURO-LEARN-DOCKER/services/ml:/nls-ml raniac/neuro-learn-service:ml /bin/bash
 # docker run -it --rm --network host -v /home/raniac/dev/NEURO-LEARN-DOCKER/services/sgn:/nls-sgn raniac/neuro-learn-service:sgn /bin/bash
+
+## !!!! REMOVE IMAGES WITHOUT TAGS !!!!
+
+# docker images | grep none | awk '{print $3}' | xargs docker rmi
