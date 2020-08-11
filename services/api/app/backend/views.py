@@ -291,7 +291,7 @@ def download_data(request):
         if len(data_cont_query) == 0:
             raise Exception('Oops! No access!')
         data_cont = list(data_cont_query)[0]['data_cont']
-        pd.read_json(data_cont).to_csv(data_path)
+        pd.read_json(data_cont).to_csv(data_path, index=False)
         data_file = open(data_path, 'rb')
         
         response = FileResponse(data_file)
