@@ -70,6 +70,7 @@ const router = new Router({
     },
     {
       path: '/analysis/viewer',
+      name: 'viewer',
       component: analysisViewer
     },
     {

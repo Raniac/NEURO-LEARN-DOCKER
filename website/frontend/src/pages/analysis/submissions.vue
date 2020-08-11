@@ -270,8 +270,8 @@ export default {
         })
       } else {
         this.$router.push({
-          path: '/analysis/viewer',
-          query: {analysisType: this.analysisType, taskSelections: this.multipleSelections}
+          name: 'viewer',
+          params: {analysisType: this.analysisType, taskSelections: this.multipleSelections}
         })
       }
     },

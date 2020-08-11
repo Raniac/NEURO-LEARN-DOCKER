@@ -130,21 +130,21 @@
 import axios from 'axios'
 export default {
   mounted () {
-    if (this.$route.query.taskSelections) {
-      this.taskSelections = this.$route.query.taskSelections
+    if (this.$route.params.taskSelections) {
+      this.taskSelections = this.$route.params.taskSelections
       this.taskSelection = this.taskSelections[0]
       this.taskid = this.taskSelection.fields.task_id
       this.tasktype = this.taskSelection.fields.task_type
       this.tabsValue = this.taskid
-      this.analysisType = this.$route.query.analysisType
+      this.analysisType = this.$route.params.analysisType
       this.showResults()
-    } else if (this.$route.query.taskid) {
-      this.taskid = this.$route.query.taskid
-      this.tasktype = this.$route.query.tasktype
+    } else if (this.$route.params.taskid) {
+      this.taskid = this.$route.params.taskid
+      this.tasktype = this.$route.params.tasktype
       this.taskSelections = {0: {fields: {task_id: this.taskid}}}
       this.taskSelection = this.taskSelections[0]
       this.tabsValue = this.taskid
-      this.analysisType = this.$route.query.analysisType
+      this.analysisType = this.$route.params.analysisType
       this.showResults()
     } else {
       this.$alert('There is no report to view!', 'Error!', {
