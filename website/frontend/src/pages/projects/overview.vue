@@ -54,7 +54,7 @@ export default {
   },
   methods: {
     showProjectOverview () {
-      axios.get('/rest/api/v0/show_project_overview' + '&user_id=' + sessionStorage.getItem('UserID'))
+      axios.get('/rest/api/v0/show_project_overview?user_id=' + sessionStorage.getItem('UserID'))
         .then(response => {
           var res = response.data
           if (res.error_num === 0) {
