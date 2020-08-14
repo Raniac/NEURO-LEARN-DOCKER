@@ -112,7 +112,7 @@ def show_project_overview(request):
     response_content = {}
     response = HttpResponse()
     try:
-        user_id = request.COOKIES.get('user_id')
+        user_id = request.GET.get('user_id')
         proj_ids = User_Proj_Auth.objects.filter(user_id=user_id).values('proj_id')
         proj_id_list = []
         for itm in proj_ids:
@@ -152,7 +152,7 @@ def join_project(request):
     response = HttpResponse()
     try:
         proj_id = request.GET.get('proj_id')
-        user_id = request.COOKIES.get('user_id')
+        user_id = request.GET.get('user_id')
         if len(User_Proj_Auth.objects.filter(proj_id=proj_id, user_id=user_id)) == 0:
             auth_rec = User_Proj_Auth(
                 user_id=user_id,
@@ -178,7 +178,7 @@ def quit_project(request):
     response = HttpResponse()
     try:
         proj_id = request.GET.get('proj_id')
-        user_id = request.COOKIES.get('user_id')
+        user_id = request.GET.get('user_id')
         if len(User_Proj_Auth.objects.filter(proj_id=proj_id, user_id=user_id)) == 1:
             User_Proj_Auth.objects.filter(proj_id=proj_id, user_id=user_id).delete()
         else:
@@ -266,7 +266,7 @@ def delete_data(request):
     try:
         proj_id = request.GET.get('proj_id')
         data_id = request.GET.get('data_id')
-        user_id = request.COOKIES.get('user_id')
+        user_id = request.GET.get('user_id')
         if len(Datasets.objects.filter(proj_id=proj_id, data_id=data_id, user_id=user_id)) == 0:
             raise Exception('Oops! No access!')
         Datasets.objects.filter(proj_id=proj_id, data_id=data_id, user_id=user_id).delete()
@@ -285,7 +285,7 @@ def delete_data(request):
 def download_data(request):
     try:
         data_id = request.GET.get('data_id')
-        user_id = request.COOKIES.get('user_id')
+        user_id = request.GET.get('user_id')
         data_path = data_id + '.csv'
         data_cont_query = Datasets.objects.filter(data_id=data_id, user_id=user_id).values('data_cont')
         if len(data_cont_query) == 0:
@@ -312,7 +312,7 @@ def new_project(request):
     response_content = {}
     try:
         postBody = json.loads(request.body.decode("utf-8"))
-        user_id = request.COOKIES.get('user_id')
+        user_id = request.GET.get('user_id')
         proj_id = 'PROJ' + time.strftime('%Y%m%d%H%M%S')
         label = postBody.get('label')
         title = postBody.get('title')
@@ -352,7 +352,7 @@ def delete_project(request):
     response = HttpResponse()
     try:
         proj_id = request.GET.get('proj_id')
-        user_id = request.COOKIES.get('user_id')
+        user_id = request.GET.get('user_id')
         if len(Projects.objects.filter(proj_id=proj_id, admin_id=user_id)) == 0:
             raise Exception('Oops! No access!')
         Projects.objects.filter(proj_id=proj_id, admin_id=user_id).delete()
@@ -387,12 +387,12 @@ def overview_submissions(request):
     response_content = {}
     response = HttpResponse()
     try:
-        print(request.COOKIES.get('sessionid'))
-        print(request.COOKIES.get('username'))
-        print(request.COOKIES.get('user_id'))
+        # print(request.GET.get('sessionid'))
+        print(request.GET.get('username'))
+        print(request.GET.get('user_id'))
 
         analysis_type = request.GET.get('analysis_type')
-        user_id = request.COOKIES.get('user_id')
+        user_id = request.GET.get('user_id')
         proj_ids = User_Proj_Auth.objects.filter(user_id=user_id).values('proj_id')
         proj_id_list = []
         for itm in proj_ids:
@@ -433,7 +433,7 @@ def show_submissions(request):
         analysis_type = request.GET.get('analysis_type')
         page_num = int(request.GET.get('page_num'))
         page_size = 10
-        user_id = request.COOKIES.get('user_id')
+        user_id = request.GET.get('user_id')
         proj_ids = User_Proj_Auth.objects.filter(user_id=user_id).values('proj_id')
         proj_id_list = []
         for itm in proj_ids:

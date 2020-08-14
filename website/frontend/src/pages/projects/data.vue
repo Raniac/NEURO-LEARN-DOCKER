@@ -124,7 +124,7 @@ export default {
         confirmButtonText: 'Yes',
         cancelButtonText: 'No'
       }).then(() => {
-        axios.get('/rest/api/v0/delete_data?proj_id=' + this.proj_id + '&data_id=' + row.fields.data_id)
+        axios.get('/rest/api/v0/delete_data?proj_id=' + this.proj_id + '&data_id=' + row.fields.data_id + '&user_id=' + sessionStorage.getItem('UserID'))
           .then(response => {
             var res = response.data
             if (res.error_num === 0) {
@@ -140,14 +140,14 @@ export default {
     handleDownload (row) {
       console.log(row.fields.data_id)
       // window.location.href = '/rest/api/v0/download_data?data_id=' + row.fields.data_id
-      axios.get('/rest/api/v0/download_data?data_id=' + row.fields.data_id)
+      axios.get('/rest/api/v0/download_data?data_id=' + row.fields.data_id + '&user_id=' + sessionStorage.getItem('UserID'))
         .then(response => {
           var res = response.data
           if (res.error_num === 1) {
             this.$message.error(res['msg'])
             console.log(res['msg'])
           } else {
-            window.location.href = 'http://api.neurolearn.com:1470/rest/api/v0/download_data?data_id=' + row.fields.data_id
+            window.location.href = 'http://api.neurolearn.com:1470/rest/api/v0/download_data?data_id=' + row.fields.data_id + '&user_id=' + sessionStorage.getItem('UserID')
           }
         })
     },

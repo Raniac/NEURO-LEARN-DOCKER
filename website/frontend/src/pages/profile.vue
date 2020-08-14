@@ -164,7 +164,7 @@ export default {
   },
   methods: {
     showJoinedProjects () {
-      axios.get('/rest/api/v0/show_project_overview')
+      axios.get('/rest/api/v0/show_project_overview?user_id=' + sessionStorage.getItem('UserID'))
         .then(response => {
           var res = response.data
           if (res.error_num === 0) {
@@ -192,7 +192,7 @@ export default {
         })
     },
     handleJoin (row) {
-      axios.get('/rest/api/v0/join_project?proj_id=' + row.fields.proj_id)
+      axios.get('/rest/api/v0/join_project?proj_id=' + row.fields.proj_id + '&user_id=' + sessionStorage.getItem('UserID'))
         .then(response => {
           var res = response.data
           if (res.error_num === 0) {
@@ -211,7 +211,7 @@ export default {
         confirmButtonText: 'Yes',
         cancelButtonText: 'No'
       }).then(() => {
-        axios.get('/rest/api/v0/delete_project?proj_id=' + row.fields.proj_id)
+        axios.get('/rest/api/v0/delete_project?proj_id=' + row.fields.proj_id + '&user_id=' + sessionStorage.getItem('UserID'))
           .then(response => {
             var res = response.data
             if (res.error_num === 0) {

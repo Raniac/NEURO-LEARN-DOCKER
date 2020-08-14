@@ -54,7 +54,7 @@ export default {
   },
   methods: {
     showSubmissions () {
-      axios.get('/rest/api/v0/overview_submissions?analysis_type=' + 'Machine Learning')
+      axios.get('/rest/api/v0/overview_submissions?analysis_type=Machine Learning&user_id=' + sessionStorage.getItem('UserID'))
         .then(response => {
           var res = response.data
           if (res.error_num === 0) {
