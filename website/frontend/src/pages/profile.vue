@@ -226,7 +226,7 @@ export default {
       }).catch(() => {})
     },
     handleQuit (row) {
-      axios.get('/rest/api/v0/quit_project?proj_id=' + row.fields.proj_id)
+      axios.get('/rest/api/v0/quit_project?proj_id=' + row.fields.proj_id + '&user_id=' + sessionStorage.getItem('UserID'))
         .then(response => {
           var res = response.data
           if (res.error_num === 0) {
