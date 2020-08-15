@@ -4,13 +4,13 @@
       <div class="profile-detail">
         <img style="float: left; height: auto; width: 200px" src="@/assets/img/joker.jpg">
         <div style="line-height: 28px">
-          <span style="padding-left: 20px; font-family: Arial; font-weight: 200; font-size: 40px; color: #282828">Benny Ray</span><br/>
+          <span style="padding-left: 20px; font-family: Arial; font-weight: 200; font-size: 40px; color: #282828">BINGYE LEI</span><br/>
           <span style="padding-left: 20px; font-family: Arial; font-weight: 100; font-size: 20px; color: #505050">Master of Engineering | SCUT</span><br/>
-          <span style="padding-left: 20px; font-family: Arial; font-weight: 100; font-size: 20px; color: #505050">Interests:  Artificial Intelligence & Neuro-Informatics</span><br/>
+          <span style="padding-left: 20px; font-family: Arial; font-weight: 100; font-size: 20px; color: #505050">Interests:  Artificial Intelligence & Neuroinformatics</span><br/>
         </div>
         <div style="margin-top: 16px; line-height: 28px">
-          <a class="github-link" href="https://github.com/Raniac/NEURO-LEARN" target="_blank"><i class="el-icon-folder"></i> NEURO-LEARN</a><br/>
-          <a class="github-link" href="https://github.com/Raniac" target="_blank"><i class="el-icon-user"></i> GitHub/Raniac</a><br/>
+          <a class="github-link" href="https://github.com/Raniac/NEURO-LEARN-DOCKER/" target="_blank"><i class="el-icon-folder"></i> GitHub/NEURO-LEARN-DOCKER</a><br/>
+          <a class="github-link" href="https://raniac.github.io/" target="_blank"><i class="el-icon-user"></i> Personal Website</a><br/>
           <a class="github-link" href="mailto:leibingye@outlook.com"><i class="el-icon-message"></i> leibingye@outlook.com</a>
         </div>
       </div>
@@ -261,8 +261,8 @@ export default {
     min-height: 200px;
     .github-link {
       padding-left: 20px;
-      font-family: Arial;
-      font-weight: 100;
+      font-family: monospace;
+      font-weight: 10;
       font-size: 20px;
       color: #282828;
       &:hover {

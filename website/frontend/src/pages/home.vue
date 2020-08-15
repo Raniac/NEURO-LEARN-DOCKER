@@ -55,6 +55,9 @@
         </div>
       </div>
     </div>
+    <div style="margin: 14px auto">
+      <img style="width: 800px" src="@/assets/img/scheme.png">
+    </div>
     <div style="text-align: center">
       <div style="margin: 14px auto; padding:14px; width: 772px; background-color: #FFFFFF; color: #505050; text-align: center">
         <div style="text-align: left; width: 700px; margin: 0 auto; font-family: 'Times New Roman', Times, serif; font-size: 18px">
@@ -64,12 +67,13 @@
         <div style="text-align: left; width: 700px; margin: 0 auto; font-family: 'Times New Roman', Times, serif; font-size: 18px">
           <p><a style="color: #00CCFF; font-weight: bold" href="https://github.com/Raniac/NEURO-LEARN/" target="_blank">NEURO-LEARN</a> is a solution for collaborative pattern analysis of neuroimaging data. Its collaboration scheme consists of four parts: projects, data, analysis, and reports. While data preparation workflows defined in projects reduce the high dimensionality of neuroimaging data by collaborative computation, pooling of derived data and sharing of pattern analysis workflows along with generated reports on the Web enlarge the sample size and ensure the reliability and reproducibility of pattern analysis. Incorporating this scheme, NEURO-LEARN provides an easy-to-use Web application that allows users from different sites to share projects and processed data, perform pattern analysis, and obtain result reports.</p>
           <p>Main functionalities of NEURO-LEARN was coded by Bingye Lei, who also wrote the first version of wiki. Should you encouter any problems when using NEURO-LEARN, please feel free to file an issue or contact <a style="color: #00CCFF; font-weight: bold" href="mailto:raniac@qq.com">raniac@qq.com</a>.</p>
-          <p>The code of NEURO-LEARN is distributed under Apache License 2.0. If you find our work useful and want to publish a study using NEURO-LEARN, we would appreciate it if you cited our paper.</p>
+          <p>The code of NEURO-LEARN is distributed under Apache License 2.0. If you find our work useful and want to publish a study using NEURO-LEARN, we would appreciate it if you cited our <a style="color: #00CCFF; font-weight: bold" href="https://doi.org/10.1007/s12021-020-09468-6" target="_blank">paper</a>.</p>
+          <p>Lei, B., Wu, F., Zhou, J. et al. NEURO-LEARN: a Solution for Collaborative Pattern Analysis of Neuroimaging Data. Neuroinform (2020). https://doi.org/10.1007/s12021-020-09468-6</p>
           <p>More information about NEURO-LEARN can be found in <a style="color: #00CCFF; font-weight: bold" href="https://github.com/Raniac/NEURO-LEARN/wiki/" target="_blank">NEURO-LEARN Documentation</a>.</p>
         </div>
         <div>
           <hr style="width: 750px" />
-            <p style="font-size: 14px; color: #505050">This application is part of NEURO-LEARN developed by Raniac from South China University of Technology.</p>
+            <p style="font-size: 14px; color: #505050">This application is part of NEURO-LEARN developed by Bingye Lei from South China University of Technology.</p>
         </div>
       </div>
     </div>
