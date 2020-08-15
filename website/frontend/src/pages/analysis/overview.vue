@@ -270,8 +270,8 @@ export default {
     },
     onRowClick (row) {
       this.$router.push({
-        path: '/analysis/viewer',
-        query: {taskid: row.fields.task_id, tasktype: row.fields.task_type, analysisType: this.analysisType}
+        name: 'viewer',
+        params: {taskid: row.fields.task_id, tasktype: row.fields.task_type, analysisType: this.analysisType}
       })
     }
   }

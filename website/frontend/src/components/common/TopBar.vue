@@ -80,8 +80,8 @@ export default {
     },
     onTaskClick (taskId, taskType) {
       this.$router.push({
-        path: '/analysis/viewer',
-        query: {taskid: taskId, tasktype: taskType, analysisType: 'Machine Learning'}
+        name: 'viewer',
+        params: {taskid: taskId, tasktype: taskType, analysisType: 'Machine Learning'}
       })
     },
     goToSubmissions () {
