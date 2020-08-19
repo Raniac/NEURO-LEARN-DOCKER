@@ -10,7 +10,7 @@
         </div>
         <div style="margin-top: 16px; line-height: 28px">
           <a class="github-link" href="https://github.com/Raniac/NEURO-LEARN-DOCKER/" target="_blank"><i class="el-icon-folder"></i> GitHub/NEURO-LEARN-DOCKER</a><br/>
-          <a class="github-link" href="https://raniac.github.io/" target="_blank"><i class="el-icon-user"></i> Personal Website</a><br/>
+          <a class="github-link" href="https://raniac.github.io/" target="_blank"><i class="el-icon-user"></i> Bingye's Personal Site</a><br/>
           <a class="github-link" href="mailto:leibingye@outlook.com"><i class="el-icon-message"></i> leibingye@outlook.com</a>
         </div>
       </div>
