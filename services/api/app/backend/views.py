@@ -524,9 +524,9 @@ def show_results(request):
                 plt.ylabel('Classification Accuracy')
                 plt.xlabel('Features Selected')
                 plt.title('Optimization Curve')
-                plt.savefig('optimization_curve.png', dpi=300)
+                plt.savefig('optimization_curve_' + task_id + '.png', dpi=300)
                 plt.close()
-                response_content['img_list'].append('optimization_curve.png')
+                response_content['img_list'].append('optimization_curve_' + task_id + '.png')
             if 'ROC fpr' in task_result_dict.keys():
                 plt.figure()
                 mean_fpr = np.linspace(0, 1, 100)
@@ -543,9 +543,9 @@ def show_results(request):
                 plt.ylabel('True Positive Rate')
                 plt.title('Receiver Operating Characteristic')
                 plt.legend(loc="lower right")
-                plt.savefig('ROC_curve.png', dpi=300)
+                plt.savefig('ROC_curve_' + task_id + '.png', dpi=300)
                 plt.close()
-                response_content['img_list'].append('ROC_curve.png')
+                response_content['img_list'].append('ROC_curve_' + task_id + '.png')
 
         # elif analysis_type == 'Statistical Analysis':
         #     task_info = Submissions_SA_Demo.objects.filter(task_id=task_id, task_status='Finished')
