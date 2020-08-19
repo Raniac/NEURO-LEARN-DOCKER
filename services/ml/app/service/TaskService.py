@@ -16,6 +16,7 @@ def insertNewTask(task_form):
         status: Success or not
     """
     counter = 0
+    task_name = task_form.get('task_name')
     for trans in task_form.get('feat_sel'):
         for estim in task_form.get('estimator'):
             task_config = {}
@@ -47,11 +48,10 @@ def insertNewTask(task_form):
                 'Lasso Regression': 'lasso',
                 'Ridge Regression': 'ridge'
             }
-            if not task_form.get('task_name'):
-                task_form['task_name'] = task_form['task_id'] + '_' + model_abbrs[trans] + '_' + model_abbrs[estim]
+            if task_name:
+                task_form['task_name'] = task_name + '_' + model_abbrs[trans] + '_' + model_abbrs[estim]
             else:
-                task_form['task_name'] = task_form.get('task_name') + '_' + model_abbrs[trans] + '_' + model_abbrs[estim]
-    
+                task_form['task_name'] = task_form['task_id'] + '_' + model_abbrs[trans] + '_' + model_abbrs[estim]
 
             taskDao = TaskDao()
             taskDao.insertNewTask(task_form)
