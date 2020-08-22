@@ -9,10 +9,10 @@ Before you start, feel free to read our [article](https://www.jianshu.com/p/06f0
 ```bash
 # In the case of standalone deployment, the following ips are the same
 # which is the ip of the deployed host
-root@machine:/$ echo "{host ip for api-service} api.neurolearn.com" >> /etc/host
-root@machine:/$ echo "{host ip for ml-service} ml.neurolearn.com" >> /etc/host
-root@machine:/$ echo "{host ip for sgn-service} sgn.neurolearn.com" >> /etc/host
-root@machine:/$ echo "{host ip for db-server} db.neurolearn.com" >> /etc/host
+root@machine:/$ echo "{host ip for api-service} api.neurolearn.com" >> /etc/hosts
+root@machine:/$ echo "{host ip for ml-service} ml.neurolearn.com" >> /etc/hosts
+root@machine:/$ echo "{host ip for sgn-service} sgn.neurolearn.com" >> /etc/hosts
+root@machine:/$ echo "{host ip for db-server} db.neurolearn.com" >> /etc/hosts
 # Open a terminal on the host, change directory to NEURO-LEARN-DOCKER/utils
 user@machine:~/NEURO-LEARN-DOCKER/utils$ docker-compose -f docker-compose.yml up -d
 # To stop the containers
@@ -26,7 +26,7 @@ user@machine:~/NEURO-LEARN-DOCKER/utils$ docker-compose stop
 
 ```bash
 # Configure the ip for api-service apis
-root@machine:/$ echo "120.79.49.129 api.neurolearn.com" >> /etc/host
+root@machine:/$ echo "120.79.49.129 api.neurolearn.com" >> /etc/hosts
 # open a browser and type the address '120.79.49.129'
 # VOILA!
 ```
