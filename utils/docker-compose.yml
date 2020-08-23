@@ -3,7 +3,7 @@ version: '2'
 services:
   website:
     image: raniac/neuro-learn-website:dev
-    # restart: on-failure
+    restart: on-failure
     network_mode: host
     volumes:
       - /opt/nlw/log:/nlw/log
@@ -11,7 +11,7 @@ services:
 
   service-api:
     image: raniac/neuro-learn-service:api
-    # restart: on-failure
+    restart: on-failure
     network_mode: host
     volumes:
       - /opt/nls/api/log:/nls-api/log
@@ -19,17 +19,17 @@ services:
 
   service-ml:
     image: raniac/neuro-learn-service:ml
-    # restart: on-failure
+    restart: on-failure
     network_mode: host
     volumes:
       - /opt/nls/ml/log:/nls-ml/log
     container_name: service-ml
 
-  service-sgn:
-    image: raniac/neuro-learn-service:sgn
-    # restart: on-failure
-    network_mode: host
-    volumes:
-      - /opt/nls/sgn/log:/nls-sgn/log
-      - /opt/nls/sgn/models:/nls-sgn/models
-    container_name: service-sgn
+  # service-sgn:
+  #   image: raniac/neuro-learn-service:sgn
+  #   # restart: on-failure
+  #   network_mode: host
+  #   volumes:
+  #     - /opt/nls/sgn/log:/nls-sgn/log
+  #     - /opt/nls/sgn/models:/nls-sgn/models
+  #   container_name: service-sgn
