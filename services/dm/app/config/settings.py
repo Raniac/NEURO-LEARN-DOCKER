@@ -1,8 +1,8 @@
 from fastapi import FastAPI
-from hdfs.client import Client
+from hdfs.client import InsecureClient
 
 app = FastAPI()
 
-client = Client("http://hdfs.neurolearn.com:50070")
+client = InsecureClient("http://hdfs.neurolearn.com:50070", user="hadoop")
 
 BASE_URL = "/rest/dmservice"
