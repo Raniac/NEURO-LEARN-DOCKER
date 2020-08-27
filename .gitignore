@@ -1,4 +1,4 @@
 .vscode
 *cache*
+services/api/env
 utils/dm/env
-utils/dm/app/tmp

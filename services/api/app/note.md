@@ -8,6 +8,7 @@
 
 - [API Documentation](https://hdfscli.readthedocs.io/en/latest/api.html)
 - [Python对HDFS的操作(一)](https://blog.csdn.net/ahilll/article/details/83377387)
+- [利用 python requests完成接口文件上传](https://www.cnblogs.com/liulinghua90/p/9676790.html)
 
 ## Run FastAPI Server
 
