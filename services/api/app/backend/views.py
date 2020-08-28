@@ -205,8 +205,11 @@ def upload_data(request):
         proj_id = request.GET.get('proj_id')
         data_file = request.FILES.get('datafile')
         data_id = 'DATA' + time.strftime('%Y%m%d%H%M%S')
-        data_name = data_file.name[:-4]
-        data_cont = handle_uploaded_file(data_file)
+        data_name = data_file.name
+        if data_name[:-4] == '.csv':
+            data_cont, hdfs_path = handle_uploaded_file(data_file, data_id, proj_id)
+        else:
+            data_cont, hdfs_path = '', ''
 
         dataset = Datasets(
             data_id=data_id,
@@ -229,7 +232,7 @@ def upload_data(request):
 
     return response
 
-def handle_uploaded_file(f):
+def handle_uploaded_file(f, data_id, proj_id):
     file_name = str(f.name)
     with open(file_name, 'wb+') as destination:
         for chunk in f.chunks():
@@ -238,9 +241,11 @@ def handle_uploaded_file(f):
     data_json = data_content.to_json()
 
     client = InsecureClient("http://hdfs.neurolearn.com:50070", user="hadoop")
-    client.upload("/neurolearn/files/datasets/", file_name)
+    hdfs_path = "/neurolearn/files/" + proj_id + "/datasets/" + data_id
+    client.makedirs(hdfs_path)
+    client.upload(hdfs_path, file_name)
     
-    return data_json
+    return data_json, hdfs_path
 
 @require_http_methods(["GET"])
 def show_data(request):
