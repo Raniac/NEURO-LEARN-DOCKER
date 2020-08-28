@@ -206,7 +206,7 @@ def upload_data(request):
         data_file = request.FILES.get('datafile')
         data_id = 'DATA' + time.strftime('%Y%m%d%H%M%S')
         data_name = data_file.name
-        if data_name[:-4] == '.csv':
+        if data_name[-4:] == '.csv':
             data_cont, hdfs_path = handle_uploaded_file(data_file, data_id, proj_id)
         else:
             data_cont, hdfs_path = '', ''
