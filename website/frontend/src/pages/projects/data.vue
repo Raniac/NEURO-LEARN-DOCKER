@@ -12,6 +12,16 @@
           :file-list="fileList">
           <el-button size="large" type="primary">Upload</el-button>
         </el-upload>
+        <div style="text-align: left; float: left">
+          <el-select v-model="selected_project.label" style="margin: 0 20px; width: 200px" placeholder="Select Project" @change="handelSelectionChange">
+            <el-option
+              v-for="project_option in project_options"
+              :key="project_option.fields.label"
+              :label="project_option.fields.label"
+              :value="project_option.fields.label">
+            </el-option>
+          </el-select>
+        </div>
         <el-input placeholder="Search data by name" v-model="search_input" class="input-with-select" style="width: 50%; float: right">
           <el-button slot="append" icon="el-icon-search"></el-button>
         </el-input>
@@ -64,33 +74,58 @@ import axios from 'axios'
 export default {
   data () {
     return {
+      selected_project: {
+        proj_id: '',
+        label: ''
+      },
       data_table: [],
       fileList: [],
       pagesize: 10,
       currpage: 1,
       search_input: '',
       proj_id: '',
-      upload_url: 'http://api.neurolearn.com:1470/rest/api/v0/upload_data?proj_id='
+      upload_url: '',
+      project_options: []
     }
   },
   mounted: function () {
+    this.showProjectOverview()
     if (this.$route.query.projectid) {
       this.proj_id = this.$route.query.projectid
       this.showData()
-      this.upload_url += this.proj_id + '&user_id=' + sessionStorage.getItem('UserID')
+      this.upload_url = 'http://api.neurolearn.com:1470/rest/api/v0/upload_data?proj_id=' + this.proj_id + '&user_id=' + sessionStorage.getItem('UserID')
     } else {
-      this.$alert('Choose a project first!', 'Error!', {
-        confirmButtonText: 'Confirm',
-        callback: action => {
-          this.$router.replace({
-            path: '/projects/overview',
-            component: resolve => require(['@/pages/projects/overview'], resolve)
-          })
-        }
+      this.$alert('Choose a project first!', 'Attention!', {
+        confirmButtonText: 'Confirm'
       })
     }
   },
   methods: {
+    handelSelectionChange () {
+      console.log(this.project_options)
+      for (let i in this.project_options) {
+        if (this.project_options[i].fields.label === this.selected_project.label) {
+          this.selected_project.proj_id = this.project_options[i].fields.proj_id
+          this.selected_project.label = this.project_options[i].fields.label
+        }
+      }
+      console.log(this.selected_project.proj_id)
+      this.proj_id = this.selected_project.proj_id
+      this.showData()
+      this.upload_url = 'http://api.neurolearn.com:1470/rest/api/v0/upload_data?proj_id=' + this.proj_id + '&user_id=' + sessionStorage.getItem('UserID')
+    },
+    showProjectOverview () {
+      axios.get('/rest/api/v0/show_project_overview?user_id=' + sessionStorage.getItem('UserID'))
+        .then(response => {
+          var res = response.data
+          if (res.error_num === 0) {
+            this.project_options = res['list']
+          } else {
+            this.$message.error('Failed!')
+            console.log(res['msg'])
+          }
+        })
+    },
     showData () {
       axios.get('/rest/api/v0/show_data?proj_id=' + this.proj_id)
         .then(response => {
