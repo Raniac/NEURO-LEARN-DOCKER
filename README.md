@@ -31,13 +31,13 @@ root@machine:/$ echo "120.79.49.129 api.neurolearn.com" >> /etc/hosts
 # VOILA!
 ```
 
-## NLD Microservices Layout
+## NLD Microservices Framework
 
-![layout](doc/NLD.png)
+![framework](doc/framework.png)
 
-## NLD DevOps Solution
+## NLD Continuous Integration
 
-![solution](doc/solution.png)
+![continuous_integration](doc/continuous_integration.png)
 
 ## More
 
