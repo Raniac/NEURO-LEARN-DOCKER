@@ -54,6 +54,16 @@
             <el-option v-for="(data_option, key) in data_table" :label="data_option.fields.data_name" :value="data_option.fields.data_name" :key="key"></el-option>
           </el-select>
         </el-form-item>
+        <el-form-item label="Trained Task">
+          <el-select class="select-task" v-model="newform.trained_task_id" placeholder="Select Trained Task ID" filterable>
+            <el-option v-for="(task_option, key) in form.task_options" :label="task_option.fields.label" :value="task_option.fields.label" :key="key"></el-option>
+          </el-select>
+        </el-form-item>
+        <el-form-item label="Save Model">
+          <el-switch
+            v-model="newform.save_model_state">
+          </el-switch>
+        </el-form-item>
         <el-form-item>
           <el-button type="primary" @click="onSubmit">Submit</el-button>
           <el-button @click="onCancel">Cancel</el-button>
@@ -71,6 +81,7 @@ export default {
       selected_proj_label: '',
       selected_proj_id: '',
       data_table: [],
+      currpage: 1,
       newform: {
         proj_id: '',
         proj_name: '',
@@ -88,17 +99,19 @@ export default {
           lr_decay: 0.2,
           epochs: 200
         },
-        cv_type: ''
+        trained_task_id: '',
+        save_model_state: false
       },
       form: {
         proj_options: [],
-        model_options: []
+        model_options: [],
+        task_options: []
       }
     }
   },
   mounted () {
     this.updateProjects()
-    // this.updateData()
+    // this.updateTasks()
   },
   methods: {
     onSubmit () {
@@ -123,6 +136,21 @@ export default {
             console.log(res)
             this.form.proj_options = res['list']
             console.log(this.form.proj_options)
+          } else {
+            this.$message.error('Failed!')
+            console.log(res['msg'])
+          }
+        })
+    },
+    updateTasks () {
+      axios.get('/rest/api/v0/show_trained_tasks?user_id=' + sessionStorage.getItem('UserID'))
+        .then(response => {
+          var res = response.data
+          console.log(res)
+          if (res.error_num === 0) {
+            console.log(res)
+            this.form.task_options = res['list']
+            console.log(this.form.task_options)
           } else {
             this.$message.error('Failed!')
             console.log(res['msg'])
@@ -198,6 +226,9 @@ export default {
   }
   .input-param {
     width: 100px;
+  }
+  .select-task {
+    width: 400px;
   }
   .second-label {
     font-size: 10px;
