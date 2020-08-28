@@ -256,8 +256,8 @@ export default {
     },
     clickToView () {
       console.log(this.multipleSelections.length)
-      if (this.multipleSelections.length > 4) {
-        this.$alert('You can only view 4 or less reports at the same time!', 'Error!', {
+      if (this.multipleSelections.length > 10) {
+        this.$alert('You can only view 10 or less reports at the same time!', 'Error!', {
           confirmButtonText: 'Confirm',
           callback: action => {
             this.$refs.multipleTable.clearSelection()
