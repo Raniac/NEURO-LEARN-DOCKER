@@ -111,6 +111,7 @@ class Datasets(models.Model):
     user_id = models.CharField(max_length=32)
     data_name = models.CharField(max_length=64, unique=True)
     data_cont = models.TextField(max_length=4294967295)
+    hdfs_path = models.CharField(max_length=256)
 
     def __unicode__(self):
         return self.data_id

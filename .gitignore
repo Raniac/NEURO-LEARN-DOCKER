@@ -2,3 +2,4 @@
 *cache*
 utils/dm/env
 utils/dm/app/tmp
+services/api/log

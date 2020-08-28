@@ -216,7 +216,8 @@ def upload_data(request):
             proj_id=proj_id,
             user_id=user_id,
             data_name=data_name,
-            data_cont=data_cont
+            data_cont=data_cont,
+            hdfs_path=hdfs_path
         )
         dataset.save()
         
@@ -240,10 +241,13 @@ def handle_uploaded_file(f, data_id, proj_id):
     data_content = pd.read_csv(file_name, encoding='utf-8')
     data_json = data_content.to_json()
 
-    client = InsecureClient("http://hdfs.neurolearn.com:50070", user="hadoop")
-    hdfs_path = "/neurolearn/files/" + proj_id + "/datasets/" + data_id
-    client.makedirs(hdfs_path)
-    client.upload(hdfs_path, file_name)
+    try:
+        client = InsecureClient("http://hdfs.neurolearn.com:50070", user="hadoop")
+        hdfs_path = "/neurolearn/files/" + proj_id + "/datasets/" + data_id
+        client.makedirs(hdfs_path)
+        client.upload(hdfs_path, file_name)
+    except:
+        hdfs_path = ''
     
     return data_json, hdfs_path
 
@@ -273,8 +277,12 @@ def delete_data(request):
         proj_id = request.GET.get('proj_id')
         data_id = request.GET.get('data_id')
         user_id = request.GET.get('user_id')
-        if len(Datasets.objects.filter(proj_id=proj_id, data_id=data_id, user_id=user_id)) == 0:
+        fetched = Datasets.objects.filter(proj_id=proj_id, data_id=data_id, user_id=user_id).values('hdfs_path')
+        if len(fetched) == 0:
             raise Exception('Oops! No access!')
+        if list(fetched)[0]['hdfs_path']:
+            client = InsecureClient("http://hdfs.neurolearn.com:50070", user="hadoop")
+            client.delete(list(fetched)[0]['hdfs_path'], recursive=True)
         Datasets.objects.filter(proj_id=proj_id, data_id=data_id, user_id=user_id).delete()
 
         response_content['msg'] = 'success'
@@ -293,17 +301,27 @@ def download_data(request):
         data_id = request.GET.get('data_id')
         user_id = request.GET.get('user_id')
         data_path = data_id + '.csv'
-        data_cont_query = Datasets.objects.filter(data_id=data_id, user_id=user_id).values('data_cont')
-        if len(data_cont_query) == 0:
+
+        fetched = Datasets.objects.filter(data_id=data_id, user_id=user_id).values('hdfs_path', 'data_name')
+        if len(fetched) == 0:
             raise Exception('Oops! No access!')
-        data_cont = list(data_cont_query)[0]['data_cont']
-        pd.read_json(data_cont).to_csv(data_path, index=False)
+        if list(fetched)[0]['hdfs_path']:
+            client = InsecureClient("http://hdfs.neurolearn.com:50070", user="hadoop")
+            client.download(list(fetched)[0]['hdfs_path'] + '/' + list(fetched)[0]['data_name'], data_path, overwrite=True)
+        else:
+            data_cont_query = Datasets.objects.filter(data_id=data_id, user_id=user_id).values('data_cont')
+            if len(data_cont_query) == 0:
+                raise Exception('Oops! No access!')
+            data_cont = list(data_cont_query)[0]['data_cont']
+            pd.read_json(data_cont).to_csv(data_path, index=False)
+        
         data_file = open(data_path, 'rb')
         
         response = FileResponse(data_file)
         response['Content-Type']='application/octet-stream'
         response['Content-Disposition']='attachment;filename=\"' + data_id + '.csv\"'
     except Exception as e:
+        traceback.print_exc()
         response_content = {}
         response = HttpResponse()
         response_content['msg'] = str(e)
