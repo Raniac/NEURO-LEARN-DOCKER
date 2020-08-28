@@ -26,6 +26,8 @@ import time
 import zipfile
 import traceback
 
+from hdfs import InsecureClient
+
 # from .models import Book, Projects_Demo, Submissions_Demo, Submissions_SA_Demo, Data_Demo, User_Demo
 
 from .models import Users, Projects, User_Proj_Auth, Datasets, Submissions
@@ -228,17 +230,16 @@ def upload_data(request):
     return response
 
 def handle_uploaded_file(f):
-    try:
-        file_name = str(f.name)
-        destination = open(file_name, 'wb+')
+    file_name = str(f.name)
+    with open(file_name, 'wb+') as destination:
         for chunk in f.chunks():
             destination.write(chunk)
-        destination.close()
-        data_content = pd.read_csv(file_name, encoding='utf-8')
-        data_json = data_content.to_json()
+    data_content = pd.read_csv(file_name, encoding='utf-8')
+    data_json = data_content.to_json()
+
+    client = InsecureClient("http://hdfs.neurolearn.com:50070", user="hadoop")
+    client.upload("/neurolearn/files/datasets/", file_name)
     
-    except Exception as e:
-        print(e)
     return data_json
 
 @require_http_methods(["GET"])
