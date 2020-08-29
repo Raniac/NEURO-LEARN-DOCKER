@@ -172,7 +172,7 @@
             <el-pagination
               background
               layout="sizes, prev, pager, next"
-              :page-sizes="[10, 15, 20, 25]"
+              :page-sizes="[10, 15, 20, 25, 30]"
               :page-size="pagesize"
               :total="totalsize"
               @size-change="handleSizeChange"
@@ -268,8 +268,8 @@ export default {
     },
     clickToView () {
       console.log(this.multipleSelections.length)
-      if (this.multipleSelections.length > 10) {
-        this.$alert('You can only view 10 or less reports at the same time!', 'Error!', {
+      if (this.multipleSelections.length > 30) {
+        this.$alert('You can only view 30 or less reports at the same time!', 'Error!', {
           confirmButtonText: 'Confirm',
           callback: action => {
             this.$refs.multipleTable.clearSelection()
