@@ -17,7 +17,7 @@ $ docker build -t raniac/neuro-learn-service:api .
 ### Initiate ```raniac/neuro-learn-service:api``` Container for Dev
 
 ```bash
-$ docker run -it --rm --network host -v /home/raniac/dev/NEURO-LEARN-DOCKER/services/api:/nls-api raniac/neuro-learn-service:api /bin/bash
+$ docker run -it --rm --network host -v /home/bennyray/Projects/neuro-learn/docker/services/api:/nls-api raniac/neuro-learn-service:api /bin/bash
 ```
 
 ## ```ml```
