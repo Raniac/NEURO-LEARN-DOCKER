@@ -171,9 +171,11 @@
           <div style="margin: 14px; padding-bottom: 30px">
             <el-pagination
               background
-              layout="prev, pager, next"
+              layout="sizes, prev, pager, next"
+              :page-sizes="[10, 15, 20, 25]"
               :page-size="pagesize"
               :total="totalsize"
+              @size-change="handleSizeChange"
               @current-change="handleCurrentChange"
               style="float: left">
             </el-pagination>
@@ -211,6 +213,10 @@ export default {
       this.analysisType = this.tabsValue
       this.showSubmissions()
     },
+    handleSizeChange (val) {
+      this.pagesize = val
+      this.showSubmissions()
+    },
     onSearch () {
       this.showSubmissions()
     },
@@ -218,7 +224,7 @@ export default {
       this.showSubmissions()
     },
     showSubmissions () {
-      axios.get('/rest/api/v0/show_submissions?analysis_type=' + this.analysisType + '&page_num=' + this.currpage + '&user_id=' + sessionStorage.getItem('UserID') + '&search=' + this.search_input.toLowerCase() + '&status=' + this.selected_status)
+      axios.get('/rest/api/v0/show_submissions?analysis_type=' + this.analysisType + '&page_num=' + this.currpage + '&page_size=' + this.pagesize + '&user_id=' + sessionStorage.getItem('UserID') + '&search=' + this.search_input.toLowerCase() + '&status=' + this.selected_status)
         .then(response => {
           var res = response.data
           if (res.error_num === 0) {

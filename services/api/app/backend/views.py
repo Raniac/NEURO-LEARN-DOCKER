@@ -456,7 +456,7 @@ def show_submissions(request):
     try:
         analysis_type = request.GET.get('analysis_type')
         page_num = int(request.GET.get('page_num'))
-        page_size = 10
+        page_size = int(request.GET.get('page_size'))
         user_id = request.GET.get('user_id')
         search = request.GET.get('search')
         status = request.GET.get('status')
