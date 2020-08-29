@@ -463,10 +463,10 @@ def show_submissions(request):
         for itm in proj_ids:
             proj_id_list.append(itm['proj_id'])
         if analysis_type == 'Machine Learning':
-            submissions = Submissions.objects.filter(task_type__in = ['ml_clf', 'ml_rgs'], proj_id__in = proj_id_list).order_by('-id')
+            submissions = Submissions.objects.filter(task_type__in = ['ml_clf', 'ml_rgs'], proj_id__in = proj_id_list).order_by('-id')[(page_num-1)*page_size:page_num*page_size]
             response_content['list']  = json.loads(
                 serializers.serialize(
-                    "json", submissions[(page_num-1)*page_size:page_num*page_size], 
+                    "json", submissions, 
                     fields=('task_id', 'proj_id', 'task_name', 'task_type', 'task_config', 'task_status')
                 )
             )
