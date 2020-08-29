@@ -470,7 +470,7 @@ def show_submissions(request):
                     fields=('task_id', 'proj_id', 'task_name', 'task_type', 'task_config', 'task_status')
                 )
             )
-            response_content['total_size'] = len(submissions)
+            response_content['total_size'] = Submissions.objects.filter(proj_id__in = proj_id_list).count()
         elif analysis_type == "Statistical Analysis":
             submissions = Submissions.objects.filter(task_type__in = ['sa_da_ttest', 'sa_da_anova', 'sa_ca_prson', 'sa_ca_spman'], proj_id__in = proj_id_list).order_by('-id')[:4]
             response_content['list']  = json.loads(serializers.serialize("json", submissions))
