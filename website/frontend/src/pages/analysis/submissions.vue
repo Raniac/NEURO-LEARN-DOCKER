@@ -193,7 +193,7 @@ export default {
   data () {
     return {
       search_input: '',
-      selected_status: 'Total',
+      selected_status: '',
       submissions_table: [],
       pagesize: 10,
       currpage: 1,
