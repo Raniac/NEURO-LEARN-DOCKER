@@ -91,20 +91,20 @@
         <el-tab-pane label="Machine Learning" name="Machine Learning">
           <div style="margin: 14px">
             <el-input placeholder="Search machine learning tasks by name" v-model="search_input" class="input-with-select">
-              <el-select v-model="selected_status" slot="prepend" placeholder="Status">
-              <el-option label="Total" value=""></el-option>
-              <el-option label="Submitted" value="Submitted"></el-option>
-              <el-option label="Running" value="Running"></el-option>
-              <el-option label="Finished" value="Finished"></el-option>
-              <el-option label="Failed" value="Failed"></el-option>
+              <el-select v-model="selected_status" slot="prepend" placeholder="Status" @change="onStatusSelected">
+                <el-option label="Total" value=""></el-option>
+                <el-option label="Submitted" value="Submitted"></el-option>
+                <el-option label="Running" value="Running"></el-option>
+                <el-option label="Finished" value="Finished"></el-option>
+                <el-option label="Failed" value="Failed"></el-option>
               </el-select>
-              <el-button slot="append" icon="el-icon-search"></el-button>
+              <el-button slot="append" icon="el-icon-search" @click="onSearch"></el-button>
             </el-input>
           </div>
           <div style="margin: 14px">
             <el-table
               class="submissions-table"
-              :data="submissions_table.filter(data => (!search_input || data.fields.task_name.toLowerCase().includes(search_input.toLowerCase())) && data.fields.task_status.includes(selected_status))"
+              :data="submissions_table"
               stripe
               border
               @selection-change="onSelectionChange"
@@ -193,7 +193,7 @@ export default {
   data () {
     return {
       search_input: '',
-      selected_status: '',
+      selected_status: 'Total',
       submissions_table: [],
       pagesize: 10,
       currpage: 1,
@@ -211,8 +211,14 @@ export default {
       this.analysisType = this.tabsValue
       this.showSubmissions()
     },
+    onSearch () {
+      this.showSubmissions()
+    },
+    onStatusSelected () {
+      this.showSubmissions()
+    },
     showSubmissions () {
-      axios.get('/rest/api/v0/show_submissions?analysis_type=' + this.analysisType + '&page_num=' + this.currpage + '&user_id=' + sessionStorage.getItem('UserID'))
+      axios.get('/rest/api/v0/show_submissions?analysis_type=' + this.analysisType + '&page_num=' + this.currpage + '&user_id=' + sessionStorage.getItem('UserID') + '&search=' + this.search_input.toLowerCase() + '&status=' + this.selected_status)
         .then(response => {
           var res = response.data
           if (res.error_num === 0) {
