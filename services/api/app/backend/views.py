@@ -458,12 +458,14 @@ def show_submissions(request):
         page_num = int(request.GET.get('page_num'))
         page_size = 10
         user_id = request.GET.get('user_id')
+        search = request.GET.get('search')
+        status = request.GET.get('status')
         proj_ids = User_Proj_Auth.objects.filter(user_id=user_id).values('proj_id')
         proj_id_list = []
         for itm in proj_ids:
             proj_id_list.append(itm['proj_id'])
         if analysis_type == 'Machine Learning':
-            submissions = Submissions.objects.filter(task_type__in = ['ml_clf', 'ml_rgs'], proj_id__in = proj_id_list).order_by('-id')[(page_num-1)*page_size:page_num*page_size]
+            submissions = Submissions.objects.filter(task_type__in = ['ml_clf', 'ml_rgs'], proj_id__in = proj_id_list, task_name__icontains = search, task_status = status).order_by('-id')[(page_num-1)*page_size:page_num*page_size]
             response_content['list']  = json.loads(
                 serializers.serialize(
                     "json", submissions, 
