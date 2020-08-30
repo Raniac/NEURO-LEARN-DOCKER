@@ -16,7 +16,7 @@ root@machine:/$ echo "{host ip for db-server} db.neurolearn.com" >> /etc/hosts
 # Open a terminal on the host, change directory to NEURO-LEARN-DOCKER/utils
 user@machine:~/NEURO-LEARN-DOCKER/utils$ docker-compose -f docker-compose.yml up -d
 # To stop the containers
-user@machine:~/NEURO-LEARN-DOCKER/utils$ docker-compose stop
+user@machine:~/NEURO-LEARN-DOCKER/utils$ docker-compose down
 ```
 
 > NOTE that NEURO-LEARN-DOCKER requires a deployed MySQL database server with corresponding tables.
