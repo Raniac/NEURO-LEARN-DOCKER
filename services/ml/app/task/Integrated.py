@@ -7,22 +7,10 @@ import decimal
 import codecs
 import csv
 
-from hdfs import InsecureClient
 from sklearn.pipeline import Pipeline
 from sklearn.model_selection import GridSearchCV
 from sklearn.model_selection import permutation_test_score
 from sklearn.metrics import roc_auc_score, auc
-
-def handleHdfsUpload(file_path):
-    try:
-        client = InsecureClient("http://hdfs.neurolearn.com:50070", user="hadoop")
-        hdfs_path = "/neurolearn/files/" + proj_id + "/results/" + task_id
-        client.makedirs(hdfs_path)
-        client.upload(hdfs_path, file_path)
-        print('Uploaded Images to HDFS.')
-    except:
-        hdfs_path = ''
-    return hdfs_path
 
 def integrated_clf_model(feat_sel, model, train_data, test_data, cv):
     starttime = time.time()
@@ -80,7 +68,6 @@ def integrated_clf_model(feat_sel, model, train_data, test_data, cv):
         plt.title('Optimization Curve')
 
         plt.savefig('optimization_curve.png', dpi=300)
-        opt_hdfs_path = handleHdfsUpload('optimization_curve.png')
 
     elif feat_sel and feat_sel.name == 'anova':
         plt.figure()
@@ -95,7 +82,6 @@ def integrated_clf_model(feat_sel, model, train_data, test_data, cv):
         plt.title('Optimization Curve')
 
         plt.savefig('optimization_curve.png', dpi=300)
-        opt_hdfs_path = handleHdfsUpload('optimization_curve.png')
 
         selector = optimal_model.named_steps['anova'].get_support()
         selected_feature_list = np.array(feature_list)[selector]
@@ -129,7 +115,6 @@ def integrated_clf_model(feat_sel, model, train_data, test_data, cv):
         plt.title('Optimization Curve')
 
         plt.savefig('optimization_curve.png', dpi=300)
-        opt_hdfs_path = handleHdfsUpload('optimization_curve.png')
 
         selector = optimal_model.named_steps['rfe'].get_support()
         selected_feature_list = np.array(feature_list)[selector]
@@ -207,7 +192,6 @@ def integrated_clf_model(feat_sel, model, train_data, test_data, cv):
     plt.title('Receiver Operating Characteristic')
     plt.legend(loc="lower right")
     plt.savefig('ROC_curve.png', dpi=300)
-    roc_hdfs_path = handleHdfsUpload('ROC_curve.png')
     
     endtime = time.time()
     runtime = str(endtime - starttime)
@@ -225,7 +209,6 @@ def integrated_clf_model(feat_sel, model, train_data, test_data, cv):
     result_dict['Run Time'] = runtime
     result_dict['ROC fpr'] = list(fpr)
     result_dict['ROC tpr'] = list(tpr)
-    result_dict['ROC HDFS Path'] = roc_hdfs_path
     result_dict['Predictions'] = predictions_list.to_dict('records')
     try:
         result_dict['Feature Weights'] = feature_weights_list.to_dict('records')
@@ -233,7 +216,6 @@ def integrated_clf_model(feat_sel, model, train_data, test_data, cv):
         result_dict['Feature Weights'] = pd.DataFrame({"Error": ["This model doesn\'t support generating feature weights"]}).to_dict('records')
     if feat_sel:
         result_dict['Optimization'] = best_clfs.to_dict('records')
-        result_dict['Opt HDFS Path'] = opt_hdfs_path
 
     return result_dict
 
@@ -293,7 +275,6 @@ def integrated_clf_model_notest(feat_sel, model, train_data, cv):
         plt.title('Optimization Curve')
 
         plt.savefig('optimization_curve.png', dpi=300)
-        opt_hdfs_path = handleHdfsUpload('optimization_curve.png')
 
     elif feat_sel and feat_sel.name == 'anova':
         plt.figure()
@@ -308,7 +289,6 @@ def integrated_clf_model_notest(feat_sel, model, train_data, cv):
         plt.title('Optimization Curve')
 
         plt.savefig('optimization_curve.png', dpi=300)
-        opt_hdfs_path = handleHdfsUpload('optimization_curve.png')
 
         selector = optimal_model.named_steps['anova'].get_support()
         selected_feature_list = np.array(feature_list)[selector]
@@ -342,7 +322,6 @@ def integrated_clf_model_notest(feat_sel, model, train_data, cv):
         plt.title('Optimization Curve')
 
         plt.savefig('optimization_curve.png', dpi=300)
-        opt_hdfs_path = handleHdfsUpload('optimization_curve.png')
 
         selector = optimal_model.named_steps['rfe'].get_support()
         selected_feature_list = np.array(feature_list)[selector]
@@ -396,7 +375,6 @@ def integrated_clf_model_notest(feat_sel, model, train_data, cv):
         result_dict['Feature Weights'] = pd.DataFrame({"Error": ["This model doesn\'t support generating feature weights"]}).to_dict('records')
     if feat_sel:
         result_dict['Optimization'] = best_clfs.to_dict('records')
-        result_dict['Opt HDFS Path'] = opt_hdfs_path
 
     return result_dict
 

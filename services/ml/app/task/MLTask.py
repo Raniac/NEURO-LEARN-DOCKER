@@ -10,7 +10,7 @@ from dao.TaskDao import TaskDao
 from task.Core import ml_task
 
 @celery.task
-def new_ml_celery_task(taskid, tasktype, traindata, enabletest, testdata, label, featsel, estimator, cv):
+def new_ml_celery_task(taskid, projid, tasktype, traindata, enabletest, testdata, label, featsel, estimator, cv):
     taskDao = TaskDao()
     taskDao.updateTaskStatusByTaskId(task_id=taskid, task_status='Running')
     try:
@@ -25,7 +25,7 @@ def new_ml_celery_task(taskid, tasktype, traindata, enabletest, testdata, label,
             for jtm in list(test_data_queryset):
                 test_data_list.append(pd.read_json(jtm[0]))
 
-        results = ml_task(taskid, tasktype, train_data_list, enabletest, test_data_list, label, featsel, estimator, cv)
+        results = ml_task(taskid, projid, tasktype, train_data_list, enabletest, test_data_list, label, featsel, estimator, cv)
         taskDao.updateTaskStatusByTaskId(task_id=taskid, task_status='Finished')
         taskDao.updateTaskResultByTaskId(task_id=taskid, task_result=json.dumps(results))
     except:

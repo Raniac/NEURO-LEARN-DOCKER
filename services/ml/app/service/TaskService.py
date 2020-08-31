@@ -58,6 +58,7 @@ def insertNewTask(task_form):
 
             new_ml_celery_task.delay(
                 taskid=task_form['task_id'],
+                projid=task_form['proj_id'],
                 tasktype=task_form['task_type'],
                 traindata=task_config['train_data'],
                 enabletest=task_config['enable_test'],

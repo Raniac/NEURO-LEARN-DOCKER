@@ -1,12 +1,27 @@
 import os
 import sys
 import time
+
+from hdfs import InsecureClient
 import pandas as pd
+
 from task.Acquisition import Data
 from task.Models import *
 from task.Integrated import *
 
-def ml_task(task_id, task_type, train_data, enable_test, test_data, label, feat_sel, estimator, cv_type):
+def handleHdfsUpload(file_path, proj_id, task_id):
+    try:
+        client = InsecureClient("http://hdfs.neurolearn.com:50070", user="hadoop")
+        hdfs_path = "/neurolearn/files/" + proj_id + "/results/" + task_id
+        client.makedirs(hdfs_path)
+        client.upload(hdfs_path, file_path)
+        print('Uploaded Images to HDFS.')
+    except Exception as e:
+        print(e)
+        hdfs_path = ''
+    return hdfs_path
+
+def ml_task(task_id, proj_id, task_type, train_data, enable_test, test_data, label, feat_sel, estimator, cv_type):
     print(task_id, task_type, enable_test, label, feat_sel, estimator, cv_type)
     
     data_columns = train_data[0].columns
@@ -106,5 +121,12 @@ def ml_task(task_id, task_type, train_data, enable_test, test_data, label, feat_
             results = integrated_rgs_model(my_feat_sel, my_model, my_train_data, my_test_data, cv) # run integrated classification model
         else:
             results = integrated_rgs_model_notest(my_feat_sel, my_model, my_train_data, cv)
+    
+    if feat_sel:
+        opt_hdfs_path = handleHdfsUpload('optimization_curve.png', proj_id, task_id)
+        results['Opt HDFS Path'] = opt_hdfs_path
+    if enable_test:
+        roc_hdfs_path = handleHdfsUpload('ROC_curve.png', proj_id, task_id)
+        results['ROC HDFS Path'] = roc_hdfs_path
 
     return results
