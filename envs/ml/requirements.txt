@@ -4,6 +4,7 @@ Flask==1.1.2
 flower==0.9.3
 future==0.17.1
 gunicorn==20.0.4
+hdfs==2.5.8
 matplotlib==3.0.3
 numpy==1.16.3
 pandas==0.24.1
