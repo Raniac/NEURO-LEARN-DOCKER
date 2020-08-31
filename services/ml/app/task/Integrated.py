@@ -7,10 +7,22 @@ import decimal
 import codecs
 import csv
 
+from hdfs import InsecureClient
 from sklearn.pipeline import Pipeline
 from sklearn.model_selection import GridSearchCV
 from sklearn.model_selection import permutation_test_score
 from sklearn.metrics import roc_auc_score, auc
+
+def handleHdfsUpload(file_path):
+    try:
+        client = InsecureClient("http://hdfs.neurolearn.com:50070", user="hadoop")
+        hdfs_path = "/neurolearn/files/" + proj_id + "/results/" + task_id
+        client.makedirs(hdfs_path)
+        client.upload(hdfs_path, file_path)
+        print('Uploaded Images to HDFS.')
+    except:
+        hdfs_path = ''
+    return hdfs_path
 
 def integrated_clf_model(feat_sel, model, train_data, test_data, cv):
     starttime = time.time()
@@ -56,32 +68,34 @@ def integrated_clf_model(feat_sel, model, train_data, test_data, cv):
 
     # Optimization Curve and Selected Features (if possible) 
     if feat_sel and feat_sel.name == 'pca':
-        # plt.figure()
+        plt.figure()
 
         results = pd.DataFrame(search.cv_results_)
         components_col = 'param_pca__n_components'
         best_clfs = results.groupby(components_col).apply(lambda g: g.nlargest(1, 'mean_test_score'))
-        # best_clfs.plot(x=components_col, y='mean_test_score', yerr='std_test_score')
+        best_clfs.plot(x=components_col, y='mean_test_score', yerr='std_test_score')
         
-        # plt.ylabel('Classification accuracy (val)')
-        # plt.xlabel('n_components')
-        # plt.title('Optimization Curve')
+        plt.ylabel('Classification accuracy (val)')
+        plt.xlabel('n_components')
+        plt.title('Optimization Curve')
 
-        # plt.savefig(result_path + '/' + 'optimization_curve.png', dpi=300)
+        plt.savefig('optimization_curve.png', dpi=300)
+        opt_hdfs_path = handleHdfsUpload('optimization_curve.png')
 
     elif feat_sel and feat_sel.name == 'anova':
-        # plt.figure()
+        plt.figure()
 
         results = pd.DataFrame(search.cv_results_)
         components_col = 'param_anova__percentile'
         best_clfs = results.groupby(components_col).apply(lambda g: g.nlargest(1, 'mean_test_score'))
-        # best_clfs.plot(x=components_col, y='mean_test_score', yerr='std_test_score')
+        best_clfs.plot(x=components_col, y='mean_test_score', yerr='std_test_score')
         
-        # plt.ylabel('Classification accuracy (val)')
-        # plt.xlabel('percentile')
-        # plt.title('Optimization Curve')
+        plt.ylabel('Classification accuracy (val)')
+        plt.xlabel('percentile')
+        plt.title('Optimization Curve')
 
-        # plt.savefig(result_path + '/' + 'optimization_curve.png', dpi=300)
+        plt.savefig('optimization_curve.png', dpi=300)
+        opt_hdfs_path = handleHdfsUpload('optimization_curve.png')
 
         selector = optimal_model.named_steps['anova'].get_support()
         selected_feature_list = np.array(feature_list)[selector]
@@ -103,18 +117,19 @@ def integrated_clf_model(feat_sel, model, train_data, test_data, cv):
             feature_weights_list = pd.DataFrame({'Feature': selected_feature_list, 'Weight': selected_weight_list})
 
     elif feat_sel and feat_sel.name == 'rfe':
-        # plt.figure()
+        plt.figure()
 
         results = pd.DataFrame(search.cv_results_)
         components_col = 'param_rfe__n_features_to_select'
         best_clfs = results.groupby(components_col).apply(lambda g: g.nlargest(1, 'mean_test_score'))
-        # best_clfs.plot(x=components_col, y='mean_test_score', yerr='std_test_score')
+        best_clfs.plot(x=components_col, y='mean_test_score', yerr='std_test_score')
         
-        # plt.ylabel('Classification accuracy (val)')
-        # plt.xlabel('n_features_to_select')
-        # plt.title('Optimization Curve')
+        plt.ylabel('Classification accuracy (val)')
+        plt.xlabel('n_features_to_select')
+        plt.title('Optimization Curve')
 
-        # plt.savefig(result_path + '/' + 'optimization_curve.png', dpi=300)
+        plt.savefig('optimization_curve.png', dpi=300)
+        opt_hdfs_path = handleHdfsUpload('optimization_curve.png')
 
         selector = optimal_model.named_steps['rfe'].get_support()
         selected_feature_list = np.array(feature_list)[selector]
@@ -177,21 +192,22 @@ def integrated_clf_model(feat_sel, model, train_data, test_data, cv):
     cnf_specificity = tn / (tn + fp)
     test_specificity = cnf_specificity
     
-    # plt.figure()
+    plt.figure()
     mean_fpr = np.linspace(0, 1, 100)
     fpr, tpr, _ = roc_curve(test_data.y, probas_[:, 1])
     roc_auc = auc(fpr, tpr)
-    # plt.plot(fpr, tpr, lw=1, alpha=0.3, color='b',
-    #         label='AUC = %0.2f' % (roc_auc))
-    # plt.plot([0, 1], [0, 1], linestyle='--', lw=2, color='r',
-    #         label='Chance', alpha=.8)
-    # plt.xlim([-0.05, 1.05])
-    # plt.ylim([-0.05, 1.05])
-    # plt.xlabel('False Positive Rate')
-    # plt.ylabel('True Positive Rate')
-    # plt.title('Receiver Operating Characteristic')
-    # plt.legend(loc="lower right")
-    # plt.savefig(result_path + '/' + 'ROC_curve.png', dpi=300)
+    plt.plot(fpr, tpr, lw=1, alpha=0.3, color='b',
+            label='AUC = %0.2f' % (roc_auc))
+    plt.plot([0, 1], [0, 1], linestyle='--', lw=2, color='r',
+            label='Chance', alpha=.8)
+    plt.xlim([-0.05, 1.05])
+    plt.ylim([-0.05, 1.05])
+    plt.xlabel('False Positive Rate')
+    plt.ylabel('True Positive Rate')
+    plt.title('Receiver Operating Characteristic')
+    plt.legend(loc="lower right")
+    plt.savefig('ROC_curve.png', dpi=300)
+    roc_hdfs_path = handleHdfsUpload('ROC_curve.png')
     
     endtime = time.time()
     runtime = str(endtime - starttime)
@@ -209,6 +225,7 @@ def integrated_clf_model(feat_sel, model, train_data, test_data, cv):
     result_dict['Run Time'] = runtime
     result_dict['ROC fpr'] = list(fpr)
     result_dict['ROC tpr'] = list(tpr)
+    result_dict['ROC HDFS Path'] = roc_hdfs_path
     result_dict['Predictions'] = predictions_list.to_dict('records')
     try:
         result_dict['Feature Weights'] = feature_weights_list.to_dict('records')
@@ -216,6 +233,7 @@ def integrated_clf_model(feat_sel, model, train_data, test_data, cv):
         result_dict['Feature Weights'] = pd.DataFrame({"Error": ["This model doesn\'t support generating feature weights"]}).to_dict('records')
     if feat_sel:
         result_dict['Optimization'] = best_clfs.to_dict('records')
+        result_dict['Opt HDFS Path'] = opt_hdfs_path
 
     return result_dict
 
@@ -263,32 +281,34 @@ def integrated_clf_model_notest(feat_sel, model, train_data, cv):
 
     # Optimization Curve and Selected Features (if possible) 
     if feat_sel and feat_sel.name == 'pca':
-        # plt.figure()
+        plt.figure()
 
         results = pd.DataFrame(search.cv_results_)
         components_col = 'param_pca__n_components'
         best_clfs = results.groupby(components_col).apply(lambda g: g.nlargest(1, 'mean_test_score'))
-        # best_clfs.plot(x=components_col, y='mean_test_score', yerr='std_test_score')
+        best_clfs.plot(x=components_col, y='mean_test_score', yerr='std_test_score')
         
-        # plt.ylabel('Classification accuracy (val)')
-        # plt.xlabel('n_components')
-        # plt.title('Optimization Curve')
+        plt.ylabel('Classification accuracy (val)')
+        plt.xlabel('n_components')
+        plt.title('Optimization Curve')
 
-        # plt.savefig(result_path + '/' + 'optimization_curve.png', dpi=300)
+        plt.savefig('optimization_curve.png', dpi=300)
+        opt_hdfs_path = handleHdfsUpload('optimization_curve.png')
 
     elif feat_sel and feat_sel.name == 'anova':
-        # plt.figure()
+        plt.figure()
 
         results = pd.DataFrame(search.cv_results_)
         components_col = 'param_anova__percentile'
         best_clfs = results.groupby(components_col).apply(lambda g: g.nlargest(1, 'mean_test_score'))
-        # best_clfs.plot(x=components_col, y='mean_test_score', yerr='std_test_score')
+        best_clfs.plot(x=components_col, y='mean_test_score', yerr='std_test_score')
         
-        # plt.ylabel('Classification accuracy (val)')
-        # plt.xlabel('percentile')
-        # plt.title('Optimization Curve')
+        plt.ylabel('Classification accuracy (val)')
+        plt.xlabel('percentile')
+        plt.title('Optimization Curve')
 
-        # plt.savefig(result_path + '/' + 'optimization_curve.png', dpi=300)
+        plt.savefig('optimization_curve.png', dpi=300)
+        opt_hdfs_path = handleHdfsUpload('optimization_curve.png')
 
         selector = optimal_model.named_steps['anova'].get_support()
         selected_feature_list = np.array(feature_list)[selector]
@@ -310,18 +330,19 @@ def integrated_clf_model_notest(feat_sel, model, train_data, cv):
             feature_weights_list = pd.DataFrame({'Feature': selected_feature_list, 'Weight': selected_weight_list})
 
     elif feat_sel and feat_sel.name == 'rfe':
-        # plt.figure()
+        plt.figure()
 
         results = pd.DataFrame(search.cv_results_)
         components_col = 'param_rfe__n_features_to_select'
         best_clfs = results.groupby(components_col).apply(lambda g: g.nlargest(1, 'mean_test_score'))
-        # best_clfs.plot(x=components_col, y='mean_test_score', yerr='std_test_score')
+        best_clfs.plot(x=components_col, y='mean_test_score', yerr='std_test_score')
         
-        # plt.ylabel('Classification accuracy (val)')
-        # plt.xlabel('n_features_to_select')
-        # plt.title('Optimization Curve')
+        plt.ylabel('Classification accuracy (val)')
+        plt.xlabel('n_features_to_select')
+        plt.title('Optimization Curve')
 
-        # plt.savefig(result_path + '/' + 'optimization_curve.png', dpi=300)
+        plt.savefig('optimization_curve.png', dpi=300)
+        opt_hdfs_path = handleHdfsUpload('optimization_curve.png')
 
         selector = optimal_model.named_steps['rfe'].get_support()
         selected_feature_list = np.array(feature_list)[selector]
@@ -375,6 +396,7 @@ def integrated_clf_model_notest(feat_sel, model, train_data, cv):
         result_dict['Feature Weights'] = pd.DataFrame({"Error": ["This model doesn\'t support generating feature weights"]}).to_dict('records')
     if feat_sel:
         result_dict['Optimization'] = best_clfs.to_dict('records')
+        result_dict['Opt HDFS Path'] = opt_hdfs_path
 
     return result_dict
 

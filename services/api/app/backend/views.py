@@ -496,6 +496,7 @@ def show_results(request):
         
         task_info_query = Submissions.objects.filter(task_id=task_id).values('task_id', 'proj_id', 'task_name', 'task_type', 'task_config', 'task_status', 'task_result')
         task_info = list(task_info_query)[0]
+        proj_id = task_info['proj_id']
         
         if analysis_type == 'Machine Learning':
             # response with task configuration list
@@ -541,37 +542,48 @@ def show_results(request):
 
             # response with image data if exists
             response_content['img_list'] = []
-            if 'Optimization' in task_result_dict.keys():
-                plt.figure()
-                best_clfs = pd.DataFrame.from_records(task_result_dict['Optimization'])
-                print(best_clfs.columns.values.tolist())
-                components_col = best_clfs.columns.values.tolist()[3]
-                best_clfs.plot(x=components_col, y='mean_test_score', yerr='std_test_score')
-                plt.ylabel('Classification Accuracy')
-                plt.xlabel('Features Selected')
-                plt.title('Optimization Curve')
-                plt.savefig('optimization_curve_' + task_id + '.png', dpi=300)
-                plt.close()
-                response_content['img_list'].append('optimization_curve_' + task_id + '.png')
-            if 'ROC fpr' in task_result_dict.keys():
-                plt.figure()
-                mean_fpr = np.linspace(0, 1, 100)
-                fpr = np.array(task_result_dict['ROC fpr'])
-                tpr = np.array(task_result_dict['ROC tpr'])
-                roc_auc = task_result_dict['Area Under Curve']
-                plt.plot(fpr, tpr,
-                        label='AUC = %0.2f' % (roc_auc))
-                plt.plot([0, 1], [0, 1], linestyle='--', lw=2, color='r',
-                        label='Chance', alpha=.8)
-                plt.xlim([-0.05, 1.05])
-                plt.ylim([-0.05, 1.05])
-                plt.xlabel('False Positive Rate')
-                plt.ylabel('True Positive Rate')
-                plt.title('Receiver Operating Characteristic')
-                plt.legend(loc="lower right")
-                plt.savefig('ROC_curve_' + task_id + '.png', dpi=300)
-                plt.close()
-                response_content['img_list'].append('ROC_curve_' + task_id + '.png')
+            if 'Opt HDFS Path' in task_result_dict.keys():
+                opt_file_path = 'optimization_curve_' + task_id + '.png'
+                if task_result_dict['Opt HDFS Path']:
+                    opt_hdfs_path = "/neurolearn/files/" + proj_id + "/results/" + task_id + '/optimization_curve.png'
+                    opt_file_path = handleHdfsDownload(opt_hdfs_path, opt_file_path)
+                else:
+                    plt.figure()
+                    best_clfs = pd.DataFrame.from_records(task_result_dict['Optimization'])
+                    print(best_clfs.columns.values.tolist())
+                    components_col = best_clfs.columns.values.tolist()[3]
+                    best_clfs.plot(x=components_col, y='mean_test_score', yerr='std_test_score')
+                    plt.ylabel('Classification Accuracy')
+                    plt.xlabel('Features Selected')
+                    plt.title('Optimization Curve')
+                    plt.savefig(opt_file_path, dpi=300)
+                    plt.close()
+                response_content['img_list'].append(opt_file_path)
+            
+            if 'ROC HDFS Path' in task_result_dict.keys():
+                roc_file_path = 'ROC_curve_' + task_id + '.png'
+                if task_result_dict['ROC HDFS Path']:
+                    roc_hdfs_path = "/neurolearn/files/" + proj_id + "/results/" + task_id + '/ROC_curve.png'
+                    roc_file_path = handleHdfsDownload(roc_hdfs_path, roc_file_path)
+                else:
+                    plt.figure()
+                    mean_fpr = np.linspace(0, 1, 100)
+                    fpr = np.array(task_result_dict['ROC fpr'])
+                    tpr = np.array(task_result_dict['ROC tpr'])
+                    roc_auc = task_result_dict['Area Under Curve']
+                    plt.plot(fpr, tpr,
+                            label='AUC = %0.2f' % (roc_auc))
+                    plt.plot([0, 1], [0, 1], linestyle='--', lw=2, color='r',
+                            label='Chance', alpha=.8)
+                    plt.xlim([-0.05, 1.05])
+                    plt.ylim([-0.05, 1.05])
+                    plt.xlabel('False Positive Rate')
+                    plt.ylabel('True Positive Rate')
+                    plt.title('Receiver Operating Characteristic')
+                    plt.legend(loc="lower right")
+                    plt.savefig(roc_file_path, dpi=300)
+                    plt.close()
+                response_content['img_list'].append(roc_file_path)
 
         # elif analysis_type == 'Statistical Analysis':
         #     task_info = Submissions_SA_Demo.objects.filter(task_id=task_id, task_status='Finished')
@@ -592,6 +604,12 @@ def show_results(request):
     response.write(json.dumps(response_content))
 
     return response
+
+def handleHdfsDownload(hdfs_path, local_path):
+    client = InsecureClient("http://hdfs.neurolearn.com:50070", user="hadoop")
+    client.download(hdfs_path, local_path, overwrite=True)
+    print('Downloaded Images from HDFS.')
+    return local_path
 
 @require_http_methods(["GET"])
 def show_img(request):
