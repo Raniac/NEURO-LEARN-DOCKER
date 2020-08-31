@@ -545,7 +545,7 @@ def show_results(request):
             if 'Opt HDFS Path' in task_result_dict.keys():
                 opt_file_path = 'optimization_curve_' + task_id + '.png'
                 if task_result_dict['Opt HDFS Path']:
-                    opt_hdfs_path = "/neurolearn/files/" + proj_id + "/results/" + task_id + '/optimization_curve.png'
+                    opt_hdfs_path = task_result_dict['Opt HDFS Path'] + '/optimization_curve.png'
                     opt_file_path = handleHdfsDownload(opt_hdfs_path, opt_file_path)
                 else:
                     plt.figure()
@@ -563,7 +563,7 @@ def show_results(request):
             if 'ROC HDFS Path' in task_result_dict.keys():
                 roc_file_path = 'ROC_curve_' + task_id + '.png'
                 if task_result_dict['ROC HDFS Path']:
-                    roc_hdfs_path = "/neurolearn/files/" + proj_id + "/results/" + task_id + '/ROC_curve.png'
+                    roc_hdfs_path = task_result_dict['ROC HDFS Path'] + '/ROC_curve.png'
                     roc_file_path = handleHdfsDownload(roc_hdfs_path, roc_file_path)
                 else:
                     plt.figure()
