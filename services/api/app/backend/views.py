@@ -520,6 +520,10 @@ def show_results(request):
                 del(result_table_dict['ROC fpr'])
             if 'ROC tpr' in result_table_dict.keys():
                 del(result_table_dict['ROC tpr'])
+            if 'Opt HDFS Path' in result_table_dict.keys():
+                del(result_table_dict['Opt HDFS Path'])
+            if 'ROC HDFS Path' in result_table_dict.keys():
+                del(result_table_dict['ROC HDFS Path'])
             result_table_dict['Optimal Parameters'] = str(result_table_dict['Optimal Parameters'])
             result_table = []
             for idx in range(len(list(result_table_dict.keys()))):
