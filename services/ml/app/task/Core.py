@@ -122,7 +122,7 @@ def ml_task(task_id, proj_id, task_type, train_data, enable_test, test_data, lab
         else:
             results = integrated_rgs_model_notest(my_feat_sel, my_model, my_train_data, cv)
     
-    if feat_sel:
+    if my_feat_sel:
         opt_hdfs_path = handleHdfsUpload('optimization_curve.png', proj_id, task_id)
         results['Opt HDFS Path'] = opt_hdfs_path
     if enable_test:
