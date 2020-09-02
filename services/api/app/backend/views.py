@@ -406,6 +406,20 @@ def new_task(request):
         response.write(e)
         return response
 
+@require_http_methods(["POST"])
+def new_sgn_task(request):
+    response = HttpResponse()
+    try:
+        res = requests.post(
+            url="http://sgn.neurolearn.com:7014/rest/sgnservice/v0/task/insert",
+            data=request.body.decode("utf-8")
+        )
+        response.write(json.dumps(res.json()))
+        return response
+    except Exception as e:
+        response.write(e)
+        return response
+
 @require_http_methods(["GET"])
 def overview_submissions(request):
     response_content = {}

@@ -44,7 +44,7 @@ def intro():
     '''
     return intro_cont
 
-@app.route('/rest/sgnservice/v0/new_sgn_task', methods=['POST'])
+@app.route('/rest/sgnservice/v0/task/insert', methods=['POST'])
 def new_task():
     response_content = {}
 
