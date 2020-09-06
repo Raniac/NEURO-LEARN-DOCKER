@@ -1,8 +1,12 @@
+![logo](doc/logo.png)
+
 # NEURO-LEARN-DOCKER
 
-Before you start, feel free to read our [article](https://www.jianshu.com/p/06f0451463fe) about NLD! :-)
+**Before you start, feel free to read our [article](https://www.jianshu.com/p/06f0451463fe) about NLD! :-)**
 
 ## Quick Start
+
+> 中文使用文档详见[Getting Started with NEURO-LEARN](https://www.jianshu.com/p/067747c881ee).
 
 ### Fast Deployment
 
@@ -39,7 +43,50 @@ root@machine:/$ echo "120.79.49.129 api.neurolearn.com" >> /etc/hosts
 
 ![continuous_integration](doc/continuous_integration.png)
 
-## More
+## NLD Website UI
 
-- More information about NEURO-LEARN-DOCKER can be found in [NLD Documentation](https://github.com/Raniac/NEURO-LEARN-DOCKER/wiki).
-- 中文文档请戳[这里](https://www.jianshu.com/p/067747c881ee)。
+> 中文文档详见[Getting Started with NEURO-LEARN](https://www.jianshu.com/p/067747c881ee)。
+
+### Home
+
+![home](doc/screenshots/home.png)
+
+### Login
+
+![login](doc/screenshots/login.png)
+
+### Profile
+
+![profile](doc/screenshots/profile.png)
+
+### Projects Overview
+
+![projects-overview](doc/screenshots/projects-overview.png)
+
+### Projects Data
+
+![projects-data](doc/screenshots/projects-data.png)
+
+### New Projects
+
+![new-project](doc/screenshots/new-project.png)
+
+### New ML Task
+
+![new-ml-task](doc/screenshots/new-ml-task.png)
+
+### New DL Task
+
+![new-dl-task](doc/screenshots/new-dl-task.png)
+
+### Analysis Overview
+
+![analysis-overview](doc/screenshots/analysis-overview.png)
+
+### Analysis Submissions
+
+![analysis-submissions](doc/screenshots/analysis-submissions.png)
+
+### Analysis Viewer
+
+![analysis-viewer](doc/screenshots/analysis-viewer.png)
