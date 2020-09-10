@@ -56,7 +56,7 @@ def init_db(db_host, db_name, db_user, db_pwd):
 def get_results_by_taskids(mysql, task_ids):
     try:
         sql = """
-        SELECT task_id, task_result
+        SELECT task_id, task_name, task_result
         FROM backend_submissions as submissions
         WHERE submissions.task_id in (%s)
         """ % (','.join(list(map(lambda x: "'" + x + "'", task_ids))))
@@ -67,5 +67,10 @@ def get_results_by_taskids(mysql, task_ids):
 
 if __name__ == '__main__':
     mysql = MYSQLDB(host="db.neurolearn.com", user="neurolearn", pwd="nl4444_", db="neurolearn")
-    resList = get_results_by_taskids(mysql, ['TASK20080706524300', 'TASK20091002390308'])
-    print(json.loads(resList[0][1]))
+    task_ids = []
+    with open('cache.txt', 'r') as t:
+        for i in t.readlines():
+            task_ids.append(i.strip())
+    resList = get_results_by_taskids(mysql, task_ids)
+    for itm in resList:
+        print('Task Name: %s, Accuracy: %.2f' % (itm[1], json.loads(itm[2])['Optimal CV Accuracy']))
