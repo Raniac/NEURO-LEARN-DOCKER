@@ -2,14 +2,7 @@ import pymysql
 import json
 import traceback
 
-## TODO modify MYSQLDB as singleton class
-class Singleton:
-    def __new__(cls, *args, **kwargs):
-        if not hasattr(cls, '_instance'):
-            cls._instance = super(Singleton, cls).__new__(cls)
-        return cls._instance
-
-class MYSQLDB(Singleton):
+class MYSQLDB():
     def __init__(self, host, user, pwd, db):
         self.host = host
         self.user = user
@@ -42,16 +35,6 @@ class MYSQLDB(Singleton):
         ## Required for query execution
         self.conn.close()
         return resList
-
-    def ExecNonQuery(self, sql):
-        cur = self.__GetConnect()
-        cur.execute(sql)
-        self.conn.commit()
-        self.conn.close()
-
-def init_db(db_host, db_name, db_user, db_pwd):
-    mysql = MYSQLDB(host=db_host, db=db_name, user=db_user, pwd=db_pwd)
-    return mysql
 
 def get_results_by_taskids(mysql, task_ids):
     try:
