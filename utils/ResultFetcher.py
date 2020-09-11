@@ -45,7 +45,7 @@ def get_results_by_taskids(mysql, task_ids):
         """ % (','.join(list(map(lambda x: "'" + x + "'", task_ids))))
         fetList = mysql.ExecQuery(sql)
         return fetList
-    except Exception as e:
+    except:
         traceback.print_exc()
 
 if __name__ == '__main__':
@@ -55,5 +55,11 @@ if __name__ == '__main__':
         for i in t.readlines():
             task_ids.append(i.strip())
     resList = get_results_by_taskids(mysql, task_ids)
-    for itm in resList:
-        print('Task Name: %s, Accuracy: %.2f' % (itm[1], json.loads(itm[2])['Optimal CV Accuracy']))
+    
+    # Configure Items to Show
+    items = ['Optimal CV Accuracy', 'Test Accuracy', 'Area Under Curve']
+    
+    for res in resList:
+        print('Task Name: %s' % res[1])
+        for itm in items:
+            print('    %s: %.4f' % (itm, json.loads(res[2])[itm]))
