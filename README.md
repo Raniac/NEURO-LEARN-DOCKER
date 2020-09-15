@@ -31,7 +31,8 @@ user@machine:~/NEURO-LEARN-DOCKER/utils$ docker-compose down
 ```bash
 # Configure the ip for api-service apis
 root@machine:/$ echo "120.79.49.129 api.neurolearn.com" >> /etc/hosts
-# open a browser and type the address https://raniac.github.io/neuro-learn-website/
+# Remember to configure the security options to allow insecure mixed contents
+# Now open a browser and type the address https://raniac.github.io/neuro-learn-website/
 # VOILA!
 ```
 
