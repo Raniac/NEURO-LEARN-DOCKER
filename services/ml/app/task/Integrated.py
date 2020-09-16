@@ -378,7 +378,7 @@ def integrated_clf_model_notest(feat_sel, model, train_data, cv, task_id):
 
     return result_dict
 
-def integrated_rgs_model(feat_sel, model, train_data, test_data, cv):
+def integrated_rgs_model(feat_sel, model, train_data, test_data, cv, task_id):
     starttime = time.time()
 
     feature_list = train_data.list_features
@@ -431,9 +431,9 @@ def integrated_rgs_model(feat_sel, model, train_data, test_data, cv):
     import scipy
     pearson_r, pearson_p = scipy.stats.pearsonr(original, predictions)
     print('The pearsonr and pearsonp are:', pearson_r, 'and', pearson_p)
-    # g = sns.jointplot(x='Original', y='Predicted', data=original_predicted, kind='reg', label='pearson_r = %.2f, pearson_p = %.4f' % (pearson_r, pearson_p))
-    # plt.legend(loc='upper right')
-    # g.savefig(result_path + '/' + 'Original_Predicted_Correlation.png', dpi=300)
+    g = sns.jointplot(x='Original', y='Predicted', data=predictions_list, kind='reg', label='pearson_r = %.2f, pearson_p = %.4f' % (pearson_r, pearson_p))
+    plt.legend(loc='upper right')
+    g.savefig(task_id + '_Original_Predicted_Correlation.png', dpi=300)
 
     endtime = time.time()
     runtime = str(endtime - starttime)

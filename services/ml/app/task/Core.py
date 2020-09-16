@@ -126,7 +126,9 @@ def ml_task(task_id, proj_id, task_type, train_data, enable_test, test_data, lab
             my_model = L2_RGS()
     
         if enable_test:
-            results = integrated_rgs_model(my_feat_sel, my_model, my_train_data, my_test_data, cv) # run integrated classification model
+            results = integrated_rgs_model(my_feat_sel, my_model, my_train_data, my_test_data, cv, task_id) # run integrated regression model
+            cor_hdfs_path = handleHdfsUpload(task_id + '_Original_Predicted_Correlation.png', proj_id, task_id)
+            results['Cor HDFS Path'] = cor_hdfs_path
         else:
             results = integrated_rgs_model_notest(my_feat_sel, my_model, my_train_data, cv)
 

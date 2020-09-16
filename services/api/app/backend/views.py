@@ -538,6 +538,8 @@ def show_results(request):
                 del(result_table_dict['Opt HDFS Path'])
             if 'ROC HDFS Path' in result_table_dict.keys():
                 del(result_table_dict['ROC HDFS Path'])
+            if 'Cor HDFS Path' in result_table_dict.keys():
+                del(result_table_dict['Cor HDFS Path'])
             result_table_dict['Optimal Parameters'] = str(result_table_dict['Optimal Parameters'])
             result_table = []
             for idx in range(len(list(result_table_dict.keys()))):
@@ -602,6 +604,13 @@ def show_results(request):
                     plt.savefig(roc_file_path, dpi=300)
                     plt.close()
                 response_content['img_list'].append(roc_file_path)
+            
+            if 'Cor HDFS Path' in task_result_dict.keys():
+                opt_file_path = 'Original_Predicted_Correlation_' + task_id + '.png'
+                if task_result_dict['Cor HDFS Path']:
+                    opt_hdfs_path = task_result_dict['Cor HDFS Path'] + '/' + task_id + '_Original_Predicted_Correlation.png'
+                    opt_file_path = handleHdfsDownload(opt_hdfs_path, opt_file_path)
+                    response_content['img_list'].append(opt_file_path)
 
         # elif analysis_type == 'Statistical Analysis':
         #     task_info = Submissions_SA_Demo.objects.filter(task_id=task_id, task_status='Finished')
