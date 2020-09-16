@@ -12,7 +12,7 @@ from sklearn.model_selection import GridSearchCV
 from sklearn.model_selection import permutation_test_score
 from sklearn.metrics import roc_auc_score, auc
 
-def integrated_clf_model(feat_sel, model, train_data, test_data, cv):
+def integrated_clf_model(feat_sel, model, train_data, test_data, cv, task_id):
     starttime = time.time()
 
     feature_list = train_data.list_features
@@ -67,7 +67,7 @@ def integrated_clf_model(feat_sel, model, train_data, test_data, cv):
         plt.xlabel('n_components')
         plt.title('Optimization Curve')
 
-        plt.savefig('optimization_curve.png', dpi=300)
+        plt.savefig(task_id + 'optimization_curve.png', dpi=300)
 
     elif feat_sel and feat_sel.name == 'anova':
         plt.figure()
@@ -81,7 +81,7 @@ def integrated_clf_model(feat_sel, model, train_data, test_data, cv):
         plt.xlabel('percentile')
         plt.title('Optimization Curve')
 
-        plt.savefig('optimization_curve.png', dpi=300)
+        plt.savefig(task_id + 'optimization_curve.png', dpi=300)
 
         selector = optimal_model.named_steps['anova'].get_support()
         selected_feature_list = np.array(feature_list)[selector]
@@ -114,7 +114,7 @@ def integrated_clf_model(feat_sel, model, train_data, test_data, cv):
         plt.xlabel('n_features_to_select')
         plt.title('Optimization Curve')
 
-        plt.savefig('optimization_curve.png', dpi=300)
+        plt.savefig(task_id + 'optimization_curve.png', dpi=300)
 
         selector = optimal_model.named_steps['rfe'].get_support()
         selected_feature_list = np.array(feature_list)[selector]
@@ -191,7 +191,7 @@ def integrated_clf_model(feat_sel, model, train_data, test_data, cv):
     plt.ylabel('True Positive Rate')
     plt.title('Receiver Operating Characteristic')
     plt.legend(loc="lower right")
-    plt.savefig('ROC_curve.png', dpi=300)
+    plt.savefig(task_id + 'ROC_curve.png', dpi=300)
     
     endtime = time.time()
     runtime = str(endtime - starttime)
@@ -219,7 +219,7 @@ def integrated_clf_model(feat_sel, model, train_data, test_data, cv):
 
     return result_dict
 
-def integrated_clf_model_notest(feat_sel, model, train_data, cv):
+def integrated_clf_model_notest(feat_sel, model, train_data, cv, task_id):
     starttime = time.time()
 
     feature_list = train_data.list_features
@@ -274,7 +274,7 @@ def integrated_clf_model_notest(feat_sel, model, train_data, cv):
         plt.xlabel('n_components')
         plt.title('Optimization Curve')
 
-        plt.savefig('optimization_curve.png', dpi=300)
+        plt.savefig(task_id + 'optimization_curve.png', dpi=300)
 
     elif feat_sel and feat_sel.name == 'anova':
         plt.figure()
@@ -288,7 +288,7 @@ def integrated_clf_model_notest(feat_sel, model, train_data, cv):
         plt.xlabel('percentile')
         plt.title('Optimization Curve')
 
-        plt.savefig('optimization_curve.png', dpi=300)
+        plt.savefig(task_id + 'optimization_curve.png', dpi=300)
 
         selector = optimal_model.named_steps['anova'].get_support()
         selected_feature_list = np.array(feature_list)[selector]
@@ -321,7 +321,7 @@ def integrated_clf_model_notest(feat_sel, model, train_data, cv):
         plt.xlabel('n_features_to_select')
         plt.title('Optimization Curve')
 
-        plt.savefig('optimization_curve.png', dpi=300)
+        plt.savefig(task_id + 'optimization_curve.png', dpi=300)
 
         selector = optimal_model.named_steps['rfe'].get_support()
         selected_feature_list = np.array(feature_list)[selector]

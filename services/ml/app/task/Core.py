@@ -97,9 +97,17 @@ def ml_task(task_id, proj_id, task_type, train_data, enable_test, test_data, lab
             my_model = KNN_CLF()
 
         if enable_test:
-            results = integrated_clf_model(my_feat_sel, my_model, my_train_data, my_test_data, cv) # run integrated classification model
+            results = integrated_clf_model(my_feat_sel, my_model, my_train_data, my_test_data, cv, task_id) # run integrated classification model
         else:
-            results = integrated_clf_model_notest(my_feat_sel, my_model, my_train_data, cv)
+            results = integrated_clf_model_notest(my_feat_sel, my_model, my_train_data, cv, task_id)
+    
+        if my_feat_sel:
+            opt_hdfs_path = handleHdfsUpload(task_id + 'optimization_curve.png', proj_id, task_id)
+            results['Opt HDFS Path'] = opt_hdfs_path
+        if enable_test:
+            roc_hdfs_path = handleHdfsUpload(task_id + 'ROC_curve.png', proj_id, task_id)
+            results['ROC HDFS Path'] = roc_hdfs_path
+
     elif task_type == "ml_rgs":
         if feat_sel == "Analysis of Variance":
             my_feat_sel = ANOVA_Feat_Sel(train_n_samples, train_n_features)
@@ -121,12 +129,5 @@ def ml_task(task_id, proj_id, task_type, train_data, enable_test, test_data, lab
             results = integrated_rgs_model(my_feat_sel, my_model, my_train_data, my_test_data, cv) # run integrated classification model
         else:
             results = integrated_rgs_model_notest(my_feat_sel, my_model, my_train_data, cv)
-    
-    if my_feat_sel:
-        opt_hdfs_path = handleHdfsUpload('optimization_curve.png', proj_id, task_id)
-        results['Opt HDFS Path'] = opt_hdfs_path
-    if enable_test:
-        roc_hdfs_path = handleHdfsUpload('ROC_curve.png', proj_id, task_id)
-        results['ROC HDFS Path'] = roc_hdfs_path
 
     return results
