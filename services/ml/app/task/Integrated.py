@@ -443,8 +443,8 @@ def integrated_rgs_model(feat_sel, model, train_data, test_data, cv):
     result_dict = {}
     result_dict['Optimal CV MAE'] = optimal_score
     result_dict['Optimal Parameters'] = optimal_params
-    result_dict['Test Pearson r'] = pearson_r
-    result_dict['Test Pearson p'] = pearson_p
+    result_dict['Test Pearson r'] = str(pearson_r)
+    result_dict['Test Pearson p'] = str(pearson_p)
     result_dict['Run Time'] = runtime
     result_dict['Predictions'] = predictions_list.to_dict('records')
     try:
