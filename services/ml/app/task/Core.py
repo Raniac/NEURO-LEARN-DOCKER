@@ -102,10 +102,10 @@ def ml_task(task_id, proj_id, task_type, train_data, enable_test, test_data, lab
             results = integrated_clf_model_notest(my_feat_sel, my_model, my_train_data, cv, task_id)
     
         if my_feat_sel:
-            opt_hdfs_path = handleHdfsUpload(task_id + 'optimization_curve.png', proj_id, task_id)
+            opt_hdfs_path = handleHdfsUpload(task_id + '_optimization_curve.png', proj_id, task_id)
             results['Opt HDFS Path'] = opt_hdfs_path
         if enable_test:
-            roc_hdfs_path = handleHdfsUpload(task_id + 'ROC_curve.png', proj_id, task_id)
+            roc_hdfs_path = handleHdfsUpload(task_id + '_ROC_curve.png', proj_id, task_id)
             results['ROC HDFS Path'] = roc_hdfs_path
 
     elif task_type == "ml_rgs":
