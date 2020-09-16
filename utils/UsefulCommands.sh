@@ -47,3 +47,8 @@
 # sudo tail -n 100 /opt/nls/ml/log/celery.log
 # sudo tail -n 100 /opt/nls/ml/log/gunicorn.error.log
 # sudo tail -n 100 /opt/nls/ml/log/gunicorn.access.log
+
+## ======== BUILD WEBSITE ========
+
+# cnpm run build
+# cp -r dist/* ../../../website/
