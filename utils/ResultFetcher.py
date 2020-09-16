@@ -74,7 +74,7 @@ if __name__ == '__main__':
     resList = get_results_by_taskids(mysql, task_ids)
     
     # Configure Items to Show
-    items = ['Optimal CV Accuracy', 'Test Accuracy', 'Area Under Curve']
+    items = ['Permutation Test p-Value', 'Test Accuracy', 'Test Sensitivity', 'Test Specificity', 'Area Under Curve']
     
     for res in resList:
         print('Task Name: %s' % res[1])
