@@ -1,13 +1,13 @@
 version: '2'
 
 services:
-  website:
-    image: raniac/neuro-learn-website:dev
-    restart: on-failure
-    network_mode: host
-    volumes:
-      - /opt/nlw/log:/nlw/log
-    container_name: website-dev
+  # website:
+  #   image: raniac/neuro-learn-website:dev
+  #   restart: on-failure
+  #   network_mode: host
+  #   volumes:
+  #     - /opt/nlw/log:/nlw/log
+  #   container_name: website-dev
 
   service-api:
     image: raniac/neuro-learn-service:api

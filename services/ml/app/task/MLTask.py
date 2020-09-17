@@ -9,7 +9,7 @@ from config.settings import celery
 from dao.TaskDao import TaskDao
 from task.Core import ml_task
 
-@celery.task
+@celery.task(soft_time_limit=14400)
 def new_ml_celery_task(taskid, projid, tasktype, traindata, enabletest, testdata, label, featsel, estimator, cv):
     taskDao = TaskDao()
     taskDao.updateTaskStatusByTaskId(task_id=taskid, task_status='Running')
@@ -28,8 +28,8 @@ def new_ml_celery_task(taskid, projid, tasktype, traindata, enabletest, testdata
         results = ml_task(taskid, projid, tasktype, train_data_list, enabletest, test_data_list, label, featsel, estimator, cv)
         taskDao.updateTaskStatusByTaskId(task_id=taskid, task_status='Finished')
         taskDao.updateTaskResultByTaskId(task_id=taskid, task_result=json.dumps(results))
-    except:
+    except Exception as e:
         traceback.print_exc()
         taskDao.updateTaskStatusByTaskId(task_id=taskid, task_status='Failed')
-        taskDao.updateTaskResultByTaskId(task_id=taskid, task_result=json.dumps(traceback.format_exc()[-min(1000, len(traceback.format_exc())):]))
+        taskDao.updateTaskResultByTaskId(task_id=taskid, task_result=json.dumps(str(e)))
     return
