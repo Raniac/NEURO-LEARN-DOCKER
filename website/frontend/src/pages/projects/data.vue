@@ -95,9 +95,7 @@ export default {
       this.showData()
       this.upload_url = 'http://api.neurolearn.com:1470/rest/api/v0/upload_data?proj_id=' + this.proj_id + '&user_id=' + sessionStorage.getItem('UserID')
     } else {
-      this.$alert('Choose a project first!', 'Attention!', {
-        confirmButtonText: 'Confirm'
-      })
+      this.$message.warning('Select a PROJECT first!')
     }
   },
   methods: {
