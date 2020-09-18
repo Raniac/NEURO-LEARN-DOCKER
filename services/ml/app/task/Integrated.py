@@ -192,6 +192,8 @@ def integrated_clf_model(feat_sel, model, train_data, test_data, cv, task_id):
     plt.title('Receiver Operating Characteristic')
     plt.legend(loc="lower right")
     plt.savefig(task_id + '_ROC_curve.png', dpi=300)
+
+    plt.close('all') # Close all opened figures
     
     endtime = time.time()
     runtime = str(endtime - starttime)
@@ -359,6 +361,8 @@ def integrated_clf_model_notest(feat_sel, model, train_data, cv, task_id):
             selected_weight_list = optimal_model.named_steps['lda'].coef_[0]
             feature_weights_list = pd.DataFrame({'Feature': feature_list, 'Weight': selected_weight_list})
 
+    plt.close('all') # Close all opened figures
+
     endtime = time.time()
     runtime = str(endtime - starttime)
     runtime = str(decimal.Decimal(runtime).quantize(decimal.Decimal('0.00'))) + 's'
@@ -435,6 +439,8 @@ def integrated_rgs_model(feat_sel, model, train_data, test_data, cv, task_id):
     plt.legend(loc='upper right')
     g.savefig(task_id + '_Original_Predicted_Correlation.png', dpi=300)
 
+    plt.close('all') # Close all opened figures
+
     endtime = time.time()
     runtime = str(endtime - starttime)
     runtime = str(decimal.Decimal(runtime).quantize(decimal.Decimal('0.00'))) + 's'
@@ -499,6 +505,8 @@ def integrated_rgs_model_notest(feat_sel, model, train_data, cv):
     elif not feat_sel:
         selected_weight_list = optimal_model.named_steps[model.name].coef_[0]
         feature_weights_list = pd.DataFrame({'Feature': feature_list, 'Weight': selected_weight_list})
+
+    plt.close('all') # Close all opened figures
 
     endtime = time.time()
     runtime = str(endtime - starttime)
