@@ -14,9 +14,9 @@ class PCA_Feat_Sel():
             random_state=1
         )
         self.name = 'pca'
-        step = min(n_samples, n_features) // 20
+        step = min(n_samples, n_features) // 10
         self.param_grid = {
-            'pca__n_components': list(range(11, min(n_samples, n_features)-50, step))
+            'pca__n_components': list(range(10, max(min(n_samples, n_features) - 50, 11), step))
         }
 
 class ANOVA_Feat_Sel():
@@ -27,7 +27,7 @@ class ANOVA_Feat_Sel():
         )
         self.name = 'anova'
         self.param_grid = {
-            'anova__percentile': list(range(5, 101, 5))
+            'anova__percentile': list(range(10, 101, 10))
         }
 
 class RFE_Feat_Sel():
@@ -40,9 +40,9 @@ class RFE_Feat_Sel():
             estimator, n_features_to_select=300, step=100, verbose=False
         )
         self.name = 'rfe'
-        step = n_features // 20
+        step = n_features // 10
         self.param_grid = {
-            'rfe__n_features_to_select': list(range(10, n_features, step))
+            'rfe__n_features_to_select': list(range(10, max(n_features, 11), step))
         }
 
 # ========================================
@@ -59,7 +59,7 @@ class SVM_CLF():
         )
         self.name = 'svm'
         self.param_grid = {
-            'svm__C': [1]
+            'svm__C': [0.01, 0.1, 1, 10]
         }
 
 class RF_CLF():
@@ -119,8 +119,8 @@ class KNN_CLF():
         )
         self.name = 'knn'
         self.param_grid = {
-            'knn__n_neighbors': [5, 7, 9],
-            'knn__algorithm': ['auto', 'ball_tree', 'kd_tree', 'brute'],
+            'knn__n_neighbors': [5, 10],
+            'knn__algorithm': ['ball_tree', 'kd_tree', 'brute'],
             'knn__p': [1, 2, 3]
         }
 
