@@ -653,10 +653,13 @@ def show_img(request):
 def download_feature_weights(request):
     task_id = request.GET.get('task_id')
     feature_weights_file = open('supplementary.csv', 'rb')
+
+    task_info_query = Submissions.objects.filter(task_id=task_id).values('task_name')
+    task_info = list(task_info_query)[0]
     
     response = FileResponse(feature_weights_file)
     response['Content-Type']='application/octet-stream'
-    response['Content-Disposition']='attachment;filename=\"supplementary.csv\"'
+    response['Content-Disposition']='attachment;filename=\"' + task_info['task_name'] + '_supplementary.csv\"'
     return response
 
 @require_http_methods(["GET"])
