@@ -14,7 +14,7 @@ class PCA_Feat_Sel():
             random_state=1
         )
         self.name = 'pca'
-        step = min(n_samples, n_features) // 10
+        step = min(n_samples, n_features) // 5
         self.param_grid = {
             'pca__n_components': list(range(10, max(min(n_samples, n_features) - 50, 11), step))
         }
@@ -40,7 +40,7 @@ class RFE_Feat_Sel():
             estimator, n_features_to_select=300, step=100, verbose=False
         )
         self.name = 'rfe'
-        step = n_features // 10
+        step = n_features // 5
         self.param_grid = {
             'rfe__n_features_to_select': list(range(10, max(n_features, 11), step))
         }
@@ -94,7 +94,7 @@ class LR_CLF():
         )
         self.name = 'lr'
         self.param_grid = {
-            'lr__solver': ['newton-cg', 'lbfgs', 'sag', 'saga'],
+            'lr__solver': ['newton-cg', 'sag'],
             'lr__multi_class': ['ovr', 'multinomial']
         }
 
@@ -119,9 +119,9 @@ class KNN_CLF():
         )
         self.name = 'knn'
         self.param_grid = {
-            'knn__n_neighbors': [5, 10],
-            'knn__algorithm': ['ball_tree', 'kd_tree', 'brute'],
-            'knn__p': [1, 2, 3]
+            'knn__n_neighbors': [5],
+            'knn__algorithm': ['kd_tree'],
+            'knn__p': [1]
         }
 
 # ========================================
