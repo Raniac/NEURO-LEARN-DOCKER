@@ -171,6 +171,12 @@ export default {
       window.location.href = 'http://api.neurolearn.com:1470/rest/api/v0/download_significance_values?task_id=' + this.taskid
     },
     showResults () {
+      const loading = this.$loading({
+        lock: true,
+        text: 'Loading',
+        spinner: 'el-icon-loading',
+        background: 'rgba(0, 0, 0, 0.7)'
+      })
       axios.get('/rest/api/v0/show_results?analysis_type=' + this.analysisType + '&task_id=' + this.taskid)
         .then(response => {
           var res = response.data
@@ -193,7 +199,9 @@ export default {
               this.taskinfo = res['info']
               this.showDownloadButton = true
             }
+            loading.close()
           } else {
+            loading.close()
             this.$alert('<div>' + res['msg'].slice(1, -1).replace(/\\n/g, '<br/>').replace(/\\/g, '') + '</div>', 'Error!', {
               confirmButtonText: 'Confirm',
               dangerouslyUseHTMLString: true,

@@ -224,6 +224,12 @@ export default {
   },
   methods: {
     showSubmissions () {
+      const loading = this.$loading({
+        lock: true,
+        text: 'Loading',
+        spinner: 'el-icon-loading',
+        background: 'rgba(0, 0, 0, 0.7)'
+      })
       axios.get('/rest/api/v0/overview_submissions?analysis_type=' + this.analysisType + '&user_id=' + sessionStorage.getItem('UserID'))
         .then(response => {
           var res = response.data
@@ -234,7 +240,9 @@ export default {
             this.running_num = res['running_num']
             this.finished_num = res['finished_num']
             this.failed_num = res['failed_num']
+            loading.close()
           } else {
+            loading.close()
             this.$message.error('Failed!')
             console.log(res['msg'])
           }

@@ -109,22 +109,37 @@ export default {
       }
       console.log(this.selected_project.proj_id)
       this.proj_id = this.selected_project.proj_id
+      this.currpage = 1
       this.showData()
       this.upload_url = 'http://api.neurolearn.com:1470/rest/api/v0/upload_data?proj_id=' + this.proj_id + '&user_id=' + sessionStorage.getItem('UserID')
     },
     showProjectOverview () {
+      const loading = this.$loading({
+        lock: true,
+        text: 'Loading',
+        spinner: 'el-icon-loading',
+        background: 'rgba(0, 0, 0, 0.7)'
+      })
       axios.get('/rest/api/v0/show_project_overview?user_id=' + sessionStorage.getItem('UserID'))
         .then(response => {
           var res = response.data
           if (res.error_num === 0) {
             this.project_options = res['list']
+            loading.close()
           } else {
+            loading.close()
             this.$message.error('Failed!')
             console.log(res['msg'])
           }
         })
     },
     showData () {
+      const loading = this.$loading({
+        lock: true,
+        text: 'Loading',
+        spinner: 'el-icon-loading',
+        background: 'rgba(0, 0, 0, 0.7)'
+      })
       axios.get('/rest/api/v0/show_data?proj_id=' + this.proj_id)
         .then(response => {
           var res = response.data
@@ -132,7 +147,9 @@ export default {
             console.log(res)
             this.data_table = res['list']
             console.log(res['list'])
+            loading.close()
           } else {
+            loading.close()
             this.$message.error('Failed!')
             console.log(res['msg'])
           }

@@ -224,6 +224,12 @@ export default {
       this.showSubmissions()
     },
     showSubmissions () {
+      const loading = this.$loading({
+        lock: true,
+        text: 'Loading',
+        spinner: 'el-icon-loading',
+        background: 'rgba(0, 0, 0, 0.7)'
+      })
       axios.get('/rest/api/v0/show_submissions?analysis_type=' + this.analysisType + '&page_num=' + this.currpage + '&page_size=' + this.pagesize + '&user_id=' + sessionStorage.getItem('UserID') + '&search=' + this.search_input.toLowerCase() + '&status=' + this.selected_status)
         .then(response => {
           var res = response.data
@@ -233,7 +239,9 @@ export default {
             this.totalsize = res.total_size
             this.parseSubmissionsTable(res['list'])
             console.log(this.submissions_table)
+            loading.close()
           } else {
+            loading.close()
             this.$message.error('Failed!')
             console.log(res['msg'])
           }

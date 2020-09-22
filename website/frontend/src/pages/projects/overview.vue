@@ -54,6 +54,12 @@ export default {
   },
   methods: {
     showProjectOverview () {
+      const loading = this.$loading({
+        lock: true,
+        text: 'Loading',
+        spinner: 'el-icon-loading',
+        background: 'rgba(0, 0, 0, 0.7)'
+      })
       axios.get('/rest/api/v0/show_project_overview?user_id=' + sessionStorage.getItem('UserID'))
         .then(response => {
           var res = response.data
@@ -69,7 +75,9 @@ export default {
             this.selected_project.flowchart_url = this.project_options[0].fields.flowchart_url
             this.selected_project.workflows_url = this.project_options[0].fields.workflows_url
             this.selected_project.templates_url = this.project_options[0].fields.templates_url
+            loading.close()
           } else {
+            loading.close()
             this.$message.error('Failed!')
             console.log(res['msg'])
           }

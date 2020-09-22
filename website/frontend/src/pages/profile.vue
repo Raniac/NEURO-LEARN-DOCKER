@@ -164,6 +164,12 @@ export default {
   },
   methods: {
     showJoinedProjects () {
+      const loading = this.$loading({
+        lock: true,
+        text: 'Loading',
+        spinner: 'el-icon-loading',
+        background: 'rgba(0, 0, 0, 0.7)'
+      })
       axios.get('/rest/api/v0/show_project_overview?user_id=' + sessionStorage.getItem('UserID'))
         .then(response => {
           var res = response.data
@@ -171,13 +177,21 @@ export default {
             console.log(res)
             this.projects_table = res['list']
             console.log(this.projects_table)
+            loading.close()
           } else {
+            loading.close()
             this.$message.error('Failed!')
             console.log(res['msg'])
           }
         })
     },
     showAllProjects () {
+      const loading = this.$loading({
+        lock: true,
+        text: 'Loading',
+        spinner: 'el-icon-loading',
+        background: 'rgba(0, 0, 0, 0.7)'
+      })
       axios.get('/rest/api/v0/show_all_projects')
         .then(response => {
           var res = response.data
@@ -185,7 +199,9 @@ export default {
             console.log(res)
             this.all_projects_table = res['list']
             console.log(this.all_projects_table)
+            loading.close()
           } else {
+            loading.close()
             this.$message.error('Failed!')
             console.log(res['msg'])
           }
