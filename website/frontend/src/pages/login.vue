@@ -163,10 +163,10 @@ export default {
           console.log(res.error_num)
           if (res.error_num === 0) {
             console.log(res)
+            loading.close()
             this.$message.success('Successfully registered!')
             this.loginForm.username = this.registerForm.username
             this.loginForm.password = this.registerForm.password
-            loading.close()
             this.handleLogin()
           } else {
             loading.close()
