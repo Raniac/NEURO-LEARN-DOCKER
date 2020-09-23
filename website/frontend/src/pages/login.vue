@@ -118,6 +118,12 @@ export default {
         sessionStorage.setItem('Username', 'admin')
         this.$router.push('/home')
       } else {
+        const loading = this.$loading({
+          lock: true,
+          text: 'Loading',
+          spinner: 'el-icon-loading',
+          background: 'rgba(0, 0, 0, 0.7)'
+        })
         axios.get('/rest/api/v0/login?username=' + this.loginForm.username + '&password=' + this.loginForm.password).then(response => {
           // var DjangoToken = this.getCookie('sessionid')
           // var username = this.getCookie('username')
@@ -133,8 +139,10 @@ export default {
             sessionStorage.setItem('Authorization', DjangoToken)
             sessionStorage.setItem('Username', username)
             sessionStorage.setItem('UserID', userId)
+            loading.close()
             this.$router.push('/home')
           } else {
+            loading.close()
             this.$message.error('Wrong password!')
             console.log(res.msg)
           }
@@ -142,6 +150,12 @@ export default {
       }
     },
     handleRegister () {
+      const loading = this.$loading({
+        lock: true,
+        text: 'Loading',
+        spinner: 'el-icon-loading',
+        background: 'rgba(0, 0, 0, 0.7)'
+      })
       console.log(JSON.stringify(this.registerForm))
       axios.post('/rest/api/v0/register', JSON.stringify(this.registerForm))
         .then(response => {
@@ -152,8 +166,10 @@ export default {
             this.$message.success('Successfully registered!')
             this.loginForm.username = this.registerForm.username
             this.loginForm.password = this.registerForm.password
+            loading.close()
             this.handleLogin()
           } else {
+            loading.close()
             this.$message.error('Failed to register!')
             console.log(res['msg'])
           }
