@@ -9,7 +9,7 @@ from config.settings import celery
 from dao.TaskDao import TaskDao
 from task.Core import ml_task
 
-@celery.task(soft_time_limit=4e4)
+@celery.task(soft_time_limit=1e4)
 def new_ml_celery_task(taskid, projid, tasktype, traindata, enabletest, testdata, label, featsel, estimator, cv):
     taskDao = TaskDao()
     taskDao.updateTaskStatusByTaskId(task_id=taskid, task_status='Running')
