@@ -82,7 +82,7 @@ export default {
         label: '',
         feat_sel: [],
         estimator: [],
-        cv_type: ''
+        cv_type: '10-fold'
       },
       form: {
         proj_options: [],
@@ -115,6 +115,7 @@ export default {
         this.form.label_options = [
           {name: 'GROUP', value: 'GROUP'}
         ]
+        this.newform.label = 'GROUP'
         this.form.feat_sel_options = [
           {name: 'Analysis of Variance', value: 'Analysis of Variance'},
           {name: 'Principal Component Analysis', value: 'Principal Component Analysis'},
@@ -136,6 +137,7 @@ export default {
           // {name: 'PANSS_T', value: 'PANSS_T'}
           {name: 'SCORE', value: 'SCORE'}
         ]
+        this.newform.label = 'SCORE'
         this.form.feat_sel_options = [
           {name: 'Analysis of Variance', value: 'Analysis of Variance'},
           {name: 'None', value: 'None'}
@@ -198,21 +200,29 @@ export default {
     newTask () {
       this.newform.proj_name = this.selected_proj_label
       this.newform.proj_id = this.selected_proj_id
-      console.log(JSON.stringify(this.newform))
-      axios.post('/rest/api/v0/new_task', JSON.stringify(this.newform))
-        .then(response => {
-          var res = response.data
-          if (res.code === 200) {
-            this.$router.replace({
-              path: '/analysis/overview',
-              component: resolve => require(['@/pages/analysis/overview'], resolve)
-            })
-            console.log(res)
-          } else {
-            this.$message.error('Failed submission! Please retry!')
-            console.log(res['msg'])
-          }
-        })
+
+      // verify form before submission
+      if (this.newform.train_data.length === 0 ||
+          this.newform.feat_sel.length === 0 ||
+          this.newform.estimator.length === 0 ||
+          (this.newform.enable_test && this.newform.test_data.length === 0)) {
+        this.$message.error('Form not completed!')
+      } else {
+        axios.post('/rest/api/v0/new_task', JSON.stringify(this.newform))
+          .then(response => {
+            var res = response.data
+            if (res.code === 200) {
+              this.$router.replace({
+                path: '/analysis/overview',
+                component: resolve => require(['@/pages/analysis/overview'], resolve)
+              })
+              console.log(res)
+            } else {
+              this.$message.error('Failed submission! Please retry!')
+              console.log(res['msg'])
+            }
+          })
+      }
     }
   }
 }
