@@ -12,6 +12,7 @@
           :data="projects_table"
           stripe
           border
+          @row-dblclick="onRowClick"
           style="width: 100%; background-color: #E8E8E8; color: #282828; ">
           <el-table-column type="expand">
             <template slot-scope="props">
@@ -234,6 +235,12 @@ export default {
     },
     handleSizeChange (psize) {
       this.pagesize = psize
+    },
+    onRowClick (row) {
+      this.$router.push({
+        name: 'project-overview',
+        params: {projid: row.fields.proj_id, label: row.fields.label}
+      })
     }
   }
 }

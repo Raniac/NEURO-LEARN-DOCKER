@@ -3,12 +3,12 @@
     <div class="data-overview-area">
       <div style="padding: 20px 0px">
         <div style="text-align: left">
-          <el-select v-model="selected_project.title" style="margin: 0 20px; width: 300px" placeholder="Select Project" @change="handelSelectionChange">
+          <el-select v-model="selected_project.label" style="margin: 0 20px; width: 300px" placeholder="Select Project" @change="handelSelectionChange">
             <el-option
               v-for="project_option in project_options"
-              :key="project_option.fields.title"
+              :key="project_option.fields.label"
               :label="project_option.fields.label"
-              :value="project_option.fields.title">
+              :value="project_option.fields.label">
             </el-option>
           </el-select>
         </div>
@@ -75,6 +75,24 @@ export default {
             this.selected_project.flowchart_url = this.project_options[0].fields.flowchart_url
             this.selected_project.workflows_url = this.project_options[0].fields.workflows_url
             this.selected_project.templates_url = this.project_options[0].fields.templates_url
+
+            if (this.$route.params.label) {
+              console.log(this.$route.params.label)
+              for (let i in this.project_options) {
+                console.log(this.project_options[i].fields.label)
+                if (this.project_options[i].fields.label === this.$route.params.label) {
+                  this.selected_project.proj_id = this.project_options[i].fields.proj_id
+                  this.selected_project.label = this.project_options[i].fields.label
+                  this.selected_project.title = this.project_options[i].fields.title
+                  this.selected_project.introduction = this.project_options[i].fields.introduction
+                  this.selected_project.methods = this.project_options[i].fields.methods
+                  this.selected_project.flowchart_url = this.project_options[i].fields.flowchart_url
+                  this.selected_project.workflows_url = this.project_options[i].fields.workflows_url
+                  this.selected_project.templates_url = this.project_options[i].fields.templates_url
+                }
+              }
+            }
+
             loading.close()
           } else {
             loading.close()
@@ -96,12 +114,10 @@ export default {
       window.location.href = this.selected_project.templates_url
     },
     handelSelectionChange () {
-      console.log(this.selected_project.title)
-      var i
-      for (i in this.project_options) {
-        if (this.project_options[i].fields.title === this.selected_project.title) {
+      for (let i in this.project_options) {
+        if (this.project_options[i].fields.label === this.selected_project.label) {
           this.selected_project.proj_id = this.project_options[i].fields.proj_id
-          this.selected_project.label = this.project_options[i].fields.label
+          this.selected_project.title = this.project_options[i].fields.title
           this.selected_project.introduction = this.project_options[i].fields.introduction
           this.selected_project.methods = this.project_options[i].fields.methods
           this.selected_project.flowchart_url = this.project_options[i].fields.flowchart_url
@@ -109,7 +125,6 @@ export default {
           this.selected_project.templates_url = this.project_options[i].fields.templates_url
         }
       }
-      console.log(this.selected_project.proj_id)
     }
   }
 }

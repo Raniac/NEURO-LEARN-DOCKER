@@ -38,6 +38,7 @@ const router = new Router({
     },
     {
       path: '/projects/overview',
+      name: 'project-overview',
       component: projectsOverview
     },
     {
