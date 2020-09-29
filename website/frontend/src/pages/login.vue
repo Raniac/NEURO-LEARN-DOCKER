@@ -125,8 +125,6 @@ export default {
           background: 'rgba(0, 0, 0, 0.7)'
         })
         axios.get('/rest/api/v0/login?username=' + this.loginForm.username + '&password=' + this.loginForm.password).then(response => {
-          // var DjangoToken = this.getCookie('sessionid')
-          // var username = this.getCookie('username')
           var res = response.data
           var DjangoToken = res.sessionid
           var username = res.username

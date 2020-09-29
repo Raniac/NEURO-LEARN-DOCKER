@@ -142,27 +142,6 @@ export default {
       }
     }
   }
-  // #icon {
-  //   text-align: center;
-  //   -webkit-background-size: 20px 20px;
-  //   -moz-background-size: 20px 20px;
-  //   background-size: 20px 20px;
-  //   background-color: #00CCFF;
-  //   background-image: -webkit-gradient(linear, 0 100%, 100% 0,
-  //                             color-stop(.25, rgba(255, 255, 255, .2)), color-stop(.25, transparent),
-  //                             color-stop(.5, transparent), color-stop(.5, rgba(255, 255, 255, .2)),
-  //                             color-stop(.75, rgba(255, 255, 255, .2)), color-stop(.75, transparent),
-  //                             to(transparent));
-  //   background-image: -moz-linear-gradient(45deg, rgba(255, 255, 255, .2) 25%, transparent 25%,
-  //                         transparent 50%, rgba(255, 255, 255, .2) 50%, rgba(255, 255, 255, .2) 75%,
-  //                         transparent 75%, transparent);
-  //   background-image: -o-linear-gradient(45deg, rgba(255, 255, 255, .2) 25%, transparent 25%,
-  //                         transparent 50%, rgba(255, 255, 255, .2) 50%, rgba(255, 255, 255, .2) 75%,
-  //                         transparent 75%, transparent);
-  //   background-image: linear-gradient(45deg, rgba(255, 255, 255, .2) 25%, transparent 25%,
-  //                         transparent 50%, rgba(255, 255, 255, .2) 50%, rgba(255, 255, 255, .2) 75%,
-  //                         transparent 75%, transparent);
-  // }
   #blue-title {
     color: #00CCFF;
     text-shadow:1px 1px 1px #282828;

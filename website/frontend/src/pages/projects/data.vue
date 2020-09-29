@@ -189,7 +189,6 @@ export default {
     },
     handleDownload (row) {
       console.log(row.fields.data_id)
-      // window.location.href = '/rest/api/v0/download_data?data_id=' + row.fields.data_id
       axios.get('/rest/api/v0/download_data?data_id=' + row.fields.data_id + '&user_id=' + sessionStorage.getItem('UserID'))
         .then(response => {
           var res = response.data
