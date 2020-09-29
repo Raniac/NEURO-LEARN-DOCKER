@@ -8,7 +8,7 @@ import projectsOverview from '@/pages/projects/overview'
 import projectsData from '@/pages/projects/data'
 import projectsNewProjBeta from '@/pages/projects/newproj/beta'
 import analysisOverview from '@/pages/analysis/overview'
-import analysisNewtaskNewDL from '@/pages/analysis/newtask/newdl'
+import analysisNewtaskNewSGN from '@/pages/analysis/newtask/newsgn'
 import analysisNewtaskNewML from '@/pages/analysis/newtask/newml'
 import analysisNewtaskNewSA from '@/pages/analysis/newtask/newsa'
 import analysisSubmissions from '@/pages/analysis/submissions'
@@ -53,8 +53,8 @@ const router = new Router({
       component: analysisOverview
     },
     {
-      path: '/analysis/newtask/newdl',
-      component: analysisNewtaskNewDL
+      path: '/analysis/newtask/newsgn',
+      component: analysisNewtaskNewSGN
     },
     {
       path: '/analysis/newtask/newml',

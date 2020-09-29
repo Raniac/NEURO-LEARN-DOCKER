@@ -2,7 +2,7 @@
   <div style="text-align: center">
     <div class="ml-task-form">
       <div style="text-align: left; width: 700px; margin: 0 auto; font-family: 'Arial', Times, serif; font-size: 18px; color: #505050">
-        <h2><i class="el-icon-edit-outline"></i> New Deep Learning Task</h2>
+        <h2><i class="el-icon-edit-outline"></i> New SchizoGraphNet Task</h2>
       </div>
       <el-form ref="form" :model="form" label-width="100px" label-position="middle">
         <el-form-item label="Task Name">
@@ -35,12 +35,12 @@
           </el-select>
         </el-form-item>
         <el-form-item label="Param. Set." style="color: #505050">
-          Batch Size <el-input-number class="input-param" controls-position="right" size="small" min="0" max="1000" step="10" v-model="newform.param_set.batch_size"></el-input-number>
-          &emsp;Learning Rate <el-input-number class="input-param" controls-position="right" size="small" min="0" max="1" v-model="newform.param_set.learning_rate"></el-input-number>
-          &emsp;Epochs <el-input-number class="input-param" controls-position="right" size="small" min="0" max="1000" step="10" v-model="newform.param_set.epochs"></el-input-number>
+          Batch Size <el-input-number class="input-param" controls-position="right" size="small" min=10 max=1000 step=10 v-model="newform.param_set.batch_size"></el-input-number>
+          &emsp;Learning Rate <el-input-number class="input-param" controls-position="right" size="small" min=0.01 max=1 step=0.01 v-model="newform.param_set.learning_rate"></el-input-number>
+          &emsp;Epochs <el-input-number class="input-param" controls-position="right" size="small" min=1 max=1000 step=10 v-model="newform.param_set.epochs"></el-input-number>
           <br>
-          LR Step Size <el-input-number class="input-param" controls-position="right" size="small" min="0" max="100" step="10" v-model="newform.param_set.lr_step_size"></el-input-number>
-          &emsp;LR Decay <el-input-number class="input-param" controls-position="right" size="small" min="0" max="1" v-model="newform.param_set.lr_decay"></el-input-number>
+          LR Step Size <el-input-number class="input-param" controls-position="right" size="small" min=10 max=100 step=10 v-model="newform.param_set.lr_step_size"></el-input-number>
+          &emsp;LR Decay <el-input-number class="input-param" controls-position="right" size="small" min=0.01 max=1 step=0.01 v-model="newform.param_set.lr_decay"></el-input-number>
           <br>
           <a style="color: #00CCFF" href="https://github.com/Raniac/NEURO-LEARN/wiki/" target="_blank">What are these?</a>
         </el-form-item>

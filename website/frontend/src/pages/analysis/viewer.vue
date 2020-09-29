@@ -15,6 +15,9 @@
                 <el-table-column type="expand">
                   <template slot-scope="props">
                     <el-form label-position="left" inline class="demo-table-expand">
+                      <el-form-item label="Task ID">
+                        <span>{{ taskid }}</span>
+                      </el-form-item>
                       <el-form-item label="Proj. Name">
                         <span>{{ props.row.fields.proj_name }}</span>
                       </el-form-item>
@@ -75,7 +78,7 @@
         </el-tab-pane>
       </el-tabs>
     </div>
-    <div class="viewer-area" v-else-if="analysisType == 'Statistical Analysis'">
+    <div class="viewer-area" v-else-if="analysisType == 'SchizoGraphNet'">
       <el-tabs type="border-card" style="box-shadow: 0px 0 0px #FFFFFF;" @tab-click="handleTabClick" stretch v-model="tabsValue">
         <el-tab-pane v-for="(taskSelection, key) in taskSelections" :label="taskSelection.fields.task_id" :name="taskSelection.fields.task_id" :key="key">
           <div>

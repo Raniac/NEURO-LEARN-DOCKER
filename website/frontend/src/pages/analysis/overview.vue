@@ -58,7 +58,7 @@
     <div style="margin: 0px auto; text-align: left; padding: 0px 28px 14px 28px; color: #505050; width: 772px">
       <h3>Recent</h3>
       <el-tabs style="background-color: #FFFFFF; padding: 14px" el-tabs @tab-click="handleTabClick" stretch v-model="tabsValue">
-        <!-- <el-tab-pane label="Statistical Analysis" name="Statistical Analysis">
+        <el-tab-pane label="Machine Learning" name="Machine Learning">
           <el-table
             class="submissions-table"
             :data="submissions_table"
@@ -70,22 +70,31 @@
             <el-table-column type="expand">
               <template slot-scope="props">
                 <el-form label-position="left" inline class="demo-table-expand">
-                    <el-form-item label="Task ID">
-                      <span>{{ props.row.fields.task_id }}</span>
-                    </el-form-item>
-                    <el-form-item label="Proj. Name">
-                      <span>{{ props.row.fields.project_name }}</span>
-                    </el-form-item>
-                    <el-form-item label="Test Var. / Data X">
-                      <span>{{ props.row.fields.test_var_data_x }}</span>
-                    </el-form-item>
-                    <el-form-item label="Group Var. / Data Y">
-                      <span>{{ props.row.fields.group_var_data_y }}</span>
-                    </el-form-item>
-                    <el-form-item label="Note">
-                      <span>{{ props.row.fields.note }}</span>
-                    </el-form-item>
-                  </el-form>
+                  <el-form-item label="Task ID">
+                    <span>{{ props.row.fields.task_id }}</span>
+                  </el-form-item>
+                  <el-form-item label="Proj. Name">
+                    <span>{{ props.row.fields.proj_name }}</span>
+                  </el-form-item>
+                  <el-form-item label="Train Data">
+                    <span>{{ props.row.fields.train_data }}</span>
+                  </el-form-item>
+                  <el-form-item label="Test Data">
+                    <span>{{ props.row.fields.test_data }}</span>
+                  </el-form-item>
+                  <el-form-item label="Label">
+                    <span>{{ props.row.fields.label }}</span>
+                  </el-form-item>
+                  <el-form-item label="Feat. Sel.">
+                    <span>{{ props.row.fields.feat_sel }}</span>
+                  </el-form-item>
+                  <el-form-item label="Estimator">
+                    <span>{{ props.row.fields.estimator }}</span>
+                  </el-form-item>
+                  <el-form-item label="CV Type">
+                    <span>{{ props.row.fields.cv_type }}</span>
+                  </el-form-item>
+                </el-form>
               </template>
             </el-table-column>
             <el-table-column
@@ -110,8 +119,8 @@
               </template>
             </el-table-column>
           </el-table>
-        </el-tab-pane> -->
-        <el-tab-pane label="Machine Learning" name="Machine Learning">
+        </el-tab-pane>
+        <el-tab-pane label="SchizoGraphNet" name="SchizoGraphNet">
           <el-table
             class="submissions-table"
             :data="submissions_table"
