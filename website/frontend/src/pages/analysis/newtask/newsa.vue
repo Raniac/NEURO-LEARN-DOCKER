@@ -29,12 +29,6 @@
               <el-option v-for="(group_variables_option, key) in form.group_variables_options" :label="group_variables_option.name" :value="group_variables_option.value" :key="key"></el-option>
               </el-select>
             </el-form-item>
-            <!-- <el-form-item label="Note">
-              <el-input type="textarea" v-model="newform.note"></el-input>
-            </el-form-item>
-            <el-form-item label="Verbose">
-              <el-switch active-text="On" inactive-text="Off" v-model="newform.verbose"></el-switch>
-            </el-form-item> -->
             <el-form-item>
               <el-button type="primary" @click="onSubmit">Submit</el-button>
               <el-button @click="onCancel">Cancel</el-button>
@@ -69,12 +63,6 @@
               <el-option v-for="(data_option, key) in data_table" :label="data_option.fields.data_name" :value="data_option.fields.data_name" :key="key"></el-option>
               </el-select>
             </el-form-item>
-            <!-- <el-form-item label="Note">
-              <el-input type="textarea" v-model="newform.note"></el-input>
-            </el-form-item> -->
-            <!-- <el-form-item label="Verbose">
-              <el-switch active-text="On" inactive-text="Off" v-model="newform.verbose"></el-switch>
-            </el-form-item> -->
             <el-form-item>
               <el-button type="primary" @click="onSubmit">Submit</el-button>
               <el-button @click="onCancel">Cancel</el-button>

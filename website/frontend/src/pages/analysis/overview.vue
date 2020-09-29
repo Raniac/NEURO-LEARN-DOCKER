@@ -58,6 +58,59 @@
     <div style="margin: 0px auto; text-align: left; padding: 0px 28px 14px 28px; color: #505050; width: 772px">
       <h3>Recent</h3>
       <el-tabs style="background-color: #FFFFFF; padding: 14px" el-tabs @tab-click="handleTabClick" stretch v-model="tabsValue">
+        <el-tab-pane label="Statistical Analysis" name="Statistical Analysis">
+          <el-table
+            class="submissions-table"
+            :data="submissions_table"
+            stripe
+            border
+            @row-dblclick="onRowClick"
+            style="width: 100%; background-color: #E8E8E8; color: #282828"
+            :default-sort = "{prop: 'fields.task_id', order: 'descending'}">
+            <el-table-column type="expand">
+              <template slot-scope="props">
+                <el-form label-position="left" inline class="demo-table-expand">
+                    <el-form-item label="Task ID">
+                      <span>{{ props.row.fields.task_id }}</span>
+                    </el-form-item>
+                    <el-form-item label="Proj. Name">
+                      <span>{{ props.row.fields.project_name }}</span>
+                    </el-form-item>
+                    <el-form-item label="Test Var. / Data X">
+                      <span>{{ props.row.fields.test_var_data_x }}</span>
+                    </el-form-item>
+                    <el-form-item label="Group Var. / Data Y">
+                      <span>{{ props.row.fields.group_var_data_y }}</span>
+                    </el-form-item>
+                    <el-form-item label="Note">
+                      <span>{{ props.row.fields.note }}</span>
+                    </el-form-item>
+                  </el-form>
+              </template>
+            </el-table-column>
+            <el-table-column
+            label="Task Name"
+            prop="fields.task_name">
+            </el-table-column>
+            <el-table-column
+            label="Task Type"
+            prop="fields.task_type"
+            width="120">
+            </el-table-column>
+            <el-table-column
+            label="Status"
+            prop="fields.task_status"
+            width="100">
+              <template slot-scope="scope">
+                <el-tag
+                  size="small"
+                  :type="scope.row.fields.task_status === 'Finished' ? 'success' : (scope.row.fields.task_status === 'Failed' ? 'danger' : (scope.row.fields.task_status === 'Running' ? 'primary' : 'info'))">
+                  {{ scope.row.fields.task_status }}
+                </el-tag>
+              </template>
+            </el-table-column>
+          </el-table>
+        </el-tab-pane>
         <el-tab-pane label="Machine Learning" name="Machine Learning">
           <el-table
             class="submissions-table"

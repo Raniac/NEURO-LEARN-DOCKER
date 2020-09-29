@@ -186,7 +186,7 @@ export default {
       this.newform.proj_name = this.selected_proj_label
       this.newform.proj_id = this.selected_proj_id
       console.log(JSON.stringify(this.newform))
-      axios.post('/rest/api/v0/new_task', JSON.stringify(this.newform))
+      axios.post('/rest/api/v0/new_sgn_task', JSON.stringify(this.newform))
         .then(response => {
           var res = response.data
           if (res.error_num === 0) {
