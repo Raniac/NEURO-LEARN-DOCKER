@@ -42,7 +42,7 @@ import axios from 'axios'
 export default {
   data () {
     return {
-      avatar_url: 'https://raniac.github.io/static/img/avatar.b785c82.jpg',
+      avatar_url: 'https://avatars3.githubusercontent.com/u/17725948?s=460&u=e1a35220d0b2047d63440fb8dd36803aff9f655a&v=4',
       search: '',
       submissions_table: [],
       username: 'Profile'

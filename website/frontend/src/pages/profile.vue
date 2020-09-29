@@ -1,20 +1,5 @@
 <template>
   <div style="text-align: center">
-    <div class="profile-area">
-      <div class="profile-detail">
-        <img style="float: left; height: auto; width: 200px" src="@/assets/img/joker.jpg">
-        <div style="line-height: 28px">
-          <span style="padding-left: 20px; font-family: Arial; font-weight: 200; font-size: 40px; color: #282828">BINGYE LEI</span><br/>
-          <span style="padding-left: 20px; font-family: Arial; font-weight: 100; font-size: 20px; color: #505050">Master of Engineering | SCUT</span><br/>
-          <span style="padding-left: 20px; font-family: Arial; font-weight: 100; font-size: 20px; color: #505050">Interests:  Artificial Intelligence & Neuroinformatics</span><br/>
-        </div>
-        <div style="margin-top: 16px; line-height: 28px">
-          <a class="github-link" href="https://github.com/Raniac/NEURO-LEARN-DOCKER/" target="_blank"><i class="el-icon-folder"></i> GitHub/NEURO-LEARN-DOCKER</a><br/>
-          <a class="github-link" href="https://raniac.github.io/" target="_blank"><i class="el-icon-user"></i> Bingye's Personal Site</a><br/>
-          <a class="github-link" href="mailto:leibingye@outlook.com"><i class="el-icon-message"></i> leibingye@outlook.com</a>
-        </div>
-      </div>
-    </div>
     <div class="projects-area">
       <div>
         <h1 style="padding-left: 20px; font-family: Arial; font-weight: 150; font-size: 30px; color: #505050">
@@ -43,11 +28,6 @@
               </el-form>
             </template>
           </el-table-column>
-          <!-- <el-table-column
-          label="Project ID"
-          prop="fields.proj_id"
-          width="180px">
-          </el-table-column> -->
           <el-table-column
           label="Project Title"
           prop="fields.title">
@@ -101,11 +81,6 @@
               </el-form>
             </template>
           </el-table-column>
-          <!-- <el-table-column
-          label="Project ID"
-          prop="fields.proj_id"
-          width="180px">
-          </el-table-column> -->
           <el-table-column
           label="Project Title"
           prop="fields.title">
@@ -120,7 +95,6 @@
             label="Action"
             width="100px">
             <template slot-scope="scope" style="font-size: 20px">
-              <!-- <el-button @click="handleJoin(scope.row)" type="primary" size="small">JOIN</el-button> -->
               <el-button @click="handleJoin(scope.row)" size="small" icon="el-icon-plus" circle></el-button>
               <el-button @click="handleDelete(scope.row)" type="danger" size="small" icon="el-icon-delete" circle></el-button>
             </template>

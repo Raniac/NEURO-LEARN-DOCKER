@@ -58,6 +58,21 @@
     <div style="margin: 14px auto">
       <img style="width: 800px" src="@/assets/img/scheme.png">
     </div>
+    <div class="profile-area">
+      <div class="profile-detail">
+        <img style="float: left; height: auto; width: 200px" src="@/assets/img/benny.png">
+        <div style="line-height: 28px">
+          <span style="padding-left: 20px; font-family: Arial; font-weight: 200; font-size: 40px; color: #282828">BINGYE LEI</span><br/>
+          <span style="padding-left: 20px; font-family: Arial; font-weight: 100; font-size: 20px; color: #505050">Master of Engineering | SCUT</span><br/>
+          <span style="padding-left: 20px; font-family: Arial; font-weight: 100; font-size: 20px; color: #505050">Interests:  Artificial Intelligence & Neuroinformatics</span><br/>
+        </div>
+        <div style="margin-top: 16px; line-height: 28px">
+          <a class="github-link" href="https://github.com/Raniac/NEURO-LEARN-DOCKER/" target="_blank"><i class="el-icon-folder"></i> GitHub/NEURO-LEARN-DOCKER</a><br/>
+          <a class="github-link" href="https://raniac.github.io/" target="_blank"><i class="el-icon-user"></i> Bingye's Personal Site</a><br/>
+          <a class="github-link" href="mailto:leibingye@outlook.com"><i class="el-icon-message"></i> leibingye@outlook.com</a>
+        </div>
+      </div>
+    </div>
     <div style="text-align: center">
       <div style="margin: 14px auto; padding:14px; width: 772px; background-color: #FFFFFF; color: #505050; text-align: center">
         <div style="text-align: left; width: 700px; margin: 0 auto; font-family: 'Times New Roman', Times, serif; font-size: 18px">
