@@ -102,7 +102,6 @@ export default {
   },
   mounted () {
     this.updateProjects()
-    // this.updateData()
   },
   methods: {
     handleTabClick () {
@@ -123,7 +122,7 @@ export default {
       })
     },
     updateProjects () {
-      axios.get('/rest/api/v0/show_project_overview')
+      axios.get('/rest/api/v0/show_project_overview?user_id=' + sessionStorage.getItem('UserID'))
         .then(response => {
           var res = response.data
           if (res.error_num === 0) {
