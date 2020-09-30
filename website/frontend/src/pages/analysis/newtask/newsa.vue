@@ -86,6 +86,7 @@ export default {
       tabsValue: 'DA',
       taskType: '',
       newform: {
+        proj_id: '',
         proj_name: '',
         task_name: '',
         task_type: '',
