@@ -161,7 +161,7 @@ export default {
         })
     },
     showAllProjects () {
-      const loading = this.$loading({
+      const loadingall = this.$loading({
         lock: true,
         text: 'Loading',
         spinner: 'el-icon-loading',
@@ -174,9 +174,9 @@ export default {
             console.log(res)
             this.all_projects_table = res['list']
             console.log(this.all_projects_table)
-            loading.close()
+            loadingall.close()
           } else {
-            loading.close()
+            loadingall.close()
             this.$message.error('Failed!')
             console.log(res['msg'])
           }
