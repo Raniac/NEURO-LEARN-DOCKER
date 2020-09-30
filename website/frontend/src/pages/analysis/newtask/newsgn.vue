@@ -55,9 +55,7 @@
           </el-select>
         </el-form-item>
         <el-form-item label="Trained Task">
-          <el-select class="select-task" v-model="newform.trained_task_id" placeholder="Select Trained Task ID" filterable>
-            <el-option v-for="(task_option, key) in form.task_options" :label="task_option.fields.label" :value="task_option.fields.label" :key="key"></el-option>
-          </el-select>
+          <el-input class="select-task" v-model="newform.trained_task_id" placeholder="Specify Valid Trained Task ID."></el-input>
         </el-form-item>
         <el-form-item label="Save Model">
           <el-switch
@@ -104,8 +102,7 @@ export default {
       },
       form: {
         proj_options: [],
-        model_options: [],
-        task_options: []
+        model_options: []
       }
     }
   },
