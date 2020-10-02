@@ -25,7 +25,7 @@
               </el-select>
             </el-form-item>
             <el-form-item label="Group Var.">
-              <el-select class="select-data" v-model="newform.group_var_data_y" placeholder="Select Group Variables">
+              <el-select class="select-data" v-model="newform.group_var_data_y" placeholder="Select Group Variables" multiple>
               <el-option v-for="(group_variables_option, key) in form.group_variables_options" :label="group_variables_option.name" :value="group_variables_option.value" :key="key"></el-option>
               </el-select>
             </el-form-item>
@@ -165,7 +165,7 @@ export default {
       this.newform.proj_name = this.selected_proj_label
       this.newform.proj_id = this.selected_proj_id
       console.log(JSON.stringify(this.newform))
-      axios.post('/rest/api/v0/new_task', JSON.stringify(this.newform))
+      axios.post('/rest/api/v0/new_sa_task', JSON.stringify(this.newform))
         .then(response => {
           var res = response.data
           if (res.error_num === 0) {

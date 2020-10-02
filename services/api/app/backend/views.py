@@ -407,6 +407,20 @@ def new_task(request):
         return response
 
 @require_http_methods(["POST"])
+def new_sa_task(request):
+    response = HttpResponse()
+    try:
+        res = requests.post(
+            url="http://sa.neurolearn.com:7410/rest/saservice/v0/task/insert",
+            data=request.body.decode("utf-8")
+        )
+        response.write(json.dumps(res.json()))
+        return response
+    except Exception as e:
+        response.write(e)
+        return response
+
+@require_http_methods(["POST"])
 def new_sgn_task(request):
     response = HttpResponse()
     try:

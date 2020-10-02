@@ -13,6 +13,7 @@ urlpatterns = [
     url(r'v0/new_project$', views.new_project, ),
     url(r'v0/delete_project$', views.delete_project, ),
     url(r'v0/new_task$', views.new_task, ),
+    url(r'v0/new_sa_task$', views.new_sa_task, ),
     url(r'v0/new_sgn_task$', views.new_sgn_task, ),
     url(r'v0/show_submissions$', views.show_submissions, ),
     url(r'v0/upload_data$', views.upload_data, ),
