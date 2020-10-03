@@ -543,6 +543,8 @@ def show_results(request):
         task_info_query = Submissions.objects.filter(task_id=task_id).values('task_id', 'proj_id', 'task_name', 'task_type', 'task_config', 'task_status', 'task_result')
         task_info = list(task_info_query)[0]
         proj_id = task_info['proj_id']
+        if task_info['task_status'] == 'Failed':
+            raise Exception('Task Failed! No Valid Result.')
         
         if analysis_type == 'Machine Learning':
             # response with task configuration list

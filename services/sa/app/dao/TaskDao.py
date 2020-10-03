@@ -7,8 +7,7 @@ from dao.DB import Singleton
 class TaskDao(Singleton):
     def __init__(self):
         self.mySqlDb = MySqlDb(
-            # host='db.neurolearn.com',
-            host='127.0.0.1',
+            host='db.neurolearn.com',
             db='neurolearn',
             user='neurolearn',
             pwd='nl4444_'
