@@ -88,13 +88,12 @@
                 class="taskinfo-table"
                 :data="taskinfo"
                 stripe
-                default-expand-all="true"
                 border
                 style="width: 100%; background-color: #E8E8E8; color: #282828">
                 <el-table-column type="expand">
                   <template slot-scope="props">
                     <el-form label-position="left" inline class="demo-table-expand">
-                      <el-form-item label="Project Name">
+                      <el-form-item label="Proj. Name">
                         <span>{{ props.row.fields.proj_name }}</span>
                       </el-form-item>
                       <el-form-item label="Test Var. / Data X">
@@ -183,9 +182,7 @@ export default {
       axios.get('/rest/api/v0/show_results?analysis_type=' + this.analysisType + '&task_id=' + this.taskid)
         .then(response => {
           var res = response.data
-          console.log(res)
           if (res.error_num === 0) {
-            console.log(res)
             if (this.analysisType === 'Machine Learning') {
               this.taskinfo = [{fields: res['info']}]
               this.resultData = res['list']
@@ -199,7 +196,8 @@ export default {
                 this.showDownloadButton = false
               }
             } else if (this.analysisType === 'Statistical Analysis') {
-              this.taskinfo = res['info']
+              this.taskinfo = [{fields: res['info']}]
+              console.log(this.taskinfo)
               this.showDownloadButton = true
             }
             loading.close()

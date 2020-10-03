@@ -626,10 +626,18 @@ def show_results(request):
                     opt_file_path = handleHdfsDownload(opt_hdfs_path, opt_file_path)
                     response_content['img_list'].append(opt_file_path)
 
-        # elif analysis_type == 'Statistical Analysis':
-        #     task_info = Submissions_SA_Demo.objects.filter(task_id=task_id, task_status='Finished')
-        #     assert list(task_info)
-        #     response_content['info'] = json.loads(serializers.serialize("json", task_info))
+        elif analysis_type == 'Statistical Analysis':
+            # response with task configuration list
+            task_config = task_info['task_config']
+            task_info_dict = json.loads(task_config)
+            task_info_dict['task_name'] = task_info['task_name']
+            task_info_dict['task_type'] = task_info['task_type']
+            response_content['info'] = task_info_dict
+
+            # response with task result table
+            task_result_json = task_info['task_result']
+            significance = pd.DataFrame.from_records(json.loads(task_result_json))
+            significance.to_csv(path_or_buf='significance.csv', index=False)
 
         response_content['msg'] = 'success'
         response_content['error_num'] = 0
@@ -679,9 +687,12 @@ def download_feature_weights(request):
 @require_http_methods(["GET"])
 def download_significance_values(request):
     task_id = request.GET.get('task_id')
-    significance_file = open('results/' + task_id + '/' + 'significance.csv', 'rb')
+    significance_file = open('significance.csv', 'rb')
+
+    task_info_query = Submissions.objects.filter(task_id=task_id).values('task_name')
+    task_info = list(task_info_query)[0]
     
     response = FileResponse(significance_file)
     response['Content-Type']='application/octet-stream'
-    response['Content-Disposition']='attachment;filename=\"' + task_id + '/' + 'significance.csv\"'
+    response['Content-Disposition']='attachment;filename=\"' + task_info['task_name'] + '_significance.csv\"'
     return response
