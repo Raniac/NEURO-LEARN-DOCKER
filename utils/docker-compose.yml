@@ -25,6 +25,14 @@ services:
       - /opt/nls/ml/log:/nls-ml/log
     container_name: service-ml
 
+  service-sa:
+    image: raniac/neuro-learn-service:sa
+    restart: on-failure
+    network_mode: host
+    volumes:
+      - /opt/nls/sa/log:/nls-sa/log
+    container_name: service-sa
+
   # service-sgn:
   #   image: raniac/neuro-learn-service:sgn
   #   # restart: on-failure
