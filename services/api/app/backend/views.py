@@ -455,6 +455,9 @@ def overview_submissions(request):
         elif analysis_type == 'Statistical Analysis':
             submissions = Submissions.objects.filter(task_type__in = ['sa_da_ttest', 'sa_da_anova', 'sa_ca_prson', 'sa_ca_spman'], proj_id__in = proj_id_list).order_by('-id')[:4]
             response_content['list']  = json.loads(serializers.serialize("json", submissions))
+        elif analysis_type == 'SchizoGraphNet':
+            submissions = Submissions.objects.filter(task_type__in = ['dl_ts', 'dl_ft'], proj_id__in = proj_id_list).order_by('-id')[:4]
+            response_content['list']  = json.loads(serializers.serialize("json", submissions))
 
         total = Submissions.objects.filter(proj_id__in = proj_id_list).count()
         response_content['total_num'] = total
@@ -500,10 +503,25 @@ def show_submissions(request):
                     fields=('task_id', 'proj_id', 'task_name', 'task_type', 'task_config', 'task_status')
                 )
             )
-            response_content['total_size'] = Submissions.objects.filter(proj_id__in = proj_id_list).count()
+            response_content['total_size'] = Submissions.objects.filter(task_type__in = ['ml_clf', 'ml_rgs'], proj_id__in = proj_id_list).count()
         elif analysis_type == "Statistical Analysis":
-            submissions = Submissions.objects.filter(task_type__in = ['sa_da_ttest', 'sa_da_anova', 'sa_ca_prson', 'sa_ca_spman'], proj_id__in = proj_id_list).order_by('-id')[:4]
-            response_content['list']  = json.loads(serializers.serialize("json", submissions))
+            submissions = Submissions.objects.filter(task_type__in = ['sa_da_ttest', 'sa_da_anova', 'sa_ca_prson', 'sa_ca_spman'], proj_id__in = proj_id_list, task_name__icontains = search, task_status__icontains = status).order_by('-id')[(page_num-1)*page_size:page_num*page_size]
+            response_content['list']  = json.loads(
+                serializers.serialize(
+                    "json", submissions, 
+                    fields=('task_id', 'proj_id', 'task_name', 'task_type', 'task_config', 'task_status')
+                )
+            )
+            response_content['total_size'] = Submissions.objects.filter(task_type__in = ['sa_da_ttest', 'sa_da_anova', 'sa_ca_prson', 'sa_ca_spman'], proj_id__in = proj_id_list).count()
+        elif analysis_type == "SchizoGraphNet":
+            submissions = Submissions.objects.filter(task_type__in = ['dl_ts', 'dl_ft'], proj_id__in = proj_id_list, task_name__icontains = search, task_status__icontains = status).order_by('-id')[(page_num-1)*page_size:page_num*page_size]
+            response_content['list']  = json.loads(
+                serializers.serialize(
+                    "json", submissions, 
+                    fields=('task_id', 'proj_id', 'task_name', 'task_type', 'task_config', 'task_status')
+                )
+            )
+            response_content['total_size'] = Submissions.objects.filter(task_type__in = ['dl_ts', 'dl_ft'], proj_id__in = proj_id_list).count()
         response_content['msg'] = 'success'
         response_content['error_num'] = 0
     except Exception as e:

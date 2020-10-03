@@ -168,14 +168,14 @@ export default {
       axios.post('/rest/api/v0/new_sa_task', JSON.stringify(this.newform))
         .then(response => {
           var res = response.data
-          if (res.error_num === 200) {
+          if (res.code === 200) {
             this.$router.replace({
               path: '/analysis/overview',
               component: resolve => require(['@/pages/analysis/overview'], resolve)
             })
             console.log(res)
           } else {
-            this.$message.error('Failed submission!')
+            this.$message.error('Failed submission! Please retry!')
             console.log(res['msg'])
           }
         })
