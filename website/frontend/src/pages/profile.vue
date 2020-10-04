@@ -12,7 +12,6 @@
           :data="projects_table"
           stripe
           border
-          @row-dblclick="onRowClick"
           style="width: 100%; background-color: #E8E8E8; color: #282828; ">
           <el-table-column type="expand">
             <template slot-scope="props">
@@ -41,9 +40,10 @@
           <el-table-column
             fixed="right"
             label="Action"
-            width="80px">
+            width="100px">
             <template slot-scope="scope" style="font-size: 20px">
-              <el-button @click="handleQuit(scope.row)" type="danger" size="small">QUIT</el-button>
+              <el-button @click="handleView(scope.row)" size="small" icon="el-icon-view" circle></el-button>
+              <el-button @click="handleQuit(scope.row)" type="danger" size="small" icon="el-icon-minus" circle></el-button>
             </template>
           </el-table-column>
         </el-table>
@@ -198,7 +198,7 @@ export default {
     },
     handleDelete (row) {
       console.log(row.fields.proj_id)
-      this.$confirm('Are you sure?', 'Attention!', {
+      this.$confirm('Are you sure?', 'DELETE PROJECT!', {
         confirmButtonText: 'Yes',
         cancelButtonText: 'No'
       }).then(() => {
@@ -217,18 +217,23 @@ export default {
       }).catch(() => {})
     },
     handleQuit (row) {
-      axios.get('/rest/api/v0/quit_project?proj_id=' + row.fields.proj_id + '&user_id=' + sessionStorage.getItem('UserID'))
-        .then(response => {
-          var res = response.data
-          if (res.error_num === 0) {
-            console.log(res)
-            this.$message({showClose: true, message: 'Successfully quitted ' + row.fields.proj_id, type: 'success'})
-            this.showJoinedProjects()
-          } else {
-            this.$message.warning(res['msg'])
-            console.log(res['msg'])
-          }
-        })
+      this.$confirm('Are you sure?', 'QUIT PROJECT!', {
+        confirmButtonText: 'Yes',
+        cancelButtonText: 'No'
+      }).then(() => {
+        axios.get('/rest/api/v0/quit_project?proj_id=' + row.fields.proj_id + '&user_id=' + sessionStorage.getItem('UserID'))
+          .then(response => {
+            var res = response.data
+            if (res.error_num === 0) {
+              console.log(res)
+              this.$message({showClose: true, message: 'Successfully quitted ' + row.fields.proj_id, type: 'success'})
+              this.showJoinedProjects()
+            } else {
+              this.$message.warning(res['msg'])
+              console.log(res['msg'])
+            }
+          })
+      }).catch(() => {})
     },
     handleCurrentChange (cpage) {
       this.currpage = cpage
@@ -236,7 +241,7 @@ export default {
     handleSizeChange (psize) {
       this.pagesize = psize
     },
-    onRowClick (row) {
+    handleView (row) {
       this.$router.push({
         name: 'project-overview',
         params: {projid: row.fields.proj_id, label: row.fields.label}
