@@ -18,8 +18,9 @@ def integrated_ttest(test_variables, group_variables):
 
     for feature_name in feature_list:
         t_value, p_value, df = st.ttest_ind(group0_var[feature_name], group1_var[feature_name], usevar='unequal')
-        t_value_list.append(t_value)
-        p_value_list.append(p_value)
+        if p_value <= 0.05:
+            t_value_list.append(t_value)
+            p_value_list.append(p_value)
 
     ttest_results['Feature Name'] = feature_list
     ttest_results['t value'] = t_value_list
@@ -42,10 +43,11 @@ def integrated_pearson(data_x, data_y):
     for x_feature_name in x_feature_list:
         for y_feature_name in y_feature_list:
             r_value, p_value = scipy.stats.pearsonr(data_x[x_feature_name], data_y[y_feature_name])
-            x_feature_names.append(x_feature_name)
-            y_feature_names.append(y_feature_name)
-            r_value_list.append(r_value)
-            p_value_list.append(p_value)
+            if p_value <= 0.05:
+                x_feature_names.append(x_feature_name)
+                y_feature_names.append(y_feature_name)
+                r_value_list.append(r_value)
+                p_value_list.append(p_value)
 
     pearson_results['X Feature Name'] = x_feature_names
     pearson_results['Y Feature Name'] = y_feature_names
