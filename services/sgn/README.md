@@ -17,7 +17,7 @@ $ docker build -t raniac/neuro-learn-service:api .
 ### Initiate ```raniac/neuro-learn-service:api``` Container for Dev
 
 ```bash
-$ docker run -it --rm --network host -v /home/raniac/dev/NEURO-LEARN-DOCKER/services/api:/nls-api raniac/neuro-learn-service:api /bin/bash
+$ docker run -it --rm --network host -v /home/bennyray/Projects/neuro-learn/docker/services/api:/nls-api raniac/neuro-learn-service:api /bin/bash
 ```
 
 ## ```ml```
@@ -38,6 +38,26 @@ $ docker build -t raniac/neuro-learn-service:ml .
 
 ```bash
 $ docker run -it --rm --network host -v /home/raniac/dev/NEURO-LEARN-DOCKER/services/ml:/nls-ml raniac/neuro-learn-service:ml /bin/bash
+```
+
+## ```sa```
+
+### Start ```raniac/neuro-learn-service:sa``` Container
+
+```bash
+$ docker run -it --rm --network host raniac/neuro-learn-service:sa
+```
+
+### Build ```raniac/neuro-learn-service:sa``` Image
+
+```bash
+$ docker build -t raniac/neuro-learn-service:sa .
+```
+
+### Initiate ```raniac/neuro-learn-service:sa``` Container for Dev
+
+```bash
+$ docker run -it --rm --network host -v /home/raniac/dev/NEURO-LEARN-DOCKER/services/sa:/nls-sa raniac/neuro-learn-service:sa /bin/bash
 ```
 
 ## ```sgn```
