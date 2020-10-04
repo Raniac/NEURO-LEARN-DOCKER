@@ -445,7 +445,7 @@ def overview_submissions(request):
         for itm in proj_ids:
             proj_id_list.append(itm['proj_id'])
         
-        submissions = Submissions.objects.filter(proj_id__in = proj_id_list).order_by('-id')[:10]
+        submissions = Submissions.objects.filter(proj_id__in = proj_id_list).order_by('-id')[:8]
         response_content['list']  = json.loads(
             serializers.serialize(
                 "json", submissions, 
