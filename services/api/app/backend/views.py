@@ -439,25 +439,19 @@ def overview_submissions(request):
     response_content = {}
     response = HttpResponse()
     try:
-        # print(request.GET.get('sessionid'))
-        print(request.GET.get('username'))
-        print(request.GET.get('user_id'))
-
-        analysis_type = request.GET.get('analysis_type')
         user_id = request.GET.get('user_id')
         proj_ids = User_Proj_Auth.objects.filter(user_id=user_id).values('proj_id')
         proj_id_list = []
         for itm in proj_ids:
             proj_id_list.append(itm['proj_id'])
-        if analysis_type == 'Machine Learning':
-            submissions = Submissions.objects.filter(task_type__in = ['ml_clf', 'ml_rgs'], proj_id__in = proj_id_list).order_by('-id')[:4]
-            response_content['list']  = json.loads(serializers.serialize("json", submissions))
-        elif analysis_type == 'Statistical Analysis':
-            submissions = Submissions.objects.filter(task_type__in = ['sa_da_ttest', 'sa_da_anova', 'sa_ca_prson', 'sa_ca_spman'], proj_id__in = proj_id_list).order_by('-id')[:4]
-            response_content['list']  = json.loads(serializers.serialize("json", submissions))
-        elif analysis_type == 'SchizoGraphNet':
-            submissions = Submissions.objects.filter(task_type__in = ['dl_ts', 'dl_ft'], proj_id__in = proj_id_list).order_by('-id')[:4]
-            response_content['list']  = json.loads(serializers.serialize("json", submissions))
+        
+        submissions = Submissions.objects.filter(proj_id__in = proj_id_list).order_by('-id')[:10]
+        response_content['list']  = json.loads(
+            serializers.serialize(
+                "json", submissions, 
+                fields=('task_id', 'proj_id', 'task_name', 'task_type', 'task_config', 'task_status')
+            )
+        )
 
         total = Submissions.objects.filter(proj_id__in = proj_id_list).count()
         response_content['total_num'] = total

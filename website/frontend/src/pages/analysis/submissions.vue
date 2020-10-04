@@ -32,16 +32,13 @@
                       <span>{{ props.row.fields.task_id }}</span>
                     </el-form-item>
                     <el-form-item label="Proj. Name">
-                      <span>{{ props.row.fields.project_name }}</span>
+                      <span>{{ props.row.fields.proj_name }}</span>
                     </el-form-item>
                     <el-form-item label="Test Var. / Data X">
                       <span>{{ props.row.fields.test_var_data_x }}</span>
                     </el-form-item>
                     <el-form-item label="Group Var. / Data Y">
                       <span>{{ props.row.fields.group_var_data_y }}</span>
-                    </el-form-item>
-                    <el-form-item label="Note">
-                      <span>{{ props.row.fields.note }}</span>
                     </el-form-item>
                   </el-form>
                 </template>
@@ -355,13 +352,13 @@ export default {
           submission.fields.estimator = parsedConfig.estimator
           submission.fields.cv_type = parsedConfig.cv_type
         }
-      } else if (this.analysisType === 'SchizoGraphNet') {
-        // for (let submission of submissions) {
-        //   parsedConfig = JSON.parse(submission.fields.task_config)
-        //   submission.fields.proj_name = parsedConfig.proj_name
-        //   submission.fields.test_var_data_x = parsedConfig.group_var_data_y
-        //   submission.fields.group_var_data_y = parsedConfig.group_var_data_y
-        // }
+      } else if (this.analysisType === 'Statistical Analysis') {
+        for (let submission of submissions) {
+          parsedConfig = JSON.parse(submission.fields.task_config)
+          submission.fields.proj_name = parsedConfig.proj_name
+          submission.fields.test_var_data_x = parsedConfig.test_var_data_x
+          submission.fields.group_var_data_y = parsedConfig.group_var_data_y
+        }
       }
       this.submissions_table = submissions
       console.log(this.submissions_table)
