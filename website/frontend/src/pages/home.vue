@@ -1,7 +1,14 @@
 <template>
   <div style="text-align: center">
     <div style="margin: 14px auto">
-      <img style="width: 800px" src="@/assets/img/logo.png">
+      <el-carousel indicator-position="inside" height="350px">
+        <el-carousel-item>
+          <img style="width: 800px; height: 350px" src="@/assets/img/logo.png">
+        </el-carousel-item>
+        <el-carousel-item>
+          <img style="width: 670px; height: 350px" src="@/assets/img/scheme.png">
+        </el-carousel-item>
+      </el-carousel>
     </div>
     <div class="home-content-area">
       <div style="padding: 20px">
@@ -54,9 +61,6 @@
           </el-row>
         </div>
       </div>
-    </div>
-    <div style="margin: 14px auto">
-      <img style="width: 800px" src="@/assets/img/scheme.png">
     </div>
     <div style="text-align: center">
       <div style="margin: 14px auto; padding:14px; width: 772px; background-color: #FFFFFF; color: #505050; text-align: center">
