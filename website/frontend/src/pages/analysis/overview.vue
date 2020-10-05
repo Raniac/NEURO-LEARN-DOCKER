@@ -207,13 +207,19 @@ export default {
       this.showSubmissions()
     },
     onRowClick (row) {
-      if (row.fields.task_type in ['ml_clf', 'ml_rgs']) this.analysisType = 'Machine Learning'
-      else if (row.fields.task_type in ['sa_da_ttest', 'sa_da_anova', 'sa_ca_prson', 'sa_ca_spman']) this.analysisType = 'Statistical Analysis'
-      else if (row.fields.task_type in ['dl_ts', 'dl_ft']) this.analysisType = 'SchizoGraphNet'
+      if (this.isInArray(row.fields.task_type, ['ml_clf', 'ml_rgs'])) this.analysisType = 'Machine Learning'
+      else if (this.isInArray(row.fields.task_type, ['sa_da_ttest', 'sa_da_anova', 'sa_ca_prson', 'sa_ca_spman'])) this.analysisType = 'Statistical Analysis'
+      else if (this.isInArray(row.fields.task_type, ['dl_ts', 'dl_ft'])) this.analysisType = 'SchizoGraphNet'
       this.$router.push({
         name: 'viewer',
         params: {taskid: row.fields.task_id, tasktype: row.fields.task_type, analysisType: this.analysisType}
       })
+    },
+    isInArray (value, arr) {
+      for (let a of arr) {
+        if (a === value) return true
+      }
+      return false
     }
   }
 }
