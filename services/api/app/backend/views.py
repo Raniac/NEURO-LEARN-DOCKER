@@ -598,8 +598,12 @@ def show_results(request):
                 else:
                     plt.figure()
                     best_clfs = pd.DataFrame.from_records(task_result_dict['Optimization'])
-                    print(best_clfs.columns.values.tolist())
-                    components_col = best_clfs.columns.values.tolist()[3]
+                    components_col_dict = {
+                        'Principal Component Analysis': 'param_pca__n_components',
+                        'Analysis of Variance': 'param_anova__percentile',
+                        'Recursive Feature Elimination': 'param_rfe__n_features_to_select'
+                    }
+                    components_col = components_col_dict[task_info_dict['feat_sel']]
                     best_clfs.plot(x=components_col, y='mean_test_score', yerr='std_test_score')
                     plt.ylabel('Classification Accuracy')
                     plt.xlabel('Features Selected')
