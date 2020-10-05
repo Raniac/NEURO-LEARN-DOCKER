@@ -1,7 +1,7 @@
 <template>
   <div style="text-align: center">
     <div style="margin: 14px auto">
-      <el-carousel indicator-position="inside" height="350px">
+      <el-carousel style="width: 800px; margin: auto" indicator-position="inside" height="350px">
         <el-carousel-item>
           <img style="width: 800px; height: 350px" src="@/assets/img/logo.png">
         </el-carousel-item>
