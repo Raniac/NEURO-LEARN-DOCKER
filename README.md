@@ -14,6 +14,7 @@
 # In the case of standalone deployment, the following ips are the same
 # which is the ip of the deployed host
 root@machine:/$ echo "{host ip for ml-service} ml.neurolearn.com" >> /etc/hosts
+root@machine:/$ echo "{host ip for sa-service} sa.neurolearn.com" >> /etc/hosts
 root@machine:/$ echo "{host ip for sgn-service} sgn.neurolearn.com" >> /etc/hosts
 root@machine:/$ echo "{host ip for db-server} db.neurolearn.com" >> /etc/hosts
 root@machine:/$ echo "{host ip for hdfs-master} hdfs.neurolearn.com" >> /etc/hosts
