@@ -1,7 +1,7 @@
 <template>
   <div style="text-align: center">
     <div style="margin: 0px auto; text-align: left; padding: 14px 14px 14px 28px; color: #505050; width: 786px">
-      <h3>Overview</h3>
+      <h3><i class="el-icon-s-help"></i> STATS</h3>
       <el-row>
         <el-col :span="4" :offset=".5">
           <el-card :body-style="{ padding: '0px' }" style="background-color: #FFFFFF; width: 90%">
@@ -56,7 +56,7 @@
       </el-row>
     </div>
     <div style="margin: 0px auto; text-align: left; padding: 0px 28px 14px 28px; color: #505050; width: 772px">
-      <h3>Recent</h3>
+      <h3><i class="el-icon-time"></i> RECENT</h3>
       <el-tabs style="background-color: #FFFFFF; padding: 14px" el-tabs @tab-click="handleTabClick" stretch v-model="tabsValue">
         <el-tab-pane label="All Task Types" name="All Task Types">
           <el-table
