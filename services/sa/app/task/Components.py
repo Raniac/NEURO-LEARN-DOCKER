@@ -86,4 +86,26 @@ def integrated_pearson(data_x, data_y):
     return pearson_results.to_dict('records')
 
 def integrated_spearman(data_x, data_y):
-    pass
+    x_feature_list = data_x.columns
+    y_feature_list = data_y.columns
+    spearman_results = pd.DataFrame({'X Feature Name': [], 'Y Feature Name': [], 'r value': [], 'p value': []})
+    x_feature_names = []
+    y_feature_names = []
+    r_value_list = []
+    p_value_list = []
+
+    for x_feature_name in x_feature_list:
+        for y_feature_name in y_feature_list:
+            r_value, p_value = scipy.stats.spearmanr(data_x[x_feature_name], data_y[y_feature_name])
+            if p_value <= 0.05:
+                x_feature_names.append(x_feature_name)
+                y_feature_names.append(y_feature_name)
+                r_value_list.append(r_value)
+                p_value_list.append(p_value)
+
+    spearman_results['X Feature Name'] = x_feature_names
+    spearman_results['Y Feature Name'] = y_feature_names
+    spearman_results['r value'] = r_value_list
+    spearman_results['p value'] = p_value_list
+    
+    return spearman_results.to_dict('records')
