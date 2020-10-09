@@ -61,46 +61,19 @@ def integrated_anova(test_variables, group_variables):
     return anova_results.to_dict('records')
 
 def integrated_pearson(data_x, data_y):
-    ## TODO reduce storage cost using correlation matrix
-    # x_feature_list = data_x.columns
-    # num_x_features = len(x_feature_list)
-    # y_feature_list = data_y.columns
-    # num_y_features = len(y_feature_list)
-    # r_value_table = pd.DataFrame(np.zeros((num_x_features, num_y_features)),
-    #                              columns=y_feature_list,
-    #                              index=x_feature_list)
-    # p_value_table = pd.DataFrame(np.zeros((num_x_features, num_y_features)),
-    #                              columns=y_feature_list,
-    #                              index=x_feature_list)
-
-    # for x_feature_name in x_feature_list:
-    #     for y_feature_name in y_feature_list:
-    #         r_value, p_value = scipy.stats.pearsonr(data_x[x_feature_name], data_y[y_feature_name])
-    #         if p_value <= 0.05:
-    #             r_value_table[x_feature_name][y_feature_name] = r_value
-    #             p_value_table[x_feature_name][y_feature_name] = p_value
-
     x_feature_list = data_x.columns
+    num_x_features = len(x_feature_list)
     y_feature_list = data_y.columns
-    pearson_results = pd.DataFrame({'X Feature Name': [], 'Y Feature Name': [], 'r value': [], 'p value': []})
-    x_feature_names = []
-    y_feature_names = []
-    r_value_list = []
-    p_value_list = []
+    num_y_features = len(y_feature_list)
+    pearson_results = pd.DataFrame([['' for _ in range(num_y_features)] for _ in range(num_x_features)],
+                                 columns=y_feature_list,
+                                 index=x_feature_list)
 
     for x_feature_name in x_feature_list:
         for y_feature_name in y_feature_list:
             r_value, p_value = scipy.stats.pearsonr(data_x[x_feature_name], data_y[y_feature_name])
             if p_value <= 0.05:
-                x_feature_names.append(x_feature_name)
-                y_feature_names.append(y_feature_name)
-                r_value_list.append(r_value)
-                p_value_list.append(p_value)
-
-    pearson_results['X Feature Name'] = x_feature_names
-    pearson_results['Y Feature Name'] = y_feature_names
-    pearson_results['r value'] = r_value_list
-    pearson_results['p value'] = p_value_list
+                pearson_results[x_feature_name][y_feature_name] = str(r_value) + '(' + str(p_value) + ')'
     
     return pearson_results.to_dict('records')
 
