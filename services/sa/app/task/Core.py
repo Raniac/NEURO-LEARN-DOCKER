@@ -23,8 +23,8 @@ def test_sa_task(task_id, task_type, test_var_data_x, group_var_data_y):
 
         if len(test_var_data_x) > 0:
             for i in range(1, len(test_var_data_x)):
-                test_variables_temp = pd.read_csv(test_var_data_x[i], encoding='gbk').drop(columns_to_drop, axis=1)
-                group_variables_temp = pd.read_csv(test_var_data_x[i], encoding='gbk')[GROUP_VAR]
+                test_variables_temp = test_var_data_x[i].drop(columns_to_drop, axis=1)
+                group_variables_temp = test_var_data_x[i][GROUP_VAR]
                 test_variables = pd.concat([test_variables, test_variables_temp], axis=0)
                 group_variables = pd.concat([group_variables, group_variables_temp], axis=0)
 
@@ -52,12 +52,12 @@ def test_sa_task(task_id, task_type, test_var_data_x, group_var_data_y):
 
         if len(test_var_data_x) > 0:
             for i in range(1, len(test_var_data_x)):
-                data_x_temp = pd.read_csv(test_var_data_x[i], encoding='gbk').drop(columns_to_drop, axis=1)
+                data_x_temp = test_var_data_x[i].drop(columns_to_drop, axis=1)
                 data_x = pd.concat([data_x, data_x_temp], axis=0)
 
         if len(group_var_data_y) > 0:
             for i in range(1, len(group_var_data_y)):
-                data_y_temp = pd.read_csv(group_var_data_y[i], encoding='gbk').drop(columns_to_drop, axis=1)
+                data_y_temp = group_var_data_y[i].drop(columns_to_drop, axis=1)
                 data_y = pd.concat([data_y, data_y_temp], axis=0)
 
         if task_type[6:] == 'prson':
