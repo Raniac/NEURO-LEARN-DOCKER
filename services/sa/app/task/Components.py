@@ -10,6 +10,7 @@ import statsmodels.stats.weightstats as st
 def integrated_ttest(test_variables, group_variables):
     feature_list = test_variables.columns
     ttest_results = pd.DataFrame({'Feature Name': [],'t value': [], 'p value': []})
+    sig_features = []
     t_value_list = []
     p_value_list = []
 
@@ -19,10 +20,11 @@ def integrated_ttest(test_variables, group_variables):
     for feature_name in feature_list:
         t_value, p_value, df = st.ttest_ind(group0_var[feature_name], group1_var[feature_name], usevar='unequal')
         if p_value <= 0.05:
+            sig_features.append(feature_name)
             t_value_list.append(t_value)
             p_value_list.append(p_value)
 
-    ttest_results['Feature Name'] = feature_list
+    ttest_results['Feature Name'] = sig_features
     ttest_results['t value'] = t_value_list
     ttest_results['p value'] = p_value_list
 
