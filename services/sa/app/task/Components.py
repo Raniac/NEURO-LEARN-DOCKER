@@ -28,7 +28,7 @@ def integrated_ttest(test_variables, group_variables):
     ttest_results['t value'] = t_value_list
     ttest_results['p value'] = p_value_list
 
-    return ttest_results.to_dict('records')
+    return ttest_results.to_dict(orient='index')
 
 def integrated_anova(test_variables, group_variables):
     
@@ -58,7 +58,7 @@ def integrated_anova(test_variables, group_variables):
     anova_results['f value'] = f_value_list
     anova_results['p value'] = p_value_list
 
-    return anova_results.to_dict('records')
+    return anova_results.to_dict(orient='index')
 
 def integrated_pearson(data_x, data_y):
     x_feature_list = data_x.columns
@@ -75,7 +75,7 @@ def integrated_pearson(data_x, data_y):
             if p_value <= 0.05:
                 pearson_results[x_feature_name][y_feature_name] = '%.4f' % r_value + '(' + '%.4f' % p_value + ')'
     
-    return pearson_results.to_dict('records')
+    return pearson_results.to_dict(orient='index')
 
 def integrated_spearman(data_x, data_y):
     x_feature_list = data_x.columns
@@ -92,4 +92,4 @@ def integrated_spearman(data_x, data_y):
             if p_value <= 0.05:
                 spearman_results[x_feature_name][y_feature_name] = '%.4f' % r_value + '(' + '%.4f' % p_value + ')'
     
-    return spearman_results.to_dict('records')
+    return spearman_results.to_dict(orient='index')
