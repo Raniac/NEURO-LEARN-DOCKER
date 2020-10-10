@@ -655,7 +655,7 @@ def show_results(request):
             # response with task result table
             task_result_json = task_info['task_result']
             significance = pd.DataFrame.from_records(json.loads(task_result_json))
-            significance.to_csv(path_or_buf='significance.csv', index=False)
+            significance.to_csv(path_or_buf='significance.csv')
 
         response_content['msg'] = 'success'
         response_content['error_num'] = 0
