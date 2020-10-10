@@ -3,7 +3,7 @@
 ## Initiate Container
 
 ```bash
-$ docker run --name service-rscs -v /home/bennyray/Projects/neuro-learn/docker/utils/ResourceServer:/rscs/files -v /opt/nls/rscs/log:/rscs/log -p 7140:80 -it --rm raniac/neuro-learn-service:rscs
+$ docker run --name service-rscs -v /data:/rscs/files -v /opt/nls/rscs/log:/rscs/log -p 7140:80 -d raniac/neuro-learn-service:rscs
 ```
 
 ## Build Container
