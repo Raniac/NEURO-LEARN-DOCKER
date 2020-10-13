@@ -68,7 +68,7 @@ if __name__ == '__main__':
     
     # Obtain task ids to show
     task_ids = []
-    with open('cache.txt', 'r') as t:
+    with open('taskids.txt', 'r') as t:
         for i in t.readlines():
             task_ids.append(i.strip())
     resList = get_results_by_taskids(mysql, task_ids)
