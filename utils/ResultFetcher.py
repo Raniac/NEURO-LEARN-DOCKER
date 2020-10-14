@@ -67,10 +67,10 @@ if __name__ == '__main__':
     sys.stdout = Logger('results.txt') # output console log
     
     # Obtain task ids to show
-    task_ids = []
-    with open('taskids.txt', 'r') as t:
-        for i in t.readlines():
-            task_ids.append(i.strip())
+    task_ids = ['TASK20092101464600']
+    # with open('taskids.txt', 'r') as t:
+    #     for i in t.readlines():
+    #         task_ids.append(i.strip())
     resList = get_results_by_taskids(mysql, task_ids)
     
     # Configure Items to Show
@@ -79,4 +79,10 @@ if __name__ == '__main__':
     for res in resList:
         print('Task Name: %s' % res[1])
         for itm in items:
-            print('    %s: %.4f' % (itm, json.loads(res[2])[itm]))
+            itm_cont = json.loads(res[2])[itm]
+            if isinstance(itm_cont, float):
+                print('    %s: %.4f' % (itm, itm_cont))
+            elif isinstance(itm_cont, str):
+                print('    %s: %s' % (itm, itm_cont))
+            elif isinstance(itm_cont, list) or isinstance(itm_cont, dict):
+                print('    %s: ' % (itm) + str(itm_cont))
