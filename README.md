@@ -77,9 +77,17 @@ root@machine:/$ echo "120.79.49.129 api.neurolearn.com" >> /etc/hosts
 
 ![new-ml-task](doc/screenshots/new-ml-task.png)
 
-### New DL Task
+### New SA-DA Task
 
-![new-dl-task](doc/screenshots/new-dl-task.png)
+![new-sa-da-task](doc/screenshots/new-sa-da-task.png)
+
+### New SA-CA Task
+
+![new-sa-ca-task](doc/screenshots/new-sa-ca-task.png)
+
+### New SGN Task
+
+![new-sgn-task](doc/screenshots/new-sgn-task.png)
 
 ### Analysis Overview
 
