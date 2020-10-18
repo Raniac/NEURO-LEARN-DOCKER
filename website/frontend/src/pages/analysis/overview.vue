@@ -147,6 +147,7 @@ export default {
   },
   mounted: function () {
     this.showSubmissions()
+    setInterval(this.showSubmissions, 1e5)
   },
   methods: {
     showSubmissions () {
