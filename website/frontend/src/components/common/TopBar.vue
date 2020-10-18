@@ -51,7 +51,7 @@ export default {
   },
   mounted () {
     this.showSubmissions()
-    setInterval(this.showSubmissions, 10000)
+    // setInterval(this.showSubmissions, 10000)
   },
   methods: {
     showSubmissions () {
