@@ -1,4 +1,4 @@
-![logo](doc/logo.png)
+![logo](docs/logo.png)
 
 # NEURO-LEARN-DOCKER
 
@@ -39,11 +39,11 @@ root@machine:/$ echo "120.79.49.129 api.neurolearn.com" >> /etc/hosts
 
 ## NLD Microservices Framework
 
-![framework](doc/framework.png)
+![framework](docs/framework.png)
 
 ## NLD Continuous Integration
 
-![continuous_integration](doc/continuous_integration.png)
+![continuous_integration](docs/continuous_integration.png)
 
 ## NLD Website UI
 
@@ -51,52 +51,52 @@ root@machine:/$ echo "120.79.49.129 api.neurolearn.com" >> /etc/hosts
 
 ### Home
 
-![home](doc/screenshots/home.png)
+![home](docs/screenshots/home.png)
 
 ### Login
 
-![login](doc/screenshots/login.png)
+![login](docs/screenshots/login.png)
 
 ### Profile
 
-![profile](doc/screenshots/profile.png)
+![profile](docs/screenshots/profile.png)
 
 ### Projects Overview
 
-![projects-overview](doc/screenshots/projects-overview.png)
+![projects-overview](docs/screenshots/projects-overview.png)
 
 ### Projects Data
 
-![projects-data](doc/screenshots/projects-data.png)
+![projects-data](docs/screenshots/projects-data.png)
 
 ### New Projects
 
-![new-project](doc/screenshots/new-project.png)
+![new-project](docs/screenshots/new-project.png)
 
 ### New ML Task
 
-![new-ml-task](doc/screenshots/new-ml-task.png)
+![new-ml-task](docs/screenshots/new-ml-task.png)
 
 ### New SA-DA Task
 
-![new-sa-da-task](doc/screenshots/new-sa-da-task.png)
+![new-sa-da-task](docs/screenshots/new-sa-da-task.png)
 
 ### New SA-CA Task
 
-![new-sa-ca-task](doc/screenshots/new-sa-ca-task.png)
+![new-sa-ca-task](docs/screenshots/new-sa-ca-task.png)
 
 ### New SGN Task
 
-![new-sgn-task](doc/screenshots/new-sgn-task.png)
+![new-sgn-task](docs/screenshots/new-sgn-task.png)
 
 ### Analysis Overview
 
-![analysis-overview](doc/screenshots/analysis-overview.png)
+![analysis-overview](docs/screenshots/analysis-overview.png)
 
 ### Analysis Submissions
 
-![analysis-submissions](doc/screenshots/analysis-submissions.png)
+![analysis-submissions](docs/screenshots/analysis-submissions.png)
 
 ### Analysis Viewer
 
-![analysis-viewer](doc/screenshots/analysis-viewer.png)
+![analysis-viewer](docs/screenshots/analysis-viewer.png)
