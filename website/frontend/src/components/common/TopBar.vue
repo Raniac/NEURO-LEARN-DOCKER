@@ -22,7 +22,7 @@
       </el-col>
       <div class="new-message-area pull-right">
         <div class="new-message-icon">
-          <el-badge class="new-message-badge">
+          <el-badge class="new-message-badge" is-dot :hidden="hidden">
             <el-button class="new-message-button" @click="goToAnalysis" size="small" type="primary" icon="el-icon-message" circle></el-button>
           </el-badge>
           <div class="new-message-drop-menu">
@@ -45,12 +45,13 @@ export default {
       avatar_url: 'https://avatars3.githubusercontent.com/u/17725948?s=460&u=e1a35220d0b2047d63440fb8dd36803aff9f655a&v=4',
       search: '',
       submissions_table: [],
-      username: 'Profile'
+      username: 'Profile',
+      hidden: true
     }
   },
   mounted () {
     this.showSubmissions()
-    // setInterval(this.showSubmissions, 10000)
+    setInterval(this.showSubmissions, 10000)
   },
   methods: {
     showSubmissions () {
