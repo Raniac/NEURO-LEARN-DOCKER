@@ -57,7 +57,7 @@
     </div>
     <div style="margin: 0px auto; text-align: left; padding: 0px 28px 14px 28px; color: #505050; width: 772px">
       <h3><i class="el-icon-time"></i> RECENT</h3>
-      <el-tabs style="background-color: #FFFFFF; padding: 14px" el-tabs @tab-click="handleTabClick" stretch v-model="tabsValue">
+      <el-tabs style="background-color: #FFFFFF; padding: 14px" el-tabs stretch v-model="tabsValue">
         <el-tab-pane label="All Task Types" name="All Task Types">
           <el-table
             class="submissions-table"
@@ -147,7 +147,7 @@ export default {
   },
   mounted: function () {
     this.showSubmissions()
-    setInterval(this.showSubmissions, 4e4)
+    setInterval(this.updateSubmissionsStatus, 4e4)
   },
   methods: {
     showSubmissions () {
@@ -161,7 +161,7 @@ export default {
         .then(response => {
           var res = response.data
           if (res.error_num === 0) {
-            this.parseSubmissionsTable(res['list'])
+            this.submissions_table = res['list']
             this.total_num = res['total_num']
             this.submitted_num = res['submitted_num']
             this.running_num = res['running_num']
@@ -174,38 +174,27 @@ export default {
             console.log(res['msg'])
           }
         })
-      // setTimeout(() => {
-      //   loading.close()
-      //   this.$message.error('Request Timeout! Please Retry!')
-      // }, 10000)
+      setTimeout(() => {
+        loading.close()
+        this.$message.error('Request timeout! Please reopen this page!')
+      }, 10000)
     },
-    parseSubmissionsTable (submissions) {
-      var parsedConfig
-      if (this.analysisType === 'Machine Learning') {
-        for (let submission of submissions) {
-          parsedConfig = JSON.parse(submission.fields.task_config)
-          submission.fields.proj_name = parsedConfig.proj_name
-          submission.fields.train_data = parsedConfig.train_data
-          submission.fields.test_data = parsedConfig.test_data
-          submission.fields.label = parsedConfig.label
-          submission.fields.feat_sel = parsedConfig.feat_sel
-          submission.fields.estimator = parsedConfig.estimator
-          submission.fields.cv_type = parsedConfig.cv_type
-        }
-      } else if (this.analysisType === 'Statistical Analysis') {
-        for (let submission of submissions) {
-          parsedConfig = JSON.parse(submission.fields.task_config)
-          submission.fields.proj_name = parsedConfig.proj_name
-          submission.fields.test_var_data_x = parsedConfig.test_var_data_x
-          submission.fields.group_var_data_y = parsedConfig.group_var_data_y
-        }
-      }
-      this.submissions_table = submissions
-      console.log(this.submissions_table)
-    },
-    handleTabClick () {
-      this.analysisType = this.tabsValue
-      this.showSubmissions()
+    updateSubmissionsStatus () {
+      axios.get('/rest/api/v0/overview_submissions?user_id=' + sessionStorage.getItem('UserID'))
+        .then(response => {
+          var res = response.data
+          if (res.error_num === 0) {
+            this.submissions_table = res['list']
+            this.total_num = res['total_num']
+            this.submitted_num = res['submitted_num']
+            this.running_num = res['running_num']
+            this.finished_num = res['finished_num']
+            this.failed_num = res['failed_num']
+          } else {
+            this.$message.error('Failed!')
+            console.log(res['msg'])
+          }
+        })
     },
     onRowClick (row) {
       if (this.isInArray(row.fields.task_type, ['ml_clf', 'ml_rgs'])) this.analysisType = 'Machine Learning'

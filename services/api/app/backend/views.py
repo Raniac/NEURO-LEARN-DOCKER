@@ -449,7 +449,7 @@ def overview_submissions(request):
         response_content['list']  = json.loads(
             serializers.serialize(
                 "json", submissions, 
-                fields=('task_id', 'proj_id', 'task_name', 'task_type', 'task_config', 'task_status')
+                fields=('task_id', 'proj_id', 'task_name', 'task_type', 'task_status')
             )
         )
 
