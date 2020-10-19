@@ -1,0 +1,12 @@
+version: '2'
+
+services:
+  service-rscs:
+    image: raniac/resource-server:dev
+    restart: on-failure
+    ports:
+      - "7140:80"
+    volumes:
+      - /data:/rscs/files
+      - /opt/nls/rscs/log:/rscs/log
+    container_name: service-rscs
