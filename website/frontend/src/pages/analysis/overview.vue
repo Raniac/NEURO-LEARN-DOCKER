@@ -174,10 +174,6 @@ export default {
             console.log(res['msg'])
           }
         })
-      setTimeout(() => {
-        loading.close()
-        this.$message.error('Request timeout! Please reopen this page!')
-      }, 10000)
     },
     updateSubmissionsStatus () {
       axios.get('/rest/api/v0/overview_submissions?user_id=' + sessionStorage.getItem('UserID'))
