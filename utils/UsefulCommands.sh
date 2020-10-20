@@ -46,3 +46,7 @@
 
 # cnpm run build
 # cp -r dist/* ../../../website/
+
+## ======== UPLOAD TO RESOURCE SERVER ========
+
+# scp {filename} raniac@Server-Raniac-Dev:/home/raniac/files
