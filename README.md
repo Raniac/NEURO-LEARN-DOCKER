@@ -49,7 +49,7 @@ root@machine:/$ echo "120.79.49.129 api.neurolearn.com" >> /etc/hosts
 
 ## NLD Website UI
 
-> 中文文档详见[Getting Started with NEURO-LEARN](https://www.jianshu.com/p/067747c881ee)。
+> 中文使用文档详见[Getting Started with NEURO-LEARN](https://www.jianshu.com/p/067747c881ee).
 
 ### Home
 
