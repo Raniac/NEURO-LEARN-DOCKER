@@ -73,7 +73,7 @@ def integrated_pearson(data_x, data_y):
         for y_feature_name in y_feature_list:
             r_value, p_value = scipy.stats.pearsonr(data_x[x_feature_name], data_y[y_feature_name])
             if p_value <= 0.05:
-                pearson_results[x_feature_name][y_feature_name] = '%.4f' % r_value + '(' + '%.4f' % p_value + ')'
+                pearson_results[y_feature_name][x_feature_name] = '%.4f' % r_value + '(' + '%.4f' % p_value + ')'
     
     return pearson_results.to_dict(orient='index')
 
@@ -90,6 +90,6 @@ def integrated_spearman(data_x, data_y):
         for y_feature_name in y_feature_list:
             r_value, p_value = scipy.stats.spearmanr(data_x[x_feature_name], data_y[y_feature_name])
             if p_value <= 0.05:
-                spearman_results[x_feature_name][y_feature_name] = '%.4f' % r_value + '(' + '%.4f' % p_value + ')'
+                spearman_results[y_feature_name][x_feature_name] = '%.4f' % r_value + '(' + '%.4f' % p_value + ')'
     
     return spearman_results.to_dict(orient='index')
