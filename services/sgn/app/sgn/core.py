@@ -63,14 +63,14 @@ def run_model(taskid, tasktype, traindata, valdata, enabletest, testdata, model,
     ## Hyper-parameter setting
     SEED          = 1 # seed for random state
     DATA_PATH     = '/' # where to locate the data
-    LOG_PATH      = 'sgn/logs/test.log' # where to save the log
+    LOG_PATH      = '/nls-sgn/log/test.log' # where to save the log
     BATCH_SIZE    = paramset['batch_size'] # batch size of data loader
     LEARNING_RATE = paramset['learning_rate'] # initial learning rate
     LR_STEP_SIZE  = paramset['lr_step_size'] # epochs before each lr decay
     LR_DECAY      = paramset['lr_decay'] # multiplied by for lr decay
     NUM_EPOCHS    = paramset['epochs'] # number of epochs for training
     SAVE_MODEL    = paramset['save_model_state'] # whether save model
-    SAVE_PATH     = '/nld_sgn/models/checkpoints/' + taskid + '.pth' # name of the model
+    SAVE_PATH     = '/nls-sgn/models/checkpoints/' + taskid + '.pth' # name of the model
 
     ## Configure logging
     logging.basicConfig(level=logging.INFO, format='[%(asctime)s %(levelname)s] %(message)s')
@@ -91,7 +91,7 @@ def run_model(taskid, tasktype, traindata, valdata, enabletest, testdata, model,
     # train_dataset, test_dataset = fromPickle2Dataset('/workspace/schizo_graph_net/data/bennyray_191107_347_bcn.pkl')
     # train_dataset, test_dataset = fromPickle2DatasetWithFeature('/workspace/schizo_graph_net/data/bennyray_191107_347_bcn.pkl', '/workspace/schizo_graph_net/data/RANIAC_181210_345_sfMRI_90.csv')
     # train_dataset, test_dataset = fromTxt2Dataset('/workspace/schizo_graph_net/data/ByDPABI/')
-    train_dataset, test_dataset = fromTxt2DatasetWithFeature(DATA_PATH + '/nld_sgn/app/sgn/data/test_dpabi/', DATA_PATH + '/nld_sgn/app/sgn/data/RANIAC_181210_345_sfMRI_90.csv')
+    train_dataset, test_dataset = fromTxt2DatasetWithFeature(DATA_PATH + '/nls-sgn/data/test_dpabi/', DATA_PATH + '/nls-sgn/data/RANIAC_181210_345_sfMRI_90.csv')
 
     train_loader = DataLoader(train_dataset, batch_size=BATCH_SIZE, shuffle=True)
     test_loader = DataLoader(test_dataset, batch_size=BATCH_SIZE, shuffle=False)
@@ -102,7 +102,7 @@ def run_model(taskid, tasktype, traindata, valdata, enabletest, testdata, model,
         logging.info('Using CPU')
     device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
 
-    model = Net_191225().to(device)
+    model = Net_210311().to(device)
     ## for fine-tune tasks, load model state
     if tasktype == 'dl_ft':
         try:

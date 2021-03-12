@@ -19,7 +19,7 @@ celery.conf.update(app.config)
 def parse_arg():
     parser = argparse.ArgumentParser(description='nld-sgn-main')
     parser.add_argument('--host', dest='host', default='0.0.0.0')
-    parser.add_argument('--port', dest='port', default='80')
+    parser.add_argument('--port', dest='port', default='7014')
     parser.add_argument('--db_host', dest='db_host', default='db.neurolearn.com')
     parser.add_argument('--db_name', dest='db_name', default='neurolearn')
     parser.add_argument('--db_user', dest='db_user', default='neurolearn')
@@ -115,7 +115,7 @@ def task_executor(taskid, tasktype, traindata, valdata, enabletest, testdata, mo
         results = core.run_model(taskid, tasktype, fetched_train_data, fetched_val_data, enabletest, fetched_test_data, model, paramset)
         results_json = json.dumps(results)
         ## update task results
-        update_task_result_by_task_id(DB, taskid, results_json, 'Success')
+        update_task_result_by_task_id(DB, taskid, results_json, 'Finished')
     except Exception as e:
         traceback.print_exc()
         # update_task_result_by_task_id(DB, taskid, traceback.format_exc()[-min(1000, len(traceback.format_exc())):], 'Failed')

@@ -5,3 +5,6 @@ utils/dm/app/tmp
 services/api/log
 services/ml/log
 utils/results.txt
+services/sgn/data
+services/sgn/log
+services/sgn/models
